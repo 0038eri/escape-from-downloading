@@ -1,0 +1,139 @@
+/Users/osawaeri/Desktop/Escape from Downloading/Temp/bin/Debug/Assembly-CSharp.dll.mdb
+/Users/osawaeri/Desktop/Escape from Downloading/Temp/bin/Debug/Assembly-CSharp.dll
+/Users/osawaeri/Desktop/Escape from Downloading/obj/Debug/Assembly-CSharp.dll
+/Users/osawaeri/Desktop/Escape from Downloading/obj/Debug/Assembly-CSharp.dll.mdb
+/Users/osawaeri/Desktop/Escape from Downloading/Temp/bin/Debug/UnityEngine.dll
+/Users/osawaeri/Desktop/Escape from Downloading/Temp/bin/Debug/UnityEditor.dll
+/Users/osawaeri/Desktop/Escape from Downloading/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/osawaeri/Desktop/Escape from Downloading/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/osawaeri/Desktop/Escape from Downloading/Temp/bin/Debug/UnityEngine.PlaymodeTestsRunner.dll
+/Users/osawaeri/Desktop/Escape from Downloading/Temp/bin/Debug/UnityEngine.Analytics.dll
+/Users/osawaeri/Desktop/Escape from Downloading/Temp/bin/Debug/UnityEngine.HoloLens.dll
+/Users/osawaeri/Desktop/Escape from Downloading/Temp/bin/Debug/UnityEngine.VR.dll
+/Users/osawaeri/Desktop/Escape from Downloading/Temp/bin/Debug/Mono.Cecil.dll
+/Users/osawaeri/Desktop/Escape from Downloading/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/osawaeri/Desktop/Escape from Downloading/Temp/bin/Debug/Unity.DataContract.dll
+/Users/osawaeri/Desktop/Escape from Downloading/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/osawaeri/Desktop/Escape from Downloading/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/osawaeri/Desktop/Escape from Downloading/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/osawaeri/Desktop/Escape from Downloading/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/osawaeri/Desktop/Escape from Downloading/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/osawaeri/Desktop/Escape from Downloading/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/osawaeri/github_desk/Escape-from-Downloading/Temp/bin/Debug/Assembly-CSharp.dll.mdb
+/Users/osawaeri/github_desk/Escape-from-Downloading/Temp/bin/Debug/Assembly-CSharp.dll
+/Users/osawaeri/github_desk/Escape-from-Downloading/obj/Debug/Assembly-CSharp.dll
+/Users/osawaeri/github_desk/Escape-from-Downloading/obj/Debug/Assembly-CSharp.dll.mdb
+/Users/osawaeri/github_desk/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.dll
+/Users/osawaeri/github_desk/Escape-from-Downloading/Temp/bin/Debug/UnityEditor.dll
+/Users/osawaeri/github_desk/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/osawaeri/github_desk/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/osawaeri/github_desk/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.PlaymodeTestsRunner.dll
+/Users/osawaeri/github_desk/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.Analytics.dll
+/Users/osawaeri/github_desk/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.HoloLens.dll
+/Users/osawaeri/github_desk/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.VR.dll
+/Users/osawaeri/github_desk/Escape-from-Downloading/Temp/bin/Debug/Mono.Cecil.dll
+/Users/osawaeri/github_desk/Escape-from-Downloading/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/osawaeri/github_desk/Escape-from-Downloading/Temp/bin/Debug/Unity.DataContract.dll
+/Users/osawaeri/github_desk/Escape-from-Downloading/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/osawaeri/github_desk/Escape-from-Downloading/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/osawaeri/github_desk/Escape-from-Downloading/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/osawaeri/github_desk/Escape-from-Downloading/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/osawaeri/github_desk/Escape-from-Downloading/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/osawaeri/github_desk/Escape-from-Downloading/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/osawaeri/Github/Escape-from-Downloading/Temp/bin/Debug/Assembly-CSharp.dll.mdb
+/Users/osawaeri/Github/Escape-from-Downloading/Temp/bin/Debug/Assembly-CSharp.dll
+/Users/osawaeri/Github/Escape-from-Downloading/obj/Debug/Assembly-CSharp.dll
+/Users/osawaeri/Github/Escape-from-Downloading/obj/Debug/Assembly-CSharp.dll.mdb
+/Users/osawaeri/Github/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.dll
+/Users/osawaeri/Github/Escape-from-Downloading/Temp/bin/Debug/UnityEditor.dll
+/Users/osawaeri/Github/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/osawaeri/Github/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/osawaeri/Github/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.PlaymodeTestsRunner.dll
+/Users/osawaeri/Github/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.Analytics.dll
+/Users/osawaeri/Github/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.HoloLens.dll
+/Users/osawaeri/Github/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.VR.dll
+/Users/osawaeri/Github/Escape-from-Downloading/Temp/bin/Debug/Mono.Cecil.dll
+/Users/osawaeri/Github/Escape-from-Downloading/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/osawaeri/Github/Escape-from-Downloading/Temp/bin/Debug/Unity.DataContract.dll
+/Users/osawaeri/Github/Escape-from-Downloading/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/osawaeri/Github/Escape-from-Downloading/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/osawaeri/Github/Escape-from-Downloading/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/osawaeri/Github/Escape-from-Downloading/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/osawaeri/Github/Escape-from-Downloading/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/osawaeri/Github/Escape-from-Downloading/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/osawaeri/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/Assembly-CSharp.dll.mdb
+/Users/osawaeri/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/Assembly-CSharp.dll
+/Users/osawaeri/GithubLocal/Escape-from-Downloading/obj/Debug/Assembly-CSharp.dll
+/Users/osawaeri/GithubLocal/Escape-from-Downloading/obj/Debug/Assembly-CSharp.dll.mdb
+/Users/osawaeri/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.dll
+/Users/osawaeri/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/UnityEditor.dll
+/Users/osawaeri/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/osawaeri/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/osawaeri/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.PlaymodeTestsRunner.dll
+/Users/osawaeri/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.Analytics.dll
+/Users/osawaeri/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.HoloLens.dll
+/Users/osawaeri/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.VR.dll
+/Users/osawaeri/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/Mono.Cecil.dll
+/Users/osawaeri/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/osawaeri/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/Unity.DataContract.dll
+/Users/osawaeri/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/osawaeri/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/osawaeri/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/osawaeri/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/osawaeri/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/osawaeri/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/osawaeri/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/Assembly-CSharp.dll.mdb
+/Users/osawaeri/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/Assembly-CSharp.dll
+/Users/osawaeri/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/obj/Debug/Assembly-CSharp.dll
+/Users/osawaeri/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/obj/Debug/Assembly-CSharp.dll.mdb
+/Users/osawaeri/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.dll
+/Users/osawaeri/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/UnityEditor.dll
+/Users/osawaeri/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/osawaeri/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/osawaeri/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.PlaymodeTestsRunner.dll
+/Users/osawaeri/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.Analytics.dll
+/Users/osawaeri/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.HoloLens.dll
+/Users/osawaeri/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.VR.dll
+/Users/osawaeri/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/Mono.Cecil.dll
+/Users/osawaeri/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/osawaeri/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/Unity.DataContract.dll
+/Users/osawaeri/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/osawaeri/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/osawaeri/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/osawaeri/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/osawaeri/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/osawaeri/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/Assembly-CSharp.dll.mdb
+/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/Assembly-CSharp.dll
+/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/obj/Debug/Assembly-CSharp.dll
+/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/obj/Debug/Assembly-CSharp.dll.mdb
+/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.dll
+/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/UnityEditor.dll
+/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.UIAutomation.dll
+/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.TestRunner.dll
+/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/nunit.framework.dll
+/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.Timeline.dll
+/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.GoogleAudioSpatializer.dll
+/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.HoloLens.dll
+/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.SpatialTracking.dll
+/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.Advertisements.dll
+/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.Analytics.dll
+/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.Purchasing.dll
+/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.StandardEvents.dll
+/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/Unity.Cecil.dll
+/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/Unity.DataContract.dll
+/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/ExCSS.Unity.dll
+/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/Unity.Legacy.NRefactory.dll
+/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/Unity.Cecil.Pdb.dll
+/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/Unity.Cecil.Mdb.dll
+/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/UnityEngine.VR.dll
+/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/Mono.Cecil.dll
+/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Temp/bin/Debug/Mono.Cecil.Mdb.dll
