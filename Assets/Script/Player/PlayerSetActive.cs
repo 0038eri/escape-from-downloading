@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PlayerSetActive : MonoBehaviour {
     
     // プレイヤー MeshRenderer
 	private MeshRenderer playerRenderer;
+    // プレイヤー Canvas
+    private Canvas playerCanvas;
 
 	void Awake () {
 		     
@@ -20,41 +23,39 @@ public class PlayerSetActive : MonoBehaviour {
         // プレイヤーMeshRenderer取得
 		playerRenderer = GameObject.Find("Player").GetComponent<MeshRenderer>();
 
+        // プレイヤーCanvas取得
+        playerCanvas = GameObject.Find("PlayerCanvas").GetComponent<Canvas>();
+
 	}
 
     /// シーン移動時毎回読み込まれる
-    /// Player透明化判定メソッド
 	void checkScene (Scene scene,LoadSceneMode SceneMode) {
 		
 		/// Scene scenename,LoadSceneMode SceneMode は、SceneManager.sceneLoaded の引数である
 		/// Awakeでの場合は引数は省略されている
 		 
-        // プレイヤー 不可視
 		switch (scene.name) {
-		case "Ending":
-		case "GameClear":
-		case "GameOver":
-		case "Item1":
-		case "Menu":	
-		case "Opening":
-		case "Option":
-		case "Setting":
-		case "Shop":
-		case "Start":
-			playerRenderer.enabled = false;
-			break;
+            case "Ending":
+            case "Menu":
+            case "Opening":
+            case "Option":
+            case "Start":
+                playerRenderer.enabled = false; // プレイヤー不可視
+                GameObject.Find("StageManager").SendMessage("stopTimer"); // タイマー停止
+                playerCanvas.enabled = false; // UI非表示
+                break;
 
-        // プレイヤー 可視
-		case "Game1":
-		case "Game2":
-		case "GameL":
-		case "StageSample":
-		case "Stage1":
-			playerRenderer.enabled = true;
-			break;
+            case "Game1":
+            case "Game2":
+            case "GameL":
+            case "StageSample":
+                playerRenderer.enabled = true; // プレイヤー可視
+                GameObject.Find("StageManager").SendMessage("startTimer"); // タイマー開始
+                playerCanvas.enabled = true; // UI表示
+                break;
 
-		default:
-			break;
+            default:
+                break;
 		}
 
 	}

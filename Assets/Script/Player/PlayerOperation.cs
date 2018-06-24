@@ -63,12 +63,18 @@ public class PlayerOperation : MonoBehaviour {
             GameObject.Find("MoneyObj").SendMessage("updateCoin"); // 所持金更新
 			Destroy(gameObject); // コイン消滅
 		}
-        
-		// ダウンロードに当たると      
-		if (col.gameObject.tag == "Download") {
-			SceneManager.LoadScene ("GameOver"); // ゲームオーバー
-		}
 
+        // ダウンロードに当たると      
+        if (col.gameObject.tag == "Download")
+        {
+            GameObject.Find("PlayerManager").SendMessage("gameOver"); // ゲームオーバー
+        }
+        // ゴールしたら
+        if (col.gameObject.tag == "Goal")
+        {
+            GameObject.Find("StageManager").SendMessage("stopTimer"); // タイマー停止
+            GameObject.Find("PlayerManager").SendMessage("gameClear"); // ゲームクリア
+        }
 	}
 
 }

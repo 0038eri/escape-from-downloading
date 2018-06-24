@@ -59,8 +59,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Script\Manager\ItemManager.cs" />
     <Compile Include="Assets\Script\Manager\MoneyManager.cs" />
+    <Compile Include="Assets\Script\Manager\StageManager.cs" />
     <Compile Include="Assets\Script\Manager\SystemParent.cs" />
     <Compile Include="Assets\Script\Object\CoinSc.cs" />
     <Compile Include="Assets\Script\Object\DownloadSc.cs" />
@@ -73,13 +73,9 @@
     <Compile Include="Assets\Script\Scene\Game\Game2Scn.cs" />
     <Compile Include="Assets\Script\Scene\Game\GameLScn.cs" />
     <Compile Include="Assets\Script\Scene\Stage\Stage1Scn.cs" />
-    <Compile Include="Assets\Script\Scene\System\ItemShop\Item1Sc.cs" />
-    <Compile Include="Assets\Script\Scene\System\ItemShop\Item2Sc.cs" />
     <Compile Include="Assets\Script\Scene\System\MenuScn.cs" />
     <Compile Include="Assets\Script\Scene\System\OptionScn.cs" />
     <Compile Include="Assets\Script\Scene\System\PrefabScn.cs" />
-    <Compile Include="Assets\Script\Scene\System\SettingScn.cs" />
-    <Compile Include="Assets\Script\Scene\System\ShopScn.cs" />
     <Compile Include="Assets\Script\Scene\System\Skip\SceneSkip.cs" />
     <Compile Include="Assets\Script\Scene\System\Skip\SkipBtn.cs" />
     <Compile Include="Assets\Script\Scene\System\StartScn.cs" />

@@ -5,7 +5,7 @@ using UnityEngine;
 public class SkipBtn : MonoBehaviour {
 	
     // ボタン
-	public GameObject skipBt;
+    public GameObject skipBt;
 
 	void Start () {
 

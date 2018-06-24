@@ -22,51 +22,40 @@ public class MenuScn : MonoBehaviour {
     }
 
 	void Update () {
-
-        // セッティング画面に移動
-        if (Input.GetKeyDown(KeyCode.S)) {
-            toSet();
-        }
         // オプション画面に移動
         if (Input.GetKeyDown(KeyCode.O)) {
             toOption();
         }
 
     }
+    // スタート画面に移動
+    public void toStart()
+    {
+        SceneManager.LoadScene("Start");
+    }
+
+    // オプション画面に移動
+    public void toOption()
+    {
+        SceneManager.LoadScene("Option");
+    }
 
 	// ステージ1に移動
-	public void toGame1 () {
+	public void toGame1 () 
+    {
 		SceneManager.LoadScene ("Game1");
 	}
 
-	// ステージ2に移動
-	public void toGame2 () {
-		SceneManager.LoadScene ("Game2");
-	}
-
-	// ショップ画面に移動
-	public void toShop () {
-		SceneManager.LoadScene ("Shop");
-	}
-
-	// スタート画面に移動
-	public void toStart () {
-		SceneManager.LoadScene ("Start");
-	}
-
-	// ステージラストに移動
-	public void toLast () {
-        SceneManager.LoadScene("GameL");
+    // ステージ2に移動
+    public void toGame2()
+    {
+        SceneManager.LoadScene("Game2");
     }
 
-	// セッティング画面に移動
-	public void toSet () {
-		SceneManager.LoadScene("Setting");
-	}
-
-	// オプション画面に移動
-	public void toOption () {
-		SceneManager.LoadScene("Option");
-	}
+    // ステージラストに移動
+    public void toLast()
+    {
+        SceneManager.LoadScene("GameL");
+    }
    
 }
