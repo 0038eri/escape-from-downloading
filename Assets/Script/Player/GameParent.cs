@@ -6,8 +6,7 @@ public class GameParent : MonoBehaviour {
 
 	void Awake () {
 		
-		// これを消滅しない
-		DontDestroyOnLoad(this);
+        DontDestroyOnLoad(this); // これを消滅しない
 
 	}
 

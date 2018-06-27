@@ -4,58 +4,82 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuScn : MonoBehaviour {
-	
-	// ステージ2クリア判定
-    static bool game2Clear;
 
-	// ステージラストボタン表示
-	public GameObject toL;
-
-	void Start () {
-		
-		game2Clear = Game2Scn.game2Clear(); // Game2のクリア判定を入れる      
-        // もしGame2クリア済みだったら
-        if (game2Clear == true) {
-			toL.gameObject.SetActive(true); // ボタン表示
-        }
-
-    }
-
-	void Update () {
-        // オプション画面に移動
-        if (Input.GetKeyDown(KeyCode.O)) {
-            toOption();
-        }
-
-    }
     // スタート画面に移動
-    public void toStart()
+    public void toStart ()
     {
         SceneManager.LoadScene("Start");
     }
 
     // オプション画面に移動
-    public void toOption()
+    public void toOption ()
     {
         SceneManager.LoadScene("Option");
     }
 
 	// ステージ1に移動
-	public void toGame1 () 
+	public void toStage1 () 
     {
-		SceneManager.LoadScene ("Game1");
+		SceneManager.LoadScene ("Stage1");
 	}
 
     // ステージ2に移動
-    public void toGame2()
+    public void toStage2 ()
     {
-        SceneManager.LoadScene("Game2");
+        SceneManager.LoadScene("Stage2");
     }
 
-    // ステージラストに移動
-    public void toLast()
+    // ステージ3に移動
+    public void toStage3 ()
     {
-        SceneManager.LoadScene("GameL");
+        SceneManager.LoadScene("Stage3");
+    }
+
+    // ステージ4に移動
+    public void toStage4 () {
+        SceneManager.LoadScene("Stage4");
+
+    }
+
+    // ステージ5に移動
+    public void toStage5 () {
+        SceneManager.LoadScene("Stage5");
+
+    }
+
+    // ステージ6に移動
+    public void toStage6 () {
+        SceneManager.LoadScene("Stage6");
+    }
+
+    // ステージ7に移動
+    public void toStage7 () {
+        SceneManager.LoadScene("Stage7");
+    }
+
+    // ステージ8に移動
+    public void toStage8 () {
+        SceneManager.LoadScene("Stage8");
+    }
+
+    // ステージ9に移動
+    public void toStage9 () {
+        SceneManager.LoadScene("Stage9");
+    }
+
+    // ステージ10に移動
+    public void toStage10 () {
+        SceneManager.LoadScene("Stage10");
+    }
+
+    // ステージ11に移動
+    public void toStage11 () {
+        SceneManager.LoadScene("Stage11");
+    }
+
+    // ステージ12に移動
+    public void toStage12 () {
+        SceneManager.LoadScene("Stage12");
     }
    
 }

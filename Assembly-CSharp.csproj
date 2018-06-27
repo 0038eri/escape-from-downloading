@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{FF586FE5-698E-99B2-CBF2-74EEE0CC1F81}</ProjectGuid>
+    <ProjectGuid>{48893F69-26C4-B4A9-0F1E-C8BE09297673}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -80,10 +80,10 @@
     <Compile Include="Assets\Script\Scene\System\Skip\SkipBtn.cs" />
     <Compile Include="Assets\Script\Scene\System\StartScn.cs" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>/Users/eririn/github/escape-from-downloading/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>/Users/eririn/Library/Mobile Documents/com~apple~CloudDocs/GithubLocal/Escape-from-Downloading/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>/Users/eririn/github/escape-from-downloading/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

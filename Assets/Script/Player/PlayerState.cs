@@ -108,11 +108,13 @@ public class PlayerState : MonoBehaviour {
 
     // ゲームオーバー
     public void gameOver(){
+        GameObject.Find("StageManager").SendMessage("stopTimer"); // タイマー停止
         gameOverUi.SetActive(true); // ゲームオーバーパネル表示
     }
 
     // ゲームクリア
     public void gameClear(){
+        GameObject.Find("StageManager").SendMessage("stopTimer"); // タイマー停止
         gameClearUi.SetActive(true); // ゲームクリアパネル表示
     }
 
@@ -144,6 +146,6 @@ public class PlayerState : MonoBehaviour {
     public void escapeGameG () {
         gameUiFalse(); // ゲームUI非表示
         // アプリ終了
-    }
+    }   
 	
 }

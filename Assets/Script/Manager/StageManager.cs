@@ -10,7 +10,7 @@ public class StageManager : MonoBehaviour {
     private float timer = 60.0f;
     // 制限時間
     private float timeLimit = 0.0f;
-    // タイマーを止める
+    // タイマー停止判定
     bool timerStop = true;
     // タイマー表示テキスト
     public Text timerText;
@@ -30,17 +30,14 @@ public class StageManager : MonoBehaviour {
 
     void updateTimer()
     {
-        // タイマーを動かす
-        timer += (-1*Time.deltaTime);
-        // もしタイマーが制限時間に達したら
-        if (timer == timeLimit)
+        timer += (-1*Time.deltaTime); // タイマーを動かす
+        if (timer == timeLimit) // もしタイマーが制限時間に達したら
         {
             GameObject.Find("PlayerManager").SendMessage("gameOver"); // ゲームオーバー
             stopTimer(); // タイマー停止;
             timer = 60.0f; // タイマーリセット
         }
-        // 時間を整数で表示する
-        timerText.text = ((int)timer).ToString() + " sec";
+        timerText.text = ((int)timer).ToString() + " sec"; // 時間を整数で表示する
     }
 
     // タイマーを開始
@@ -65,10 +62,10 @@ public class StageManager : MonoBehaviour {
         poseUi.SetActive(false);
     }
 
-    // ゲームを再生する
+    // ゲームを再開する
     public void playGame () {
         poseUIFalse(); // ポーズパネルを非表示
-        timerStop = false; // タイマーをうごかす
+        startTimer(); // タイマーをうごかす
         // ゲームを再生
     }
 

@@ -21,10 +21,6 @@ public class OptionScn : MonoBehaviour {
 	public void changeUsername () {
         //入力されたテキストを文字列に入れる
 		Username_string = inputfield.text;      
-        // 対応していなかったら
-		if (!Regex.IsMatch(Username_string, @"[^a-zA-z0-9-_]")) {
-			inputfield.text = "User Name"; //「User Name」を入れる
-		}
 		//PlayerState.username = Username_string; // PlayerStateにユーザーネームを入れる
 		GameObject.Find("Player").SendMessage ("updateUsername"); // ユーザーネームを保存
 	}

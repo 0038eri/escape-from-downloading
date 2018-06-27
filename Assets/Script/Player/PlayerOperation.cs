@@ -50,11 +50,12 @@ public class PlayerOperation : MonoBehaviour {
         this.transform.position = new Vector3(22.0f, 1.04f, 0);
 	}
 
+    // 衝突判定
 	void OnCollisionEnter(Collision col){
 		
 		// エネミーに当たると      
 		if (col.gameObject.tag == "Enemy") {
-			col.gameObject.SendMessage("PlayerHpMinusE"); // HP1減らす
+            GameObject.Find("PlayerManager").SendMessage("PlayerHpMinusE"); // HP1減らす
 		}
 
 		// コインに当たると
@@ -64,17 +65,12 @@ public class PlayerOperation : MonoBehaviour {
 			Destroy(gameObject); // コイン消滅
 		}
 
-        // ダウンロードに当たると      
-        if (col.gameObject.tag == "Download")
-        {
-            GameObject.Find("PlayerManager").SendMessage("gameOver"); // ゲームオーバー
-        }
         // ゴールしたら
         if (col.gameObject.tag == "Goal")
         {
-            GameObject.Find("StageManager").SendMessage("stopTimer"); // タイマー停止
             GameObject.Find("PlayerManager").SendMessage("gameClear"); // ゲームクリア
         }
+
 	}
 
 }

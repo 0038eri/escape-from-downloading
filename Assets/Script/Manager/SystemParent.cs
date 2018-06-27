@@ -5,9 +5,8 @@ using UnityEngine;
 public class SystemParent : MonoBehaviour {
 
 	void Start () {
-		
-        // これを消滅しない
-		DontDestroyOnLoad (this);
+	
+        DontDestroyOnLoad (this); // これを消滅しない
 
 	}
 
