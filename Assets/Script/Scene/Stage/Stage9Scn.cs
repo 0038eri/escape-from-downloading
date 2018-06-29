@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Stage9Scn : MonoBehaviour {
 
+    // ステージ9クリア判定
     public static bool stage9Clear = false;
 
 }

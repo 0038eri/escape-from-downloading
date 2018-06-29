@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Stage6Scn : MonoBehaviour {
 
+    // ステージ6クリア判定
     public static bool stage6Clear = false;
 
 }

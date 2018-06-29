@@ -20,7 +20,7 @@ public class PlayerSetActive : MonoBehaviour {
 	void Start () {
 		
         playerRenderer = GameObject.Find("Player").GetComponent<MeshRenderer>(); // プレイヤーMeshRenderer取得
-        playerCanvas = GameObject.Find("PlayerCanvas").GetComponent<Canvas>(); // プレイヤーMeshRenderer取得
+        playerCanvas = GameObject.Find("PlayerCanvas").GetComponent<Canvas>(); // プレイヤーCanvas取得
 
 	}
 
@@ -31,6 +31,7 @@ public class PlayerSetActive : MonoBehaviour {
 		/// Awakeでの場合は引数は省略されている
 		 
 		switch (scene.name) {
+            
             case "Ending":
             case "Menu":
             case "Opening":
@@ -61,6 +62,7 @@ public class PlayerSetActive : MonoBehaviour {
 
             default:
                 break;
+
 		}
 
 	}

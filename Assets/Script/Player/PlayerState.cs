@@ -15,10 +15,10 @@ public class PlayerState : MonoBehaviour {
     // HPバー背景画像
     public Image hpImage;
 
- //   // ユーザーネーム文字列
-	//public static string username;
- //   // ユーザーネーム表示テキスト
-	//public Text usernameText;
+    // ユーザーネーム文字列
+	public static string username;
+    // ユーザーネーム表示テキスト
+	public Text usernameText;
 
     // クリア画面
     public GameObject gameClearUi;
@@ -29,14 +29,13 @@ public class PlayerState : MonoBehaviour {
         
         slider.value = playerHp; // HP反映
         hpImage = GameObject.Find("Fill").GetComponent<Image>(); // カラー取得
-
         playerHpText.text = playerHp.ToString(); // プレイヤーHPテキスト表示
 
 	}
  
     // HP更新
     public void updatePlayerHp () {
-        slider.value = playerHp; // HP反映更新
+        slider.value = playerHp; // HP値反映更新
         playerHpText.text = playerHp.ToString(); // HPテキスト表示更新
 
         /// HPが10以下だったら
@@ -46,34 +45,28 @@ public class PlayerState : MonoBehaviour {
             playerHpBarColorRed();
 
         }
+
         /// HPが30以下だったら
         /// HPバーの色を黄色にする
         else if (playerHp <= 30)
         {
             playerHpBarColorYellow();
         }
+
         /// HPが60以下だったら
         /// HPバーの色を緑にする
         else if (playerHp <= 60)
         {
             playerHpBarColorGreen();
         }
+
         /// HPが100以下だったら
         /// HPバーの色を青にする
         else if (playerHp <= 100)
         {
             playerHpBarColorBlue();
         }
-
-		PlayerPrefs.SetInt("playerhp", playerHp); // PlayerPrefsにデータを保存
 	}
-
-    // エネミーでHP減らす
-    public void playerHpMinusE()
-    {
-        playerHp--; // HPを1減らす
-        updatePlayerHp();
-    }
 
     // HPバーの色を青にする
     void playerHpBarColorBlue()
@@ -99,12 +92,11 @@ public class PlayerState : MonoBehaviour {
         hpImage.color = Color.red;
     }
 
-    //// ユーザーネーム更新
-    //public void updateUsername()
-    //{
-    //    usernameText.text = username; // 実行された時の現在のユーザーネームを表示      
-    //    PlayerPrefs.SetString("username", username); // PlayerPrefsにデータを保存
-    //}
+    // ユーザーネーム更新
+    public void updateUsername()
+    {
+        usernameText.text = username; // 実行された時の現在のユーザーネームを表示      
+    }
 
     // ゲームオーバー
     public void gameOver(){
@@ -116,107 +108,107 @@ public class PlayerState : MonoBehaviour {
     public void gameClear(){
         GameObject.Find("StageManager").SendMessage("stopTimer"); // タイマー停止
         gameClearUi.SetActive(true); // ゲームクリアパネル表示
-        stageClearJudge();
+        stageClearCheck(); // クリア判定確認
     }
 
-    void stageClearJudge(){
-
+    // クリア判定確認
+    void stageClearCheck(){
         switch (StageManager.stageNumber)
         {
 
             case 1:
-                if (Stage1Scn.stage1Clear == false)
+                if (Stage1Scn.stage1Clear == false) // ステージ1をクリアしていなかったら
                 {
-                    StageManager.stageNumber++;
-                    Stage1Scn.stage1Clear = true;
+                    StageManager.stageNumber++; // クリアステージ数追加
+                    Stage1Scn.stage1Clear = true; // ステージ1クリア済み
                 }
                 break;
 
             case 2:
-                if (Stage2Scn.stage2Clear == false)
+                if (Stage2Scn.stage2Clear == false) // ステージ2をクリアしていなかったら
                 {
-                    StageManager.stageNumber++;
-                    Stage2Scn.stage2Clear = true;
+                    StageManager.stageNumber++; // クリアステージ数追加
+                    Stage2Scn.stage2Clear = true; // ステージ2クリア済み
                 }
                 break;
 
             case 3:
-                if (Stage3Scn.stage3Clear == false)
+                if (Stage3Scn.stage3Clear == false) // ステージ3をクリアしていなかったら
                 {
-                    StageManager.stageNumber++;
-                    Stage3Scn.stage3Clear = true;
+                    StageManager.stageNumber++; // クリアステージ数追加
+                    Stage3Scn.stage3Clear = true; // ステージ3クリア済み
                 }
                 break;
 
             case 4:
-                if (Stage4Scn.stage4Clear == false)
+                if (Stage4Scn.stage4Clear == false) // ステージ4をクリアしていなかったら
                 {
-                    StageManager.stageNumber++;
-                    Stage4Scn.stage4Clear = true;
+                    StageManager.stageNumber++; // クリアステージ数追加
+                    Stage4Scn.stage4Clear = true; // ステージ4クリア済み
                 }
                 break;
 
             case 5:
-                if (Stage5Scn.stage5Clear == false)
+                if (Stage5Scn.stage5Clear == false) // ステージ5をクリアしていなかったら
                 {
-                    StageManager.stageNumber++;
-                    Stage5Scn.stage5Clear = true;
+                    StageManager.stageNumber++; // クリアステージ数追加
+                    Stage5Scn.stage5Clear = true; // ステージ5クリア済み
                 }
                 break;
 
             case 6:
-                if (Stage6Scn.stage6Clear == false)
+                if (Stage6Scn.stage6Clear == false) // ステージ6をクリアしていなかったら
                 {
-                    StageManager.stageNumber++;
-                    Stage6Scn.stage6Clear = true;
+                    StageManager.stageNumber++; // クリアステージ数追加
+                    Stage6Scn.stage6Clear = true; // ステージ6クリア済み
                 }
                 break;
 
             case 7:
-                if (Stage7Scn.stage7Clear == false)
+                if (Stage7Scn.stage7Clear == false) // ステージ7をクリアしていなかったら
                 {
-                    StageManager.stageNumber++;
-                    Stage7Scn.stage7Clear = true;
+                    StageManager.stageNumber++; // クリアステージ数追加
+                    Stage7Scn.stage7Clear = true; // ステージ7クリア済み
                 }
                 break;
 
             case 8:
-                if (Stage8Scn.stage8Clear == false)
+                if (Stage8Scn.stage8Clear == false) // ステージ8をクリアしていなかったら
                 {
-                    StageManager.stageNumber++;
-                    Stage8Scn.stage8Clear = true;
+                    StageManager.stageNumber++; // クリアステージ数追加
+                    Stage8Scn.stage8Clear = true; // ステージ8クリア済み
                 }
                 break;
 
             case 9:
-                if (Stage9Scn.stage9Clear == false)
+                if (Stage9Scn.stage9Clear == false) // ステージ9をクリアしていなかったら
                 {
-                    StageManager.stageNumber++;
-                    Stage9Scn.stage9Clear = true;
+                    StageManager.stageNumber++; // クリアステージ数追加
+                    Stage9Scn.stage9Clear = true; // ステージ9クリア済み
                 }
                 break;
 
             case 10:
-                if (Stage10Scn.stage10Clear == false)
+                if (Stage10Scn.stage10Clear == false) // ステージ10をクリアしていなかったら
                 {
-                    StageManager.stageNumber++;
-                    Stage10Scn.stage10Clear = true;
+                    StageManager.stageNumber++; // クリアステージ数追加
+                    Stage10Scn.stage10Clear = true; // ステージ10クリア済み
                 }
                 break;
 
             case 11:
-                if (Stage11Scn.stage11Clear == false)
+                if (Stage11Scn.stage11Clear == false) // ステージ11をクリアしていなかったら
                 {
-                    StageManager.stageNumber++;
-                    Stage11Scn.stage11Clear = true;
+                    StageManager.stageNumber++; // クリアステージ数追加
+                    Stage11Scn.stage11Clear = true; // ステージ11クリア済み
                 }
                 break;
 
             case 12:
-                if (Stage12Scn.stage12Clear == false)
+                if (Stage12Scn.stage12Clear == false) // ステージ12をクリアしていなかったら
                 {
-                    StageManager.stageNumber++;
-                    Stage12Scn.stage12Clear = true;
+                    StageManager.stageNumber++; // クリアステージ数追加
+                    Stage12Scn.stage12Clear = true; // ステージ12クリア済み
                 }
                 break;
 
@@ -224,7 +216,6 @@ public class PlayerState : MonoBehaviour {
                 break;
 
         }
-
     }
 
     // ゲームオーバー・ゲームクリアパネル非表示

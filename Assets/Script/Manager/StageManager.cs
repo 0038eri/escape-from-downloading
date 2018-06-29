@@ -31,10 +31,11 @@ public class StageManager : MonoBehaviour {
 
     }
 
+    // タイマーを動かしている
     void updateTimer()
     {
         timer += (-1*Time.deltaTime); // タイマーを動かす
-        if (timer == timeLimit) // もしタイマーが制限時間に達したら
+        if (timer >= timeLimit) // もしタイマーが制限時間に達したら
         {
             GameObject.Find("PlayerManager").SendMessage("gameOver"); // ゲームオーバー
             stopTimer(); // タイマー停止;

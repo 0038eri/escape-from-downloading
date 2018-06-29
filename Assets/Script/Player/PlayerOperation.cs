@@ -9,6 +9,7 @@ public class PlayerOperation : MonoBehaviour {
 	public float speed = 0.7f;
 	
 	void Update () {
+        
 		// Wで前進
 		if (Input.GetKey (KeyCode.W)) {
 			this.transform.position -= transform.up * speed * Time.deltaTime;
@@ -38,16 +39,7 @@ public class PlayerOperation : MonoBehaviour {
 		if (Input.GetKey (KeyCode.LeftArrow)) {
 			this.transform.Rotate(new Vector3(0, 0, -1));
 		}
-			
-//		X位置 15.0f以上 GameClear 移動
-//		if (this.transform.position.x >= 15.0f) {
-//			SceneManager.LoadScene ("GameClear");
-//		}
-	}
-
-    // プレイヤーをステージ1スタート位置に動かす
-    public void stage1Start () {
-        this.transform.position = new Vector3(22.0f, 1.04f, 0);
+		
 	}
 
     // 衝突判定
@@ -55,13 +47,14 @@ public class PlayerOperation : MonoBehaviour {
 		
 		// エネミーに当たると      
 		if (col.gameObject.tag == "Enemy") {
-            GameObject.Find("PlayerManager").SendMessage("PlayerHpMinusE"); // HP1減らす
+            PlayerState.playerHp--; // HPを1減らす
+            GameObject.Find("PlayerManager").SendMessage("updateplayerHp"); // HP更新
+            Destroy(gameObject); // エネミー消滅
 		}
 
 		// コインに当たると
 		if(col.gameObject.tag=="Coin"){
 			GameObject.Find("MoneyObj").SendMessage("getCoin"); // 所持金1増やす
-            GameObject.Find("MoneyObj").SendMessage("updateCoin"); // 所持金更新
 			Destroy(gameObject); // コイン消滅
 		}
 

@@ -16,15 +16,17 @@ public class MoneyManager : MonoBehaviour {
 
 	}
 
-    // 所持金更新メソッド
-	public void updateCoin(){
-        moneyText.text = money.ToString(); // 所持金更新時に表示しなおさせる
-        PlayerPrefs.SetInt ("money", money); // PlayerPrefsにデータを保存
-	}
-		
     // コインゲット
-	public void getCoin () {
-		money++;
-	}
+    public void getCoin()
+    {
+        money++;
+        updateMoney(); // 所持金更新
+    }
 
+    // 所持金更新メソッド
+    public void updateMoney()
+    {
+        moneyText.text = money.ToString(); // 所持金更新時に表示しなおさせる
+    }
+		
 }

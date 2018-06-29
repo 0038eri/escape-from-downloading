@@ -69,6 +69,11 @@
     <Compile Include="Assets\Script\Player\PlayerOperation.cs" />
     <Compile Include="Assets\Script\Player\PlayerSetActive.cs" />
     <Compile Include="Assets\Script\Player\PlayerState.cs" />
+    <Compile Include="Assets\Script\Scene\MenuScn.cs" />
+    <Compile Include="Assets\Script\Scene\OptionScn.cs" />
+    <Compile Include="Assets\Script\Scene\PrefabScn.cs" />
+    <Compile Include="Assets\Script\Scene\Skip\SceneSkip.cs" />
+    <Compile Include="Assets\Script\Scene\Skip\SkipBtn.cs" />
     <Compile Include="Assets\Script\Scene\Stage\Stage10Scn.cs" />
     <Compile Include="Assets\Script\Scene\Stage\Stage11Scn.cs" />
     <Compile Include="Assets\Script\Scene\Stage\Stage12Scn.cs" />
@@ -81,12 +86,7 @@
     <Compile Include="Assets\Script\Scene\Stage\Stage7Scn.cs" />
     <Compile Include="Assets\Script\Scene\Stage\Stage8Scn.cs" />
     <Compile Include="Assets\Script\Scene\Stage\Stage9Scn.cs" />
-    <Compile Include="Assets\Script\Scene\System\MenuScn.cs" />
-    <Compile Include="Assets\Script\Scene\System\OptionScn.cs" />
-    <Compile Include="Assets\Script\Scene\System\PrefabScn.cs" />
-    <Compile Include="Assets\Script\Scene\System\Skip\SceneSkip.cs" />
-    <Compile Include="Assets\Script\Scene\System\Skip\SkipBtn.cs" />
-    <Compile Include="Assets\Script\Scene\System\StartScn.cs" />
+    <Compile Include="Assets\Script\Scene\StartScn.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>/Users/eririn/github/escape-from-downloading/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
