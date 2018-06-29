@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class Stage1Scn : MonoBehaviour {
     
-	void Start () {
-
-        // ステージ1開始位置に移動
-        GameObject.Find("Player").SendMessage("stage1Start");
-
-	}
+    public static bool stage1Clear = false;
 
 }

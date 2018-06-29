@@ -14,20 +14,20 @@ public class SceneSkip : MonoBehaviour {
 		/// ゲーム1に移動する
         timer += Time.deltaTime;
         if (timer >= 20.0f) {
-            SceneManager.LoadScene("Game1");
+            SceneManager.LoadScene("Stage1");
         }
 
     }
 
     /// オープニングより
 	/// ステージ1に移動
-	public void toGame1 () {
-		SceneManager.LoadScene("Game1");
+	public void skipToStage1 () {
+		SceneManager.LoadScene("Stage1");
 	}
 
     /// エンディングより
 	/// スタート画面に移動
-	public void toStart () {
+	public void backToStart () {
 		SceneManager.LoadScene("Start");
 	}
 

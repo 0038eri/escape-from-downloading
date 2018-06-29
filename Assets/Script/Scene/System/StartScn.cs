@@ -9,9 +9,6 @@ public class StartScn : MonoBehaviour
     // PlayerPrefs保存切り替え判定
     public static bool prefsSave = false;
 
-    // ステージクリア判定
-    public static int stageNumber = 0;
-
     void Awake()
     {
 
@@ -31,8 +28,9 @@ public class StartScn : MonoBehaviour
     // 移動するシーンを確認
     void toNextScene()
     {
-        switch (stageNumber){
-            case 0: 
+        switch (StageManager.stageNumber)
+        {
+            case 0:
                 SceneManager.LoadScene("Opening"); // オープニング
                 break;
 
@@ -84,11 +82,14 @@ public class StartScn : MonoBehaviour
                 SceneManager.LoadScene("Stage12"); // ステージ12
                 break;
 
+            case 13:
+                SceneManager.LoadScene("Menu"); // メニュー
+                break;
+
             default:
                 break;
         }
+
     }
-
-
 
 }

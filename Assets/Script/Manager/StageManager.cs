@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class StageManager : MonoBehaviour {
 
+    // ステージクリア判定
+    public static int stageNumber = 0;
+
     // タイマー
     private float timer = 60.0f;
     // 制限時間

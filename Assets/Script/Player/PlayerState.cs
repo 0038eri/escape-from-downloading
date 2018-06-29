@@ -116,6 +116,115 @@ public class PlayerState : MonoBehaviour {
     public void gameClear(){
         GameObject.Find("StageManager").SendMessage("stopTimer"); // タイマー停止
         gameClearUi.SetActive(true); // ゲームクリアパネル表示
+        stageClearJudge();
+    }
+
+    void stageClearJudge(){
+
+        switch (StageManager.stageNumber)
+        {
+
+            case 1:
+                if (Stage1Scn.stage1Clear == false)
+                {
+                    StageManager.stageNumber++;
+                    Stage1Scn.stage1Clear = true;
+                }
+                break;
+
+            case 2:
+                if (Stage2Scn.stage2Clear == false)
+                {
+                    StageManager.stageNumber++;
+                    Stage2Scn.stage2Clear = true;
+                }
+                break;
+
+            case 3:
+                if (Stage3Scn.stage3Clear == false)
+                {
+                    StageManager.stageNumber++;
+                    Stage3Scn.stage3Clear = true;
+                }
+                break;
+
+            case 4:
+                if (Stage4Scn.stage4Clear == false)
+                {
+                    StageManager.stageNumber++;
+                    Stage4Scn.stage4Clear = true;
+                }
+                break;
+
+            case 5:
+                if (Stage5Scn.stage5Clear == false)
+                {
+                    StageManager.stageNumber++;
+                    Stage5Scn.stage5Clear = true;
+                }
+                break;
+
+            case 6:
+                if (Stage6Scn.stage6Clear == false)
+                {
+                    StageManager.stageNumber++;
+                    Stage6Scn.stage6Clear = true;
+                }
+                break;
+
+            case 7:
+                if (Stage7Scn.stage7Clear == false)
+                {
+                    StageManager.stageNumber++;
+                    Stage7Scn.stage7Clear = true;
+                }
+                break;
+
+            case 8:
+                if (Stage8Scn.stage8Clear == false)
+                {
+                    StageManager.stageNumber++;
+                    Stage8Scn.stage8Clear = true;
+                }
+                break;
+
+            case 9:
+                if (Stage9Scn.stage9Clear == false)
+                {
+                    StageManager.stageNumber++;
+                    Stage9Scn.stage9Clear = true;
+                }
+                break;
+
+            case 10:
+                if (Stage10Scn.stage10Clear == false)
+                {
+                    StageManager.stageNumber++;
+                    Stage10Scn.stage10Clear = true;
+                }
+                break;
+
+            case 11:
+                if (Stage11Scn.stage11Clear == false)
+                {
+                    StageManager.stageNumber++;
+                    Stage11Scn.stage11Clear = true;
+                }
+                break;
+
+            case 12:
+                if (Stage12Scn.stage12Clear == false)
+                {
+                    StageManager.stageNumber++;
+                    Stage12Scn.stage12Clear = true;
+                }
+                break;
+
+            default:
+                break;
+
+        }
+
     }
 
     // ゲームオーバー・ゲームクリアパネル非表示
