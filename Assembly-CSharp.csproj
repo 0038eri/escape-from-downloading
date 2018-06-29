@@ -69,9 +69,6 @@
     <Compile Include="Assets\Script\Player\PlayerOperation.cs" />
     <Compile Include="Assets\Script\Player\PlayerSetActive.cs" />
     <Compile Include="Assets\Script\Player\PlayerState.cs" />
-    <Compile Include="Assets\Script\Scene\Game\Game1Scn.cs" />
-    <Compile Include="Assets\Script\Scene\Game\Game2Scn.cs" />
-    <Compile Include="Assets\Script\Scene\Game\GameLScn.cs" />
     <Compile Include="Assets\Script\Scene\Stage\Stage1Scn.cs" />
     <Compile Include="Assets\Script\Scene\System\MenuScn.cs" />
     <Compile Include="Assets\Script\Scene\System\OptionScn.cs" />
