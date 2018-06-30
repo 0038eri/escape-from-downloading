@@ -31,12 +31,12 @@ public class PlayerSetActive : MonoBehaviour {
 		/// Awakeでの場合は引数は省略されている
 		 
 		switch (scene.name) {
-            
-            case "Ending":
-            case "Menu":
-            case "Opening":
-            case "Option":
+
             case "Start":
+            case "Opening":
+            case "Menu":
+            case "Option":
+            case "Ending":
                 playerRenderer.enabled = false; // プレイヤー不可視
                 GameObject.Find("StageManager").SendMessage("stopTimer"); // タイマー停止
                 playerCanvas.enabled = false; // UI非表示

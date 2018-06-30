@@ -48,13 +48,13 @@ public class PlayerOperation : MonoBehaviour {
 		// エネミーに当たると      
 		if (col.gameObject.tag == "Enemy") {
             PlayerState.playerHp--; // HPを1減らす
-            GameObject.Find("PlayerManager").SendMessage("updateplayerHp"); // HP更新
+            GameObject.Find("PlayerManager").SendMessage("updatePlayerHp"); // HP更新
             Destroy(gameObject); // エネミー消滅
 		}
 
 		// コインに当たると
 		if(col.gameObject.tag=="Coin"){
-			GameObject.Find("MoneyObj").SendMessage("getCoin"); // 所持金1増やす
+			GameObject.Find("MoneyManager").SendMessage("getCoin"); // 所持金1増やす
 			Destroy(gameObject); // コイン消滅
 		}
 
