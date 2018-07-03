@@ -26,7 +26,10 @@ public class StartScn : MonoBehaviour
         {
             
             case 0:
-                SceneManager.LoadScene("Opening"); // オープニング
+                if(StageManager.stageNumber==0){ // オープニングを経験していなかったら、
+                    SceneManager.LoadScene("Opening"); // オープニング
+                    StageManager.stageNumber++; // クリアステージ判定追加
+                }
                 break;
 
             case 1:

@@ -61,7 +61,6 @@ public class StageManager : MonoBehaviour {
 
     // ポーズパネル表示
     public void pose () {
-        Debug.Log("ぽーず");
         stopTimer(); // タイマーを停止
         // ゲームを停止
         poseUi.SetActive(true);
