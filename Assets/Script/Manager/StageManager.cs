@@ -19,7 +19,7 @@ public class StageManager : MonoBehaviour {
     public Text timerText;
 
     // ポーズ画面
-    public GameObject poseUi;
+    public GameObject pauseUi;
 
     void Update () {
 
@@ -60,34 +60,38 @@ public class StageManager : MonoBehaviour {
     }
 
     // ポーズパネル表示
-    public void pose () {
-        Debug.Log("ポーズ");
+    public void pause () {
         stopTimer(); // タイマーを停止
         // ゲームを停止
-        poseUi.SetActive(true);
+        pauseUi.SetActive(true);
+        // ポーズボタンを非表示
     }
 
     // ポーズパネル非表示
-    public void poseUIFalse () {
-        poseUi.SetActive(false);
+    void pauseUIFalse () {
+        pauseUi.SetActive(false);
     }
 
     // ゲームを再開する
     public void playGame () {
-        poseUIFalse(); // ポーズパネルを非表示
+        Debug.Log("playGame");
+        pauseUIFalse(); // ポーズパネルを非表示
         startTimer(); // タイマーをうごかす
         // ゲームを再生
+        // ポーズボタンを表示
     }
 
     // メニューに戻る
     public void backMenuP () {
-        poseUIFalse(); // ポーズパネルを非表示
+        Debug.Log("backMenuP");
+        pauseUIFalse(); // ポーズパネルを非表示
         SceneManager.LoadScene("Menu");
     }
 
     // ゲームをやめる
     public void escapeGameP () {
-        poseUIFalse(); // ポーズパネルを非表示
+        Debug.Log("escapeGameP");
+        pauseUIFalse(); // ポーズパネルを非表示
         // アプリ終了
     }
       

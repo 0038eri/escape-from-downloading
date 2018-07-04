@@ -222,6 +222,7 @@ public class PlayerState : MonoBehaviour {
     void gameUiFalse () {
         gameOverUi.SetActive(false);
         gameClearUi.SetActive(false);
+        // 改善策求む
     }
 
     // 次のゲームに進む

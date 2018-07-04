@@ -21,7 +21,7 @@ public class DevelopCommand : MonoBehaviour {
 
         /// ゲームポーズ判定送信
         if(Input.GetKeyDown(KeyCode.P)){
-            GameObject.Find("StageManager").SendMessage("pose");
+            GameObject.Find("StageManager").SendMessage("pause");
         }
 
         /// ゲームを再開する
