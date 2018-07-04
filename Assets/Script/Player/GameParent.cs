@@ -9,9 +9,4 @@ public class GameParent : MonoBehaviour {
         DontDestroyOnLoad(this); // これを消滅しない
 
 	}
-
-	void Start () {
-
-	}
-
 }
