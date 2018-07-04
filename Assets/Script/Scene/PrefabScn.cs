@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PrefabScn : MonoBehaviour {
 
-	//Startに移動
+	// Startに移動
 	void Start () {
 		SceneManager.LoadScene("Start");
 	}
