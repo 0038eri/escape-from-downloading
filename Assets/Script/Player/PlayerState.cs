@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerState : MonoBehaviour {
 
     // プレイヤーHP
-    public static int playerHp = 60;
+    public static int playerHp = 100;
     // プレイヤーHP表示テキスト
     public Text playerHpText;
     // HPバー
@@ -19,6 +19,9 @@ public class PlayerState : MonoBehaviour {
 	public static string username;
     // ユーザーネーム表示テキスト
 	public Text usernameText;
+
+    // ゲーム判定
+    string gameJudge = "none";
 
     // クリア画面
     public GameObject gameClearUi;
@@ -32,6 +35,13 @@ public class PlayerState : MonoBehaviour {
         playerHpText.text = playerHp.ToString(); // プレイヤーHPテキスト表示
 
 	}
+
+    /* HP */
+
+    // HPリセット
+    public void resetPlayerHp(){
+        playerHp = 100;
+    }
  
     // HP更新
     public void updatePlayerHp () {
@@ -92,23 +102,40 @@ public class PlayerState : MonoBehaviour {
         hpImage.color = Color.red;
     }
 
+    /* HP */
+
+    /* ユーザーネーム */
+
     // ユーザーネーム更新
     public void updateUsername()
     {
         usernameText.text = username; // 実行された時の現在のユーザーネームを表示      
     }
 
-    // ゲームオーバー
-    public void gameOver(){
-        GameObject.Find("StageManager").SendMessage("stopTimer"); // タイマー停止
-        gameOverUi.SetActive(true); // ゲームオーバーパネル表示
-    }
+    /* ユーザーネーム */
+
+    /* ゲームクリア・ゲームオーバー判定 */
 
     // ゲームクリア
-    public void gameClear(){
-        GameObject.Find("StageManager").SendMessage("stopTimer"); // タイマー停止
+    public void gameClear()
+    {
+        GameObject.Find("StageManager").SendMessage("resetTimer"); // タイマーリセット
         gameClearUi.SetActive(true); // ゲームクリアパネル表示
         stageClearCheck(); // クリア判定確認
+        gameJudge = "clear"; // ゲームクリア判定送信
+    }
+
+    // ゲームオーバー
+    public void gameOver(){
+        GameObject.Find("StageManager").SendMessage("resetTimer"); // タイマーリセット
+        gameOverUi.SetActive(true); // ゲームオーバーパネル表示
+        gameJudge = "over"; // ゲームオーバー判定送信
+    }
+
+    // ゲーム判定リセット
+    public void resetGameJudge()
+    {
+        gameJudge = "none";
     }
 
     // クリア判定確認
@@ -218,11 +245,30 @@ public class PlayerState : MonoBehaviour {
         }
     }
 
+    /* ゲームクリア・ゲームオーバー判定 */
+
+    /* UI */
+
     // ゲームオーバー・ゲームクリアパネル非表示
     void gameUiFalse () {
-        gameOverUi.SetActive(false);
-        gameClearUi.SetActive(false);
-        // 改善策求む
+        switch(gameJudge){
+            
+            /// ゲームクリアだったら
+            /// クリアUI非表示
+            case "clear":
+                gameClearUi.SetActive(false);
+                break;
+
+            /// ゲームオーバーだったら
+            /// オーバーUI非表示
+            case "over":
+                gameOverUi.SetActive(false);
+                break;
+
+            default:
+                break;
+
+        }
     }
 
     // 次のゲームに進む
@@ -235,6 +281,7 @@ public class PlayerState : MonoBehaviour {
     public void onemoreGame () {
         gameUiFalse(); // ゲームUI非表示
         // 今のゲームシーンをリロード
+        GameObject.Find("restartTimer"); // タイマーリスタート
     }
 
     // メニューに戻る
@@ -247,6 +294,8 @@ public class PlayerState : MonoBehaviour {
     public void escapeGameG () {
         gameUiFalse(); // ゲームUI非表示
         // アプリ終了
-    }   
+    }
+
+    /* UI */
 	
 }

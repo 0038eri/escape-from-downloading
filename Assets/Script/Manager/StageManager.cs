@@ -14,7 +14,7 @@ public class StageManager : MonoBehaviour {
     // 制限時間
     private float timeLimit = 0.0f;
     // タイマー停止判定
-    public bool timerStop;
+    public static bool timerStop = true;
     // タイマー表示テキスト
     public Text timerText;
 
@@ -30,6 +30,8 @@ public class StageManager : MonoBehaviour {
         }
 
     }
+
+    /* タイマー */
 
     // タイマーを動かしている
     void updateTimer()
@@ -59,6 +61,12 @@ public class StageManager : MonoBehaviour {
         timer = 60.0f; // タイマーリセット
     }
 
+    //タイマーリスタート
+    public void restartTimer(){
+        resetTimer(); // タイマーリセット
+        startTimer(); // タイマースタート
+    }
+
     // ポーズパネル表示
     public void pause () {
         stopTimer(); // タイマーを停止
@@ -66,6 +74,17 @@ public class StageManager : MonoBehaviour {
         pauseUi.SetActive(true);
         // ポーズボタンを非表示
     }
+
+    // リセットメソッド
+    public void resetMethod () {
+        resetTimer(); // タイマー
+        GameObject.Find("PlayerManager").SendMessage("resetPlayerHp"); // HP
+        GameObject.Find("PlayerManager").SendMessage("resetGameJudge"); // ゲーム判定
+    }
+
+    /* タイマー */
+
+    /* UI */
 
     // ポーズパネル非表示
     void pauseUIFalse () {
@@ -94,5 +113,7 @@ public class StageManager : MonoBehaviour {
         pauseUIFalse(); // ポーズパネルを非表示
         // アプリ終了
     }
+
+    /* UI */
       
 }

@@ -7,4 +7,18 @@ public class Stage6Scn : MonoBehaviour {
     // ステージ6クリア判定
     public static bool stage6Clear = false;
 
+    private void Awake()
+    {
+
+        GameObject.Find("StageManager").SendMessage("resetMethod"); // タイマー・HPリセット
+
+    }
+
+    private void Start()
+    {
+
+        GameObject.Find("StageManager").SendMessage("startTimer"); // タイマースタート
+
+    }
+
 }
