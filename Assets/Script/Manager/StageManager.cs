@@ -21,6 +21,12 @@ public class StageManager : MonoBehaviour {
     // ポーズ画面
     public GameObject pauseUi;
 
+    private void Start()
+    {
+
+        pauseUIFalse();
+    }
+
     void Update () {
 
         /// タイマーが停止しなかったら
