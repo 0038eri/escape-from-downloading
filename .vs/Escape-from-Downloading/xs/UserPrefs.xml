@@ -1,9 +1,8 @@
 ﻿<Properties StartupConfiguration="{48893F69-26C4-B4A9-0F1E-C8BE09297673}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Player/PlayerSetActive.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Manager/DevelopCommand.cs">
     <Files>
-      <File FileName="Assets/Script/Manager/DevelopCommand.cs" Line="10" Column="39" />
-      <File FileName="Assets/Script/Player/PlayerSetActive.cs" Line="66" Column="44" NotebookId="1" />
+      <File FileName="Assets/Script/Manager/DevelopCommand.cs" Line="16" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

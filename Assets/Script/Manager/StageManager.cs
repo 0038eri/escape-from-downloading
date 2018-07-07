@@ -99,7 +99,6 @@ public class StageManager : MonoBehaviour {
 
     // ゲームを再開する
     public void playGame () {
-        Debug.Log("playGame");
         pauseUIFalse(); // ポーズパネルを非表示
         startTimer(); // タイマーをうごかす
         // ゲームを再生

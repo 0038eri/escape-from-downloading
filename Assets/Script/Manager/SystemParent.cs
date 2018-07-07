@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SystemParent : MonoBehaviour {
 
-	void Start () {
+	void Awake () {
 	
         DontDestroyOnLoad (this); // これを消滅しない
 
