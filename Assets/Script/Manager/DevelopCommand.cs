@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class DevelopCommand : MonoBehaviour {
 
-    //private void Start()
-    //{
-    //    DontDestroyOnLoad(gameObject);
-    //}
+    private void Start()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
 
     void Update () {
 
