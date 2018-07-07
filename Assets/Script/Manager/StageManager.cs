@@ -20,12 +20,18 @@ public class StageManager : MonoBehaviour {
 
     // ポーズ画面
     public GameObject pauseUi;
+    // ポーズボタン
+    public GameObject pauseButton;
 
-    private void Start()
-    {
+    // BGM 素材
+    public AudioClip bgmClip1;
+    // BGM
+    private AudioClip bgm;
 
-        pauseUIFalse();
-    }
+    // SE 素材
+    public AudioClip seClip1;
+    // SE
+    private AudioClip se;
 
     void Update () {
 
@@ -78,7 +84,7 @@ public class StageManager : MonoBehaviour {
         stopTimer(); // タイマーを停止
         // ゲームを停止
         pauseUi.SetActive(true);
-        // ポーズボタンを非表示
+        pauseButton.SetActive(false); // ポーズボタンを非表示
     }
 
     // リセットメソッド
@@ -95,6 +101,7 @@ public class StageManager : MonoBehaviour {
     // ポーズパネル非表示
     void pauseUIFalse () {
         pauseUi.SetActive(false);
+        pauseButton.SetActive(true); // ポーズボタンを表示
     }
 
     // ゲームを再開する
