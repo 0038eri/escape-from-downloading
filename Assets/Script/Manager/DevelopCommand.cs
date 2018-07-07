@@ -5,7 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class DevelopCommand : MonoBehaviour {
 
-	void Update () {
+    private void Start()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
+    void Update () {
 
         // W,A,D,S はプレイヤー操作キー
 
@@ -50,5 +55,9 @@ public class DevelopCommand : MonoBehaviour {
         }
 
 	}
+
+    public void DebugConsole () {
+        Debug.Log("デバッグ");
+    }
 
 }

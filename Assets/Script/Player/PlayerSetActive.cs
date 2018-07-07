@@ -11,6 +11,8 @@ public class PlayerSetActive : MonoBehaviour {
     // プレイヤー Canvas
     private Canvas playerCanvas;
 
+    private Canvas debugCanvas;
+
 	void Awake () {
 		    
         SceneManager.sceneLoaded += checkScene; // シーン移動ごとに毎回呼び出し
@@ -21,6 +23,8 @@ public class PlayerSetActive : MonoBehaviour {
 		
         playerRenderer = GameObject.Find("Player").GetComponent<MeshRenderer>(); // プレイヤーMeshRenderer取得
         playerCanvas = GameObject.Find("PlayerCanvas").GetComponent<Canvas>(); // プレイヤーCanvas取得
+
+        debugCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
 
 	}
 
@@ -40,6 +44,7 @@ public class PlayerSetActive : MonoBehaviour {
                 playerRenderer.enabled = false; // プレイヤー不可視
                 GameObject.Find("StageManager").SendMessage("stopTimer"); // タイマー停止
                 playerCanvas.enabled = false; // UI非表示
+                debugCanvas.enabled = false;
                 break;
 
             case "Stage1":
@@ -58,6 +63,7 @@ public class PlayerSetActive : MonoBehaviour {
                 playerRenderer.enabled = true; // プレイヤー可視
                 GameObject.Find("StageManager").SendMessage("startTimer"); // タイマー開始
                 playerCanvas.enabled = true; // UI表示
+                debugCanvas.enabled = true;
                 break;
 
             default:
