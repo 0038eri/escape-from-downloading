@@ -29,7 +29,7 @@ public class PlayerSetActive : MonoBehaviour {
 	}
 
     // シーン移動時毎回読み込まれる
-	void checkScene (Scene scene,LoadSceneMode SceneMode) {
+	void checkScene (Scene scene,LoadSceneMode sceneMode) {
 		
 		/// Scene scenename,LoadSceneMode SceneMode は、SceneManager.sceneLoaded の引数である
 		/// Awakeでの場合は引数は省略されている
