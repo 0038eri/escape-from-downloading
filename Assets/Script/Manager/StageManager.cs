@@ -148,6 +148,8 @@ public class StageManager : MonoBehaviour {
 
         switch (scene.name) {
 
+            /* System */
+
             case "Start":
                 audiosources[0].clip = systemBgm[0]; // StartのBGMにする
                 playBgm();
@@ -172,6 +174,14 @@ public class StageManager : MonoBehaviour {
                 audiosources[0].clip = systemBgm[4]; // EndingのBGMにする
                 playBgm();
                 break;
+
+            /* System */
+
+            /* Stage */
+
+
+
+            /* Stage */
 
             default:
                 StopBgm();
