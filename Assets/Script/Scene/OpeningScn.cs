@@ -5,29 +5,47 @@ using UnityEngine.UI;
 
 public class OpeningScn : MonoBehaviour {
 
-    // 文章表示テキスト
-    public Text[] sentencesText;
+    // メッセージ表示テキスト
+    public Text messeageText;
+    // メッセージ格納変数
+    private string[] message={"こんにちは","これはテストです","スキップしてください"};
 
-    // 文章格納変数
-    public string[] sentence1={"こんにちは","これはテストです","スキップしてください"};
+    //// 最大文字数
+    //private int maxTextNumber;
+    //// 現在の文字数
+    //private int nowTextNumber;
+    //// メッセージの最大行数
+    //private int maxLine;
+    //// 現在の行数
+    //private int nowLine;
+    //// メッセージスピード
+    //private float messageSpeed=30.0f;
+    //// 経過時間
+    //private float messageTime;
 
-    // 文章判定変数
-    private int sentence1Check = 0;
+    // メッセージ判定変数
+    private int messageCheck = 0;
+
+    //// メッセージ表示完了判定
+    //private bool isOneMessage = false;
+    //// 全メッセージ表示完了判定
+    //private bool isAllMessage = false;
 
     private void Update()
     {
-     
-        //// クリックした時
-        //if(Input.GetMouseButtonDown(0)){
-        //    typeText(); // 会話を進める
-        //}
+
+        if(Input.GetMouseButtonDown(0)){
+            typeMessage();
+        }
 
     }
 
-    // テキストをタイプする
-    public void typeText () {
-        sentencesText[1].text = sentence1[0].ToString();
-        sentence1Check++;
+    void typeMessage () {
+        if(messageCheck==3){
+            messageCheck = 0;
+        }
+        messeageText.text = message[messageCheck];
+        messageCheck++;
     }
 
 }
