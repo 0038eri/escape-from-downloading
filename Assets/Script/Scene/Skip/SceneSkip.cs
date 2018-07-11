@@ -5,20 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class SceneSkip : MonoBehaviour {
 
-	// タイマー
-    private float timer;
-
-	void Update () {
-     
-        /// タイマーが20秒経過したら
-		/// ゲーム1に移動する
-        timer += Time.deltaTime;
-        if (timer >= 20.0f) {
-            SceneManager.LoadScene("Stage1");
-        }
-
-    }
-
     /// オープニングより
 	/// ステージ1に移動
 	public void skipToStage1 () {

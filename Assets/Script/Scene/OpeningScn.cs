@@ -31,6 +31,10 @@ public class OpeningScn : MonoBehaviour {
     //// 全メッセージ表示完了判定
     //private bool isAllMessage = false;
 
+    void Start(){
+        typeMessage();
+    }
+
     private void Update()
     {
 
@@ -42,10 +46,11 @@ public class OpeningScn : MonoBehaviour {
 
     void typeMessage () {
         if(messageCheck==3){
-            messageCheck = 0;
-        }
+            GameObject.Find("SkipObj").SendMessage("skipToStage1");
+        }else{
         messeageText.text = message[messageCheck];
         messageCheck++;
+        }
     }
 
 }
