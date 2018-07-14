@@ -41,7 +41,7 @@ public class StageManager : MonoBehaviour {
 
     private void Start()
     {
-        audiosources = gameObject.GetComponents<AudioSource>();
+        audiosources = gameObject.GetComponents<AudioSource>(); // オーディオソース取得
     }
 
     void Update () {

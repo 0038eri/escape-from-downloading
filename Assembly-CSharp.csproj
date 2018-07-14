@@ -70,6 +70,7 @@
     <Compile Include="Assets\Script\Player\PlayerOperation.cs" />
     <Compile Include="Assets\Script\Player\PlayerSetActive.cs" />
     <Compile Include="Assets\Script\Player\PlayerState.cs" />
+    <Compile Include="Assets\Script\Scene\EndingScn.cs" />
     <Compile Include="Assets\Script\Scene\MenuScn.cs" />
     <Compile Include="Assets\Script\Scene\OpeningScn.cs" />
     <Compile Include="Assets\Script\Scene\OptionScn.cs" />
