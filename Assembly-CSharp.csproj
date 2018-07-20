@@ -64,7 +64,6 @@
     <Compile Include="Assets\Script\Manager\StageManager.cs" />
     <Compile Include="Assets\Script\Manager\SystemParent.cs" />
     <Compile Include="Assets\Script\Object\CoinSc.cs" />
-    <Compile Include="Assets\Script\Object\DownloadSc.cs" />
     <Compile Include="Assets\Script\Object\EnemySc.cs" />
     <Compile Include="Assets\Script\Player\GameParent.cs" />
     <Compile Include="Assets\Script\Player\PlayerOperation.cs" />

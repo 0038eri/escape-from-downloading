@@ -5,9 +5,14 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PlayerSetActive : MonoBehaviour {
+
+    // プレイヤー
+    private GameObject player;
     
     // プレイヤー MeshRenderer
 	private MeshRenderer playerRenderer;
+    // プレイヤー Rigidbody
+    private Rigidbody playerRigidbody;
     // プレイヤー Canvas
     private Canvas playerCanvas;
 
@@ -20,8 +25,8 @@ public class PlayerSetActive : MonoBehaviour {
 	}
     
 	void Start () {
-		
-        playerRenderer = GameObject.Find("Player").GetComponent<MeshRenderer>(); // プレイヤーMeshRenderer取得
+
+        player = GameObject.Find("Player"); // プレイヤー取得
         playerCanvas = GameObject.Find("PlayerCanvas").GetComponent<Canvas>(); // プレイヤーCanvas取得
 
         //debugCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
@@ -36,17 +41,19 @@ public class PlayerSetActive : MonoBehaviour {
 		 
 		switch (scene.name) {
 
+            // システムシーン
             case "Start":
             case "Opening":
             case "Menu":
             case "Option":
             case "Ending":
-                playerRenderer.enabled = false; // プレイヤー不可視
+                player.SetActive(false); // プレイヤー停止
                 GameObject.Find("StageManager").SendMessage("stopTimer"); // タイマー停止
                 playerCanvas.enabled = false; // UI非表示
                 //debugCanvas.enabled = false;
                 break;
 
+            // ステージシーン
             case "Stage1":
             case "Stage2":
             case "Stage3":
@@ -60,7 +67,7 @@ public class PlayerSetActive : MonoBehaviour {
             case "Stage11":
             case "Stage12":
             case "StageSample":
-                playerRenderer.enabled = true; // プレイヤー可視
+                player.SetActive(true); // プレイヤー
                 GameObject.Find("StageManager").SendMessage("startTimer"); // タイマー開始
                 playerCanvas.enabled = true; // UI表示
                 //debugCanvas.enabled = true;
