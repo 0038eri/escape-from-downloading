@@ -7,13 +7,16 @@ public class PlayerOperation : MonoBehaviour {
 	
 	// プレイヤー移動速度
 	public float speed = 0.7f;
+    // プレイヤー前進判定
+    public bool isRunning = false;
 	
 	void Update () {
-        
-		// Wで前進
-		if (Input.GetKey (KeyCode.W)) {
-			this.transform.position -= transform.up * speed * Time.deltaTime;
-		}
+
+        // 前進
+        if(isRunning=true){
+		this.transform.position -= transform.up * speed * Time.deltaTime;
+        }
+
 		// Spaceでジャンプ
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			this.transform.position += new Vector3 (0, 1.0f, 0);
@@ -25,19 +28,6 @@ public class PlayerOperation : MonoBehaviour {
 		// Dで左 
 		if (Input.GetKey (KeyCode.D)) {
 			transform.position += transform.right * speed * Time.deltaTime;
-		}
-		// Sで後進
-		if (Input.GetKey (KeyCode.S)) {
-			transform.position += transform.up * speed * Time.deltaTime;
-		}
-		// 右矢印で右回り
-		if (Input.GetKey (KeyCode.RightArrow)) {
-			this.transform.Rotate(new Vector3(0, 0, 1));
-
-		}
-		// 左矢印で左回り
-		if (Input.GetKey (KeyCode.LeftArrow)) {
-			this.transform.Rotate(new Vector3(0, 0, -1));
 		}
 		
 	}

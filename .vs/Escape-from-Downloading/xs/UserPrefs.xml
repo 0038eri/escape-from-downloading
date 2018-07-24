@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Player/PlayerOperation.cs">
     <Files>
-      <File FileName="Assets/Script/Player/PlayerOperation.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/Player/PlayerOperation.cs" Line="21" Column="42" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
