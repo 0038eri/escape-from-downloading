@@ -1,6 +1,10 @@
 ﻿<Properties StartupConfiguration="{48893F69-26C4-B4A9-0F1E-C8BE09297673}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Player/PlayerOperation.cs">
+    <Files>
+      <File FileName="Assets/Script/Player/PlayerOperation.cs" Line="17" Column="27" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>

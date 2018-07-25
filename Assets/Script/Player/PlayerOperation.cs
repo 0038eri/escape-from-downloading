@@ -14,7 +14,7 @@ public class PlayerOperation : MonoBehaviour
     // 前進速度
     public float runSpeed;
     // 前進判定
-    public bool isRunning = false;
+    public bool isRunning;
 
     // スライド速度
     private float slideSpeed;
