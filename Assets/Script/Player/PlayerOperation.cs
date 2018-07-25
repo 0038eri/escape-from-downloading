@@ -20,12 +20,6 @@ public class PlayerOperation : MonoBehaviour
     private float slideSpeed;
     // スライド判定
     private string slide;
-    // 中央座標
-    private Vector3 centerPos;
-    // 右座標
-    private Vector3 rightPos;
-    // 左座標
-    private Vector3 leftPos;
 
     // 右矢印ボタン入力判定
     private bool isRightArrow;
@@ -38,14 +32,6 @@ public class PlayerOperation : MonoBehaviour
     private void Awake()
     {
         SceneManager.sceneLoaded += playerStartPos; // シーン呼び出しごとに毎回プレイヤーを中央に
-    }
-
-    private void Start()
-    {
-        // 座標を代入
-        centerPos.z = 0.0f;
-        rightPos.z = 1.0f;
-        leftPos.z = -1.0f;
     }
 
     void Update()
@@ -69,13 +55,15 @@ public class PlayerOperation : MonoBehaviour
         }
 
         // 右
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if(Input.GetKeyDown(KeyCode.RightArrow))
         {
+            Debug.Log("みぎ");
             isRightArrow = true; // 右キー入力した
         }
         // 左
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if(Input.GetKeyDown(KeyCode.LeftArrow))
         {
+            Debug.Log("ひだり");
             isLeftArrow = true; // 左キー入力した
         }
 
@@ -87,12 +75,14 @@ public class PlayerOperation : MonoBehaviour
         // 右キー入力したら
         if(isRightArrow==true)
         {
+            Debug.Log("みぎーかむとぅるー");
             inputRight();
             isRightArrow = false; // 右キー入力完了
         }
         // 左キー入力したら
-        else if(isLeftArrow==true)
+        if(isLeftArrow==true)
         {
+            Debug.Log("ひだりーかむとぅるー");
             inputLeft();
             isLeftArrow = false; // 左キー入力完了
         }
@@ -116,7 +106,7 @@ public class PlayerOperation : MonoBehaviour
     // 座標中央に移動
     void playerCenter()
     {
-        playerPos.z = centerPos.z;
+        playerPos.z = 0.0f;
         this.transform.position = playerPos;
         slide = "center";
     }
@@ -124,7 +114,7 @@ public class PlayerOperation : MonoBehaviour
     // 座標右に移動
     void playerRight ()
     {
-        playerPos.z = rightPos.z;
+        playerPos.z = 1.0f;
         this.transform.position = playerPos;
         slide = "right";
     }
@@ -132,7 +122,7 @@ public class PlayerOperation : MonoBehaviour
     // 座標左に移動
     void playerLeft()
     {
-        playerPos.z = leftPos.z;
+        playerPos.z = -1.0f;
         this.transform.position = playerPos;
         slide = "left";
     }
