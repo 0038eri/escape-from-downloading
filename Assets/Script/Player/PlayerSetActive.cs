@@ -54,6 +54,7 @@ public class PlayerSetActive : MonoBehaviour {
                 break;
 
             // ステージシーン
+            case "Prefab":
             case "Stage1":
             case "Stage2":
             case "Stage3":

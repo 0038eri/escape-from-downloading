@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerOperation : MonoBehaviour {
+public class PlayerOperation : MonoBehaviour
+{
 
     // プレイヤー座標
-    public Vector3 playerPos;
+    private Vector3 playerPos;
     // プレイヤー地面接触判定
     private bool isPlayerCol;
 
@@ -16,39 +17,46 @@ public class PlayerOperation : MonoBehaviour {
     public bool isRunning = false;
 
     // スライド速度
-    public float slideSpeed;
+    private float slideSpeed;
     // スライド判定
     private string slide;
+    // 中央
+    private Vector3 centerPos;
+    // 右
+    private Vector3 rightPos;
+    // 左
+    private Vector3 leftPos;
+
+    // 右矢印ボタン入力判定
+    private bool isRightArrow;
+    // 左矢印ボタン入力判定
+    private bool isLeftArrow;
+
+    // ジャンプの高さ
+    public float jumpHeight;
 
     private void Awake()
     {
-        SceneManager.sceneLoaded += playerCenter; // シーン呼び出しごとに毎回プレイヤーを中央に
+        SceneManager.sceneLoaded += playerStartPos; // シーン呼び出しごとに毎回プレイヤーを中央に
     }
 
     private void Start()
     {
-        
+        // 座標を代入
+        centerPos.z = 0.0f;
+        rightPos.z = 1.0f;
+        leftPos.z = -1.0f;
     }
 
-    void Update () {
+    void Update()
+    {
 
         playerPos = this.transform.position; // プレイヤー座標取得
 
         // 前進
-        if(isRunning==true){
+        if (isRunning == true)
+        {
             RunningMethod();
-
-            // 右移動
-            if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                playerRight();
-            }
-            // 左移動
-            else if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                playerLeft();
-            }
-
         }
 
         // ジャンプ
@@ -56,11 +64,40 @@ public class PlayerOperation : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                playerJump();
+                inputJump();
             }
         }
-		
-	}
+
+        // 右
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            isRightArrow = true;
+        }
+        // 左
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            isLeftArrow = true;
+        }
+
+    }
+
+    private void FixedUpdate()
+    {
+        
+        // 右
+        if(isRightArrow==true)
+        {
+            inputRight();
+            isRightArrow = false;
+        }
+        // 左
+        else if(isLeftArrow==true)
+        {
+            inputLeft();
+            isLeftArrow = false;
+        }
+
+    }
 
     // 前進メソッド
     public void RunningMethod()
@@ -69,72 +106,95 @@ public class PlayerOperation : MonoBehaviour {
     }
 
     // プレイヤー初期位置
-    void playerCenter (Scene scene,LoadSceneMode sceneMode) {
-        Vector3 centerPos = new Vector3(0.0f, 0.0f, 0.0f);
-        this.transform.position = centerPos;
-        slide = "center"; // 中央に位置する
+    void playerStartPos(Scene scene,LoadSceneMode sceneMode)
+    {
+        playerPos = new Vector3(0.0f, 0.0f, 0.0f);
+        this.transform.position = playerPos;
+        slide = "center";
     }
 
-    // 右移動
-    void playerRight(){
-        
-        switch(slide){
+    // 座標中央に移動
+    void playerCenter()
+    {
+        playerPos.z = centerPos.z;
+        this.transform.position = playerPos;
+        slide = "center";
+    }
 
+    // 座標右に移動
+    void playerRight ()
+    {
+        playerPos.z = rightPos.z;
+        this.transform.position = playerPos;
+        slide = "right";
+    }
+
+    // 座標左に移動
+    void playerLeft()
+    {
+        playerPos.z = leftPos.z;
+        this.transform.position = playerPos;
+        slide = "left";
+    }
+
+    // 右入力
+    void inputRight()
+    {
+        switch (slide)
+        {
             // 中央である時
             case "center":
-                playerPos.z = 1.0f;
-                this.transform.position = playerPos;
-                slide = "right";
+                playerRight();
                 break;
-
             // 左であるとき
             case "left":
-                playerPos.z = 0.0f;
-                this.transform.position = playerPos;
-                slide = "center";
+                playerCenter();
                 break;
-
             default:
                 break;
-
         }
     }
 
-    // 左移動
-    void playerLeft(){
-
-        switch(slide){
-
+    // 左入力
+    void inputLeft()
+    {
+        switch (slide)
+        {
             // 中央であるとき
             case "center":
-                playerPos.z = -1.0f;
-                this.transform.position = playerPos;
-                slide = "left";
+                playerLeft();
                 break;
-
             // 右であるとき
             case "right":
-                playerPos.z = 0.0f;
-                this.transform.position = playerPos;
-                slide = "center";
+                playerCenter();
                 break;
-
             default:
                 break;
-
         }
     }
 
-    // ジャンプ
-    void playerJump () {
-        playerPos.y += 1.5f; // Y軸1.5ジャンプ
+    // ジャンプ入力
+    void inputJump()
+    {
+        playerPos.y += jumpHeight; // Y軸1.5ジャンプ
         this.transform.position = playerPos;
     }
 
     // 衝突判定
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay (Collision collision)
     {
         isPlayerCol = true; // 地面に接している
+
+        // オブジェクト
+        if (collision.gameObject.tag == "Objects")
+        {
+            GameObject.Find("PlayerManager").SendMessage("gameOver"); // ゲームオーバー
+        }
+
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
 
         // エネミーに当たると      
         if (collision.gameObject.tag == "Enemy")
@@ -151,19 +211,20 @@ public class PlayerOperation : MonoBehaviour {
             Destroy(gameObject); // コイン消滅
         }
 
-        // ゴールしたら
-        if (collision.gameObject.tag == "Goal")
-        {
-            GameObject.Find("PlayerManager").SendMessage("gameClear"); // ゲームクリア
-        }
-
-        //Debug.Log("playerfield");
     }
 
     private void OnCollisionExit(Collision collision)
     {
         isPlayerCol = false; // 地面と接していない
-        //Debug.Log("playersky");
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        // ゴールしたら
+        if (other.gameObject.tag == "Goal")
+        {
+            GameObject.Find("PlayerManager").SendMessage("gameClear"); // ゲームクリア
+        }
     }
 
 }
