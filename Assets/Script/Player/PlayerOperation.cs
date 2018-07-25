@@ -20,11 +20,11 @@ public class PlayerOperation : MonoBehaviour
     private float slideSpeed;
     // スライド判定
     private string slide;
-    // 中央
+    // 中央座標
     private Vector3 centerPos;
-    // 右
+    // 右座標
     private Vector3 rightPos;
-    // 左
+    // 左座標
     private Vector3 leftPos;
 
     // 右矢印ボタン入力判定
@@ -71,12 +71,12 @@ public class PlayerOperation : MonoBehaviour
         // 右
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            isRightArrow = true;
+            isRightArrow = true; // 右キー入力した
         }
         // 左
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            isLeftArrow = true;
+            isLeftArrow = true; // 左キー入力した
         }
 
     }
@@ -84,22 +84,22 @@ public class PlayerOperation : MonoBehaviour
     private void FixedUpdate()
     {
         
-        // 右
+        // 右キー入力したら
         if(isRightArrow==true)
         {
             inputRight();
-            isRightArrow = false;
+            isRightArrow = false; // 右キー入力完了
         }
-        // 左
+        // 左キー入力したら
         else if(isLeftArrow==true)
         {
             inputLeft();
-            isLeftArrow = false;
+            isLeftArrow = false; // 左キー入力完了
         }
 
     }
 
-    // 前進メソッド
+    // 前進
     public void RunningMethod()
     {
         this.transform.position -= transform.up * runSpeed * Time.deltaTime;
