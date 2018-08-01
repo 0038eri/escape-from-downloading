@@ -19,7 +19,7 @@ public class PlayerOperation : MonoBehaviour
     // スライド速度
     private float slideSpeed;
     // スライド判定
-    private string slide;
+    private int slide;
 
     // 右矢印ボタン入力判定
     private bool isRightArrow;
@@ -57,13 +57,13 @@ public class PlayerOperation : MonoBehaviour
         // 右
         if(Input.GetKeyDown(KeyCode.RightArrow))
         {
-            Debug.Log("みぎ");
+            Debug.Log("右に移動する準備完了");
             isRightArrow = true; // 右キー入力した
         }
         // 左
         if(Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            Debug.Log("ひだり");
+            Debug.Log("左に移動する準備完了);
             isLeftArrow = true; // 左キー入力した
         }
 
@@ -75,14 +75,14 @@ public class PlayerOperation : MonoBehaviour
         // 右キー入力したら
         if(isRightArrow==true)
         {
-            Debug.Log("みぎーかむとぅるー");
+            Debug.Log("右に移動した");
             inputRight();
             isRightArrow = false; // 右キー入力完了
         }
         // 左キー入力したら
         if(isLeftArrow==true)
         {
-            Debug.Log("ひだりーかむとぅるー");
+            Debug.Log("左に移動した");
             inputLeft();
             isLeftArrow = false; // 左キー入力完了
         }
@@ -95,12 +95,17 @@ public class PlayerOperation : MonoBehaviour
         this.transform.position -= transform.up * runSpeed * Time.deltaTime;
     }
 
+    /// 右 : 0
+    /// 真ん中 : 1
+    /// 左 : 2
+
     // プレイヤー初期位置
     void playerStartPos(Scene scene,LoadSceneMode sceneMode)
     {
         playerPos = new Vector3(0.0f, 0.0f, 0.0f);
         this.transform.position = playerPos;
-        slide = "center";
+        slide = 1;
+        Debug.Log(slide);
     }
 
     // 座標中央に移動
@@ -108,7 +113,8 @@ public class PlayerOperation : MonoBehaviour
     {
         playerPos.z = 0.0f;
         this.transform.position = playerPos;
-        slide = "center";
+        slide = 1;
+        Debug.Log(slide);
     }
 
     // 座標右に移動
@@ -116,7 +122,8 @@ public class PlayerOperation : MonoBehaviour
     {
         playerPos.z = 1.0f;
         this.transform.position = playerPos;
-        slide = "right";
+        slide = 0;
+        Debug.Log(slide);
     }
 
     // 座標左に移動
@@ -124,7 +131,8 @@ public class PlayerOperation : MonoBehaviour
     {
         playerPos.z = -1.0f;
         this.transform.position = playerPos;
-        slide = "left";
+        slide = 2;
+        Debug.Log(slide);
     }
 
     // 右入力
@@ -133,11 +141,11 @@ public class PlayerOperation : MonoBehaviour
         switch (slide)
         {
             // 中央である時
-            case "center":
+            case 1:
                 playerRight();
                 break;
             // 左であるとき
-            case "left":
+            case 2:
                 playerCenter();
                 break;
             default:
@@ -151,11 +159,11 @@ public class PlayerOperation : MonoBehaviour
         switch (slide)
         {
             // 中央であるとき
-            case "center":
+            case 1:
                 playerLeft();
                 break;
             // 右であるとき
-            case "right":
+            case 0:
                 playerCenter();
                 break;
             default:
