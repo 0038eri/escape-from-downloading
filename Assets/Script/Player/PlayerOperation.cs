@@ -63,7 +63,7 @@ public class PlayerOperation : MonoBehaviour
         // 左
         if(Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            Debug.Log("左に移動する準備完了);
+            Debug.Log("左に移動する準備完了");
             isLeftArrow = true; // 左キー入力した
         }
 
