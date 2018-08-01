@@ -17,17 +17,21 @@ public class PlayerOperation : MonoBehaviour
     public bool isRunning;
 
     // スライド速度
-    private float slideSpeed;
+    public float[] slideSpeed;
     // スライド判定
     private int slide;
+    /// 右 : 0
+    /// 真ん中 : 1
+    /// 左 : 2
 
-    // 右矢印ボタン入力判定
-    private bool isRightArrow;
-    // 左矢印ボタン入力判定
-    private bool isLeftArrow;
+    // 矢印ボタン入力
+    private int isWhichArrow = 0;
+    /// 0 : 入力なし
+    /// 1 : 右入力
+    /// 2 : 左入力 
 
-    // ジャンプの高さ
-    public float jumpHeight;
+    // 入力不可能判定
+    private bool canNotSlide = false;
 
     private void Start()
     {
@@ -54,17 +58,22 @@ public class PlayerOperation : MonoBehaviour
             }
         }
 
+        if(canNotSlide==false)
+        {
         // 右
         if(Input.GetKeyDown(KeyCode.RightArrow))
-        {
+            {
             Debug.Log("右に移動する準備完了");
-            isRightArrow = true; // 右キー入力した
-        }
+            isWhichArrow= 1; // 右キー入力した
+            canNotSlide = true;
+            }
         // 左
         if(Input.GetKeyDown(KeyCode.LeftArrow))
-        {
+            {
             Debug.Log("左に移動する準備完了");
-            isLeftArrow = true; // 左キー入力した
+            isWhichArrow = 2; // 左キー入力した
+            canNotSlide = true;
+            }
         }
 
     }
@@ -73,18 +82,16 @@ public class PlayerOperation : MonoBehaviour
     {
         
         // 右キー入力したら
-        if(isRightArrow==true)
+        if(isWhichArrow==1)
         {
             Debug.Log("右に移動した");
-            inputRight();
-            isRightArrow = false; // 右キー入力完了
+            slideToRight();
         }
         // 左キー入力したら
-        if(isLeftArrow==true)
+        if(isWhichArrow==2)
         {
             Debug.Log("左に移動した");
-            inputLeft();
-            isLeftArrow = false; // 左キー入力完了
+            slideToLeft();
         }
 
     }
@@ -94,10 +101,6 @@ public class PlayerOperation : MonoBehaviour
     {
         this.transform.position -= transform.up * runSpeed * Time.deltaTime;
     }
-
-    /// 右 : 0
-    /// 真ん中 : 1
-    /// 左 : 2
 
     // プレイヤー初期位置
     public void playerStartPos()
@@ -110,74 +113,54 @@ public class PlayerOperation : MonoBehaviour
         Debug.Log(slide);
     }
 
-    // 座標中央に移動
-    void playerCenter()
-    {
-        playerPos.z = -0.0f;
-        this.transform.position = playerPos;
-        slide = 1;
-        Debug.Log(slide);
-    }
-
-    // 座標右に移動
-    void playerRight ()
-    {
-        playerPos.z = 2.0f;
-        this.transform.position = playerPos;
-        slide = 0;
-        Debug.Log(slide);
-    }
-
-    // 座標左に移動
-    void playerLeft()
-    {
-        playerPos.z = -2.0f;
-        this.transform.position = playerPos;
-        slide = 2;
-        Debug.Log(slide);
-    }
-
-    // 右入力
-    void inputRight()
-    {
-        switch (slide)
-        {
-            // 中央である時
-            case 1:
-                playerRight();
-                break;
-            // 左であるとき
-            case 2:
-                playerCenter();
-                break;
-            default:
-                break;
-        }
-    }
-
-    // 左入力
-    void inputLeft()
-    {
-        switch (slide)
-        {
-            // 中央であるとき
-            case 1:
-                playerLeft();
-                break;
-            // 右であるとき
-            case 0:
-                playerCenter();
-                break;
-            default:
-                break;
-        }
-    }
-
     // ジャンプ入力
     void inputJump()
     {
+        float jumpHeight = 2.5f; // ジャンプの高さ
         playerPos.y += jumpHeight; // Y軸1.5ジャンプ
         this.transform.position = playerPos;
+    }
+
+    void slideToRight(){
+        this.transform.position += Vector3.forward * slideSpeed[0] * Time.deltaTime;
+        playerPos = this.transform.position;
+        if(playerPos.z==2.0f)
+        {
+            isWhichArrow = 0;
+            canNotSlide = false;
+            switch(slide)
+            {
+                case 1:
+                    slide = 0;
+                    break;
+                case 2:
+                    slide = 1;
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
+    void slideToLeft(){
+        this.transform.position += Vector3.forward * slideSpeed[1] * Time.deltaTime;
+        playerPos = this.transform.position;
+        if (playerPos.z == -2.0f)
+        {
+            isWhichArrow = 0;
+            canNotSlide = false;
+            switch (slide)
+            {
+                case 0:
+                    slide = 1;
+                    break;
+                case 1:
+                    slide = 2;
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
     // 衝突判定
