@@ -31,7 +31,7 @@ public class PlayerOperation : MonoBehaviour
 
     private void Start()
     {
-        SceneManager.sceneLoaded += playerStartPos; // シーン呼び出しごとに毎回プレイヤーを中央に
+        //SceneManager.sceneLoaded += playerStartPos; // シーン呼び出しごとに毎回プレイヤーを中央に
     }
 
     void Update()
@@ -100,10 +100,12 @@ public class PlayerOperation : MonoBehaviour
     /// 左 : 2
 
     // プレイヤー初期位置
-    void playerStartPos(Scene scene,LoadSceneMode sceneMode)
+    public void playerStartPos()
     {
-        playerPos = new Vector3(-0.5f, -0.25f, 0.0f);
-        this.transform.position = playerPos;
+        Vector3 playerStartTransformPos;
+        Debug.Log("playerStartPos();");
+        playerStartTransformPos = new Vector3(-0.5f, 1.0f, 0.0f);
+        this.transform.position = playerStartTransformPos;
         slide = 1;
         Debug.Log(slide);
     }
@@ -111,7 +113,7 @@ public class PlayerOperation : MonoBehaviour
     // 座標中央に移動
     void playerCenter()
     {
-        playerPos.z = 0.25f;
+        playerPos.z = -0.0f;
         this.transform.position = playerPos;
         slide = 1;
         Debug.Log(slide);
@@ -120,7 +122,7 @@ public class PlayerOperation : MonoBehaviour
     // 座標右に移動
     void playerRight ()
     {
-        playerPos.z = 1.25f;
+        playerPos.z = 2.0f;
         this.transform.position = playerPos;
         slide = 0;
         Debug.Log(slide);
@@ -129,7 +131,7 @@ public class PlayerOperation : MonoBehaviour
     // 座標左に移動
     void playerLeft()
     {
-        playerPos.z = -0.75f;
+        playerPos.z = -2.0f;
         this.transform.position = playerPos;
         slide = 2;
         Debug.Log(slide);

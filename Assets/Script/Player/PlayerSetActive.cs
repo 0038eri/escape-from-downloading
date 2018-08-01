@@ -68,7 +68,9 @@ public class PlayerSetActive : MonoBehaviour {
             case "Stage11":
             case "Stage12":
             case "StageSample":
+                Debug.Log("chechScene();");
                 player.SetActive(true); // プレイヤー
+                player.SendMessage("playerStartPos"); // Playerポジション
                 GameObject.Find("StageManager").SendMessage("startTimer"); // タイマー開始
                 playerCanvas.enabled = true; // UI表示
                 //debugCanvas.enabled = true;
