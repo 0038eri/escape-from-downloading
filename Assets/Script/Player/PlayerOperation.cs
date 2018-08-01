@@ -29,7 +29,7 @@ public class PlayerOperation : MonoBehaviour
     // ジャンプの高さ
     public float jumpHeight;
 
-    private void Awake()
+    private void Start()
     {
         SceneManager.sceneLoaded += playerStartPos; // シーン呼び出しごとに毎回プレイヤーを中央に
     }
@@ -102,7 +102,7 @@ public class PlayerOperation : MonoBehaviour
     // プレイヤー初期位置
     void playerStartPos(Scene scene,LoadSceneMode sceneMode)
     {
-        playerPos = new Vector3(0.0f, 0.0f, 0.0f);
+        playerPos = new Vector3(-0.5f, -0.25f, 0.0f);
         this.transform.position = playerPos;
         slide = 1;
         Debug.Log(slide);
@@ -111,7 +111,7 @@ public class PlayerOperation : MonoBehaviour
     // 座標中央に移動
     void playerCenter()
     {
-        playerPos.z = 0.0f;
+        playerPos.z = 0.25f;
         this.transform.position = playerPos;
         slide = 1;
         Debug.Log(slide);
@@ -120,7 +120,7 @@ public class PlayerOperation : MonoBehaviour
     // 座標右に移動
     void playerRight ()
     {
-        playerPos.z = 1.0f;
+        playerPos.z = 1.25f;
         this.transform.position = playerPos;
         slide = 0;
         Debug.Log(slide);
@@ -129,7 +129,7 @@ public class PlayerOperation : MonoBehaviour
     // 座標左に移動
     void playerLeft()
     {
-        playerPos.z = -1.0f;
+        playerPos.z = -0.75f;
         this.transform.position = playerPos;
         slide = 2;
         Debug.Log(slide);
