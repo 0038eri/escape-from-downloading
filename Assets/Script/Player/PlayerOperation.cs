@@ -63,14 +63,12 @@ public class PlayerOperation : MonoBehaviour
         // 右
         if(Input.GetKeyDown(KeyCode.RightArrow))
             {
-            Debug.Log("右に移動する準備完了");
             isWhichArrow= 1; // 右キー入力した
             canNotSlide = true;
             }
         // 左
         if(Input.GetKeyDown(KeyCode.LeftArrow))
             {
-            Debug.Log("左に移動する準備完了");
             isWhichArrow = 2; // 左キー入力した
             canNotSlide = true;
             }
@@ -80,20 +78,51 @@ public class PlayerOperation : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
-        // 右キー入力したら
-        if(isWhichArrow==1)
-        {
-            Debug.Log("右に移動した");
-            slideToRight();
-        }
-        // 左キー入力したら
-        if(isWhichArrow==2)
-        {
-            Debug.Log("左に移動した");
-            slideToLeft();
-        }
 
+        // 右キー入力したら
+        if (isWhichArrow == 1)
+        {
+            if (playerPos.z == 2.0f)
+            {
+                isWhichArrow = 0;
+                canNotSlide = false;
+                switch (slide)
+                {
+                    case 1:
+                        slide = 0;
+                        break;
+                    case 2:
+                        slide = 1;
+                        break;
+                    default:
+                        break;
+                }
+            } else {
+                    slideToRight();
+                }
+            }
+        // 左キー入力したら
+        if (isWhichArrow == 2)
+        {
+            if (playerPos.z == -2.0f)
+            {
+                isWhichArrow = 0;
+                canNotSlide = false;
+                switch (slide)
+                {
+                    case 0:
+                        slide = 1;
+                        break;
+                    case 1:
+                        slide = 2;
+                        break;
+                    default:
+                        break;
+                }
+            } else {
+                slideToLeft();
+            }
+        }
     }
 
     // 前進
@@ -106,7 +135,6 @@ public class PlayerOperation : MonoBehaviour
     public void playerStartPos()
     {
         Vector3 playerStartTransformPos;
-        Debug.Log("playerStartPos();");
         playerStartTransformPos = new Vector3(-0.5f, 1.0f, 0.0f);
         this.transform.position = playerStartTransformPos;
         slide = 1;
@@ -124,43 +152,11 @@ public class PlayerOperation : MonoBehaviour
     void slideToRight(){
         this.transform.position += Vector3.forward * slideSpeed[0] * Time.deltaTime;
         playerPos = this.transform.position;
-        if(playerPos.z==2.0f)
-        {
-            isWhichArrow = 0;
-            canNotSlide = false;
-            switch(slide)
-            {
-                case 1:
-                    slide = 0;
-                    break;
-                case 2:
-                    slide = 1;
-                    break;
-                default:
-                    break;
-            }
-        }
     }
 
     void slideToLeft(){
         this.transform.position += Vector3.forward * slideSpeed[1] * Time.deltaTime;
         playerPos = this.transform.position;
-        if (playerPos.z == -2.0f)
-        {
-            isWhichArrow = 0;
-            canNotSlide = false;
-            switch (slide)
-            {
-                case 0:
-                    slide = 1;
-                    break;
-                case 1:
-                    slide = 2;
-                    break;
-                default:
-                    break;
-            }
-        }
     }
 
     // 衝突判定
