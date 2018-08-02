@@ -30,7 +30,7 @@ public class PlayerOperation : MonoBehaviour
     /// 1 : 右入力
     /// 2 : 左入力 
 
-    // 入力不可能判定
+    // スライド変更不可能判定
     private bool canNotSlide = false;
 
     private void Start()
@@ -47,26 +47,26 @@ public class PlayerOperation : MonoBehaviour
             RunningMethod();
         }
         // ジャンプ
-        if (isPlayerCol == true)
+        if (isPlayerCol == true) // 地面に触れていたら
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 inputJump();
             }
         }
-        if (canNotSlide == false)
+        if (canNotSlide == false) // スライド変更不可能判定が可能
         {
             // 右
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                isWhichArrow = 1; // 右キー入力した
-                canNotSlide = true;
+                isWhichArrow = 1; // 右キー入力した判定
+                canNotSlide = true; // スライド変更判定不可能
             }
             // 左
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                isWhichArrow = 2; // 左キー入力した
-                canNotSlide = true;
+                isWhichArrow = 2; // 左キー入力した判定
+                canNotSlide = true; // スライド変更判定不可能
             }
         }
     }
@@ -83,9 +83,10 @@ public class PlayerOperation : MonoBehaviour
         {
             slideToLeft();
         }
+        // なにも入力していなかったら
         else if (isWhichArrow==0)
         {
-            canNotSlide = false;
+            canNotSlide = false; // スライド可能になる
         }
     }
 
@@ -113,60 +114,66 @@ public class PlayerOperation : MonoBehaviour
         this.transform.position = playerPos;
     }
 
+    // 右側に移動する
     void slideToRight()
     {
         switch (slide)
         {
-            case 1:
-                if (playerPos.z < 2.0f)
+            case 1: // 真ん中にいる
+                if (playerPos.z < 2.0f) // 右に移動完了していなかったら
                 {
-                    this.transform.position += Vector3.forward * slideSpeed[0] * Time.deltaTime;
+                    this.transform.position += Vector3.forward * slideSpeed[0] * Time.deltaTime; // 右側に移動する
                 }
                 else
                 {
-                    isWhichArrow = 0;
-                    slide = 0;
+                    isWhichArrow = 0; // 右入力完了
+                    slide = 0; // 右に移動完了
                 }
                 break;
-            case 2:
-                if (playerPos.z < 0.0f)
+            case 2: // 左にいる
+                if (playerPos.z < 0.0f) // 真ん中に移動完了していなかったら
                 {
-                    this.transform.position += Vector3.forward * slideSpeed[0] * Time.deltaTime;
+                    this.transform.position += Vector3.forward * slideSpeed[0] * Time.deltaTime; // 右側に移動する
                 }
                 else
                 {
-                    isWhichArrow = 0;
-                    slide = 1;
+                    isWhichArrow = 0; // 右入力完了
+                    slide = 1; // 真ん中に移動完了
                 }
+                break;
+            default:
                 break;
         }
     }
 
+    // 左側に移動する
     void slideToLeft()
     {
         switch(slide)
         {
-            case 0:
-                if(playerPos.z<0.0f)
+            case 0: // 右にいる
+                if(playerPos.z<0.0f) // 真ん中に移動完了していなかったら
                 {
-                    this.transform.position += Vector3.forward * slideSpeed[1] * Time.deltaTime;
+                    this.transform.position += Vector3.forward * slideSpeed[1] * Time.deltaTime; // 左側に移動する
                 }
                 else
                 {
-                    isWhichArrow = 0;
-                    slide = 1;
+                    isWhichArrow = 0; // 左入力完了
+                    slide = 1; // 真ん中に移動完了
                 }
                 break;
-            case 1:
-                if(playerPos.z<2.0f)
+            case 1: // 真ん中にいるにいる
+                if(playerPos.z<2.0f) // 左に移動完了していなかったら 
                 {
-                    this.transform.position += Vector3.forward * slideSpeed[1] * Time.deltaTime;
+                    this.transform.position += Vector3.forward * slideSpeed[1] * Time.deltaTime; // 左側に移動する
                 }
                 else
                 {
-                    isWhichArrow = 0;
-                    slide = 2;
+                    isWhichArrow = 0; // 左入力完了
+                    slide = 2; // 左に移動完了
                 }
+                break;
+            default:
                 break;
         }
     }
