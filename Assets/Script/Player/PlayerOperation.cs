@@ -40,15 +40,12 @@ public class PlayerOperation : MonoBehaviour
 
     void Update()
     {
-
         playerPos = this.transform.position; // プレイヤー座標取得
-
         // 前進
         if (isRunning == true)
         {
             RunningMethod();
         }
-
         // ジャンプ
         if (isPlayerCol == true)
         {
@@ -57,71 +54,38 @@ public class PlayerOperation : MonoBehaviour
                 inputJump();
             }
         }
-
-        if(canNotSlide==false)
+        if (canNotSlide == false)
         {
-        // 右
-        if(Input.GetKeyDown(KeyCode.RightArrow))
+            // 右
+            if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-            isWhichArrow= 1; // 右キー入力した
-            canNotSlide = true;
+                isWhichArrow = 1; // 右キー入力した
+                canNotSlide = true;
             }
-        // 左
-        if(Input.GetKeyDown(KeyCode.LeftArrow))
+            // 左
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-            isWhichArrow = 2; // 左キー入力した
-            canNotSlide = true;
+                isWhichArrow = 2; // 左キー入力した
+                canNotSlide = true;
             }
         }
-
     }
 
     private void FixedUpdate()
     {
-
         // 右キー入力したら
         if (isWhichArrow == 1)
         {
-            if (playerPos.z == 2.0f)
-            {
-                isWhichArrow = 0;
-                canNotSlide = false;
-                switch (slide)
-                {
-                    case 1:
-                        slide = 0;
-                        break;
-                    case 2:
-                        slide = 1;
-                        break;
-                    default:
-                        break;
-                }
-            } else {
-                    slideToRight();
-                }
-            }
+            slideToRight();
+        }
         // 左キー入力したら
-        if (isWhichArrow == 2)
+        else if (isWhichArrow == 2)
         {
-            if (playerPos.z == -2.0f)
-            {
-                isWhichArrow = 0;
-                canNotSlide = false;
-                switch (slide)
-                {
-                    case 0:
-                        slide = 1;
-                        break;
-                    case 1:
-                        slide = 2;
-                        break;
-                    default:
-                        break;
-                }
-            } else {
-                slideToLeft();
-            }
+            slideToLeft();
+        }
+        else if (isWhichArrow==0)
+        {
+            canNotSlide = false;
         }
     }
 
@@ -135,7 +99,7 @@ public class PlayerOperation : MonoBehaviour
     public void playerStartPos()
     {
         Vector3 playerStartTransformPos;
-        playerStartTransformPos = new Vector3(-0.5f, 1.0f, 0.0f);
+        playerStartTransformPos = new Vector3(0.0f, 1.0f, 0.0f);
         this.transform.position = playerStartTransformPos;
         slide = 1;
         Debug.Log(slide);
@@ -149,18 +113,66 @@ public class PlayerOperation : MonoBehaviour
         this.transform.position = playerPos;
     }
 
-    void slideToRight(){
-        this.transform.position += Vector3.forward * slideSpeed[0] * Time.deltaTime;
-        playerPos = this.transform.position;
+    void slideToRight()
+    {
+        switch (slide)
+        {
+            case 1:
+                if (playerPos.z < 2.0f)
+                {
+                    this.transform.position += Vector3.forward * slideSpeed[0] * Time.deltaTime;
+                }
+                else
+                {
+                    isWhichArrow = 0;
+                    slide = 0;
+                }
+                break;
+            case 2:
+                if (playerPos.z < 0.0f)
+                {
+                    this.transform.position += Vector3.forward * slideSpeed[0] * Time.deltaTime;
+                }
+                else
+                {
+                    isWhichArrow = 0;
+                    slide = 1;
+                }
+                break;
+        }
     }
 
-    void slideToLeft(){
-        this.transform.position += Vector3.forward * slideSpeed[1] * Time.deltaTime;
-        playerPos = this.transform.position;
+    void slideToLeft()
+    {
+        switch(slide)
+        {
+            case 0:
+                if(playerPos.z<0.0f)
+                {
+                    this.transform.position += Vector3.forward * slideSpeed[1] * Time.deltaTime;
+                }
+                else
+                {
+                    isWhichArrow = 0;
+                    slide = 1;
+                }
+                break;
+            case 1:
+                if(playerPos.z<2.0f)
+                {
+                    this.transform.position += Vector3.forward * slideSpeed[1] * Time.deltaTime;
+                }
+                else
+                {
+                    isWhichArrow = 0;
+                    slide = 2;
+                }
+                break;
+        }
     }
 
     // 衝突判定
-    private void OnCollisionStay (Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         isPlayerCol = true; // 地面に接している
 
