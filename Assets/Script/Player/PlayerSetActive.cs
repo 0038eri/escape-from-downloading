@@ -13,28 +13,21 @@ public class PlayerSetActive : MonoBehaviour {
 	private MeshRenderer playerRenderer;
     // プレイヤー Rigidbody
     private Rigidbody playerRigidbody;
-    // プレイヤー Canvas
-    private Canvas playerCanvas;
-
-    //private Canvas debugCanvas;
 
 	void Awake () {
 		    
-        SceneManager.sceneLoaded += checkScene; // シーン移動ごとに毎回呼び出し
+        SceneManager.sceneLoaded += checkSceneP; // シーン移動ごとに毎回呼び出し
 
 	}
     
 	void Start () {
 
         player = GameObject.Find("Player"); // プレイヤー取得
-        playerCanvas = GameObject.Find("PlayerCanvas").GetComponent<Canvas>(); // プレイヤーCanvas取得
-
-        //debugCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
 
 	}
 
     // シーン移動時毎回読み込まれる
-	void checkScene (Scene scene,LoadSceneMode sceneMode) {
+    private void checkSceneP (Scene scene,LoadSceneMode sceneMode) {
 		
 		/// Scene scenename,LoadSceneMode SceneMode は、SceneManager.sceneLoaded の引数である
 		/// Awakeでの場合は引数は省略されている
@@ -48,9 +41,6 @@ public class PlayerSetActive : MonoBehaviour {
             case "Option":
             case "Ending":
                 player.SetActive(false); // プレイヤー停止
-                GameObject.Find("StageManager").SendMessage("stopTimer"); // タイマー停止
-                playerCanvas.enabled = false; // UI非表示
-                //debugCanvas.enabled = false;
                 break;
 
             // ステージシーン
@@ -71,9 +61,6 @@ public class PlayerSetActive : MonoBehaviour {
                 Debug.Log("chechScene();");
                 player.SetActive(true); // プレイヤー
                 player.SendMessage("playerStartPos"); // Playerポジション
-                GameObject.Find("StageManager").SendMessage("startTimer"); // タイマー開始
-                playerCanvas.enabled = true; // UI表示
-                //debugCanvas.enabled = true;
                 break;
 
             default:

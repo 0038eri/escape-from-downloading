@@ -23,16 +23,16 @@ public class StageManager : MonoBehaviour {
     // ポーズボタン
     public GameObject pauseButton;
 
-    // BGM 素材
-    public AudioClip[] stageBgm;
-    public AudioClip[] systemBgm;
+    //// BGM 素材
+    //public AudioClip[] stageBgm;
+    //public AudioClip[] systemBgm;
 
-    // SE 素材
-    public AudioClip[] stageSe;
-    public AudioClip[] systemSe;
+    //// SE 素材
+    //public AudioClip[] stageSe;
+    //public AudioClip[] systemSe;
 
-    // AudioSources
-    private AudioSource[] audiosources;
+    //// AudioSources
+    //private AudioSource[] audiosources;
 
     private void Awake()
     {
@@ -41,7 +41,7 @@ public class StageManager : MonoBehaviour {
 
     private void Start()
     {
-        audiosources = gameObject.GetComponents<AudioSource>(); // オーディオソース取得
+        //audiosources = gameObject.GetComponents<AudioSource>(); // オーディオソース取得
     }
 
     void Update () {
@@ -141,7 +141,7 @@ public class StageManager : MonoBehaviour {
 
     /* SOUND */
 
-    void checkScene (Scene scene,LoadSceneMode sceneMode) {
+    private void checkScene (Scene scene,LoadSceneMode sceneMode) {
 
         /// Scene scenename,LoadSceneMode SceneMode は、SceneManager.sceneLoaded の引数である
         /// Awakeでの場合は引数は省略されている
@@ -150,30 +150,30 @@ public class StageManager : MonoBehaviour {
 
             /* System */
 
-            case "Start":
-                audiosources[0].clip = systemBgm[0]; // StartのBGMにする
-                playBgm();
-                break;
+            //case "Start":
+            //    audiosources[0].clip = systemBgm[0]; // StartのBGMにする
+            //    playBgm();
+            //    break;
 
-            case "Opening":
-                audiosources[0].clip = systemBgm[1]; // OpeningのBGMにする
-                playBgm();
-                break;
+            //case "Opening":
+            //    audiosources[0].clip = systemBgm[1]; // OpeningのBGMにする
+            //    playBgm();
+            //    break;
 
-            case "Menu":
-                audiosources[0].clip = systemBgm[2]; // MenuのBGMにする
-                playBgm();
-                break;
+            //case "Menu":
+            //    audiosources[0].clip = systemBgm[2]; // MenuのBGMにする
+            //    playBgm();
+            //    break;
 
-            case "Option":
-                audiosources[0].clip = systemBgm[3]; // OptionのBGMにする
-                playBgm();
-                break;
+            //case "Option":
+            //    audiosources[0].clip = systemBgm[3]; // OptionのBGMにする
+            //    playBgm();
+            //    break;
 
-            case "Ending":
-                audiosources[0].clip = systemBgm[4]; // EndingのBGMにする
-                playBgm();
-                break;
+            //case "Ending":
+                //audiosources[0].clip = systemBgm[4]; // EndingのBGMにする
+                //playBgm();
+                //break;
 
             /* System */
 
@@ -183,22 +183,22 @@ public class StageManager : MonoBehaviour {
 
             /* Stage */
 
-            default:
-                StopBgm();
-                break;
+            //default:
+                //StopBgm();
+                //break;
         }
     }
 
 
     // BGMを再生する
-    void playBgm () {
-        audiosources[0].Play();
-    } 
+    //void playBgm () {
+    //    audiosources[0].Play();
+    //} 
 
-    // BGMを停止する
-    void StopBgm () {
-        audiosources[0].Stop();
-    }
+    //// BGMを停止する
+    //void StopBgm () {
+    //    audiosources[0].Stop();
+    //}
 
     /* SOUND */
       
