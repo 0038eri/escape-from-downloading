@@ -61,7 +61,7 @@ public class StageManager : MonoBehaviour {
     {
         timer += (-1*Time.deltaTime); // タイマーを動かす
         timerText.text = ((int)timer).ToString() + " sec"; // 時間を整数で表示する
-        if (timer == timeLimit) // もしタイマーが制限時間に達したら
+        if (timer < timeLimit) // もしタイマーが制限時間に達したら
         {
             GameObject.Find("PlayerManager").SendMessage("gameOver"); // ゲームオーバー
             resetTimer(); // タイマーをリセット
