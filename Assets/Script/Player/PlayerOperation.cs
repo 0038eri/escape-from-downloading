@@ -46,6 +46,7 @@ public class PlayerOperation : MonoBehaviour
         {
             RunningMethod();
         }
+
         // ジャンプ
         if (isPlayerCol == true) // 地面に触れていたら
         {
@@ -54,6 +55,7 @@ public class PlayerOperation : MonoBehaviour
                 inputJump();
             }
         }
+
         if (canNotSlide == false) // スライド変更不可能判定が可能
         {
             // 右
@@ -69,10 +71,7 @@ public class PlayerOperation : MonoBehaviour
                 canNotSlide = true; // スライド変更判定不可能
             }
         }
-    }
 
-    private void FixedUpdate()
-    {
         // 右キー入力したら
         if (isWhichArrow == 1)
         {
@@ -84,7 +83,7 @@ public class PlayerOperation : MonoBehaviour
             slideToLeft();
         }
         // なにも入力していなかったら
-        else if (isWhichArrow==0)
+        else if (isWhichArrow == 0)
         {
             canNotSlide = false; // スライド可能になる
         }
