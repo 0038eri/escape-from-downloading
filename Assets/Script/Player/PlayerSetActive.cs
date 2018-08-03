@@ -14,15 +14,12 @@ public class PlayerSetActive : MonoBehaviour {
     // プレイヤー Rigidbody
     private Rigidbody playerRigidbody;
 
-	void Awake () {
+	void Awake () 
+    {
 		    
-        SceneManager.sceneLoaded += checkSceneP; // シーン移動ごとに毎回呼び出し
-
-	}
-    
-	void Start () {
-
         player = GameObject.Find("Player"); // プレイヤー取得
+
+        SceneManager.sceneLoaded += checkSceneP; // シーン移動ごとに毎回呼び出し
 
 	}
 
@@ -58,7 +55,6 @@ public class PlayerSetActive : MonoBehaviour {
             case "Stage11":
             case "Stage12":
             case "StageSample":
-                Debug.Log("chechScene();");
                 player.SetActive(true); // プレイヤー
                 player.SendMessage("playerStartPos"); // Playerポジション
                 break;

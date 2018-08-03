@@ -13,6 +13,9 @@ public class StageSetActive : MonoBehaviour {
     void Awake()
     {
 
+        playerCanvas = GameObject.Find("PlayerCanvas").GetComponent<Canvas>(); // プレイヤーCanvas取得
+        gameStartCanvas = GameObject.Find("GameStartCanvas").GetComponent<Canvas>(); // ゲームスタートCanvas取得
+
         SceneManager.sceneLoaded += checkSceneS; // シーン移動ごとに毎回呼び出し
 
     }
