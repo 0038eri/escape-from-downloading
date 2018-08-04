@@ -285,7 +285,6 @@
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.PerformanceReportingModule.dll
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.Physics2DModule.dll
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.PhysicsModule.dll
-/Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.Purchasing.dll
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.ScreenCaptureModule.dll
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.SharedInternalsModule.dll
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.SpatialTracking.dll
@@ -303,7 +302,6 @@
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.TimelineModule.dll
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.TLSModule.dll
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.UI.dll
-/Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.UIAutomation.dll
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.UIElementsModule.dll
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.UIModule.dll
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.UmbraModule.dll
@@ -318,7 +316,6 @@
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.VehiclesModule.dll
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.VideoModule.dll
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.VRModule.dll
-/Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.WebModule.dll
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.WindModule.dll
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.XRModule.dll
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityScript.dll
@@ -452,8 +449,6 @@
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.VehiclesModule.xml
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.VideoModule.dll.mdb
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.VideoModule.xml
-/Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.WebModule.dll.mdb
-/Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.WebModule.xml
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.WindModule.dll.mdb
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.WindModule.xml
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.XRModule.dll.mdb
@@ -465,8 +460,6 @@
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.Networking.xml
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.Timeline.dll.mdb
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.Timeline.xml
-/Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.UIAutomation.dll.mdb
-/Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.UIAutomation.xml
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.GoogleAudioSpatializer.dll.mdb
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.GoogleAudioSpatializer.xml
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.HoloLens.dll.mdb
@@ -474,7 +467,6 @@
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.SpatialTracking.dll.mdb
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.SpatialTracking.xml
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.Analytics.dll.mdb
-/Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.Purchasing.dll.mdb
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.StandardEvents.dll.mdb
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
 /Users/eririn/github/escape-from-downloading/Temp/bin/Debug/Unity.IvyParser.dll.mdb
@@ -482,3 +474,19 @@
 /Users/eririn/github/escape-from-downloading/obj/Debug/Assembly-CSharp.csproj.CoreCompileInputs.cache
 /Users/eririn/github/escape-from-downloading/obj/Debug/Assembly-CSharp.dll
 /Users/eririn/github/escape-from-downloading/obj/Debug/Assembly-CSharp.pdb
+/Users/eririn/github/escape-from-downloading/Temp/bin/Debug/Unity.TextMeshPro.dll
+/Users/eririn/github/escape-from-downloading/Temp/bin/Debug/Unity.TextMeshPro.Editor.dll
+/Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.FileSystemHttpModule.dll
+/Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.LocalizationModule.dll
+/Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.ProfilerModule.dll
+/Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.StreamingModule.dll
+/Users/eririn/github/escape-from-downloading/Temp/bin/Debug/Unity.TextMeshPro.Editor.dll.mdb
+/Users/eririn/github/escape-from-downloading/Temp/bin/Debug/Unity.TextMeshPro.dll.mdb
+/Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.FileSystemHttpModule.dll.mdb
+/Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.FileSystemHttpModule.xml
+/Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.LocalizationModule.dll.mdb
+/Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.LocalizationModule.xml
+/Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.ProfilerModule.dll.mdb
+/Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.ProfilerModule.xml
+/Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.StreamingModule.dll.mdb
+/Users/eririn/github/escape-from-downloading/Temp/bin/Debug/UnityEngine.StreamingModule.xml

@@ -7,36 +7,28 @@ public class StageSetActive : MonoBehaviour {
 
     // プレイヤー Canvas
     private Canvas playerCanvas;
-    // ゲームスタート Canvas
-    private Canvas gameStartCanvas;
 
     void Awake()
     {
 
         playerCanvas = GameObject.Find("PlayerCanvas").GetComponent<Canvas>(); // プレイヤーCanvas取得
-        gameStartCanvas = GameObject.Find("GameStartCanvas").GetComponent<Canvas>(); // ゲームスタートCanvas取得
 
         SceneManager.sceneLoaded += checkSceneS; // シーン移動ごとに毎回呼び出し
-
+        Debug.Log("StageSetActive.cs");
     }
-
-	void Start () {
-		
-        playerCanvas = GameObject.Find("PlayerCanvas").GetComponent<Canvas>(); // プレイヤーCanvas取得
-        gameStartCanvas = GameObject.Find("GameStartCanvas").GetComponent<Canvas>(); // ゲームスタートCanvas取得
-
-	}
 
     // シーン移動時毎回読み込まれる
     private void checkSceneS(Scene scene, LoadSceneMode sceneMode)
     {
+
+        Debug.Log("checkSceneS();");
 
         /// Scene scenename,LoadSceneMode SceneMode は、SceneManager.sceneLoaded の引数である
         /// Awakeでの場合は引数は省略されている
 
         switch (scene.name)
         {
-
+            
             // システムシーン
             case "Start":
             case "Opening":
@@ -45,11 +37,10 @@ public class StageSetActive : MonoBehaviour {
             case "Ending":
                 GameObject.Find("StageManager").SendMessage("stopTimer"); // タイマー停止
                 playerCanvas.enabled = false; // UI非表示
-                //gameStartCanvas.enabled = false;
                 break;
 
             // ステージシーン
-            case "Prefab":
+            //case "Prefab":
             case "Stage1":
             case "Stage2":
             case "Stage3":
@@ -63,9 +54,6 @@ public class StageSetActive : MonoBehaviour {
             case "Stage11":
             case "Stage12":
             case "StageSample":
-                GameObject.Find("StageManager").SendMessage("startTimer"); // タイマー開始
-                //gameStartCanvas.enabled = true; // UI表示
-                //playerCanvas.enabled = true; 
                 break;
 
             default:

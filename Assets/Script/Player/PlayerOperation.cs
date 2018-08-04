@@ -89,6 +89,12 @@ public class PlayerOperation : MonoBehaviour
         }
     }
 
+    // 入力可能
+    public void canInput()
+    {
+        canNotSlide = false;
+    }
+
     // 前進
     public void RunningMethod()
     {
