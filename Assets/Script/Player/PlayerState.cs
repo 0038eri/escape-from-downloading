@@ -279,9 +279,12 @@ public class PlayerState : MonoBehaviour {
 
     // もう一度遊ぶ
     public void onemoreGame () {
+        Debug.Log("onemoreGame");
         gameUiFalse(); // ゲームUI非表示
-        // 今のゲームシーンをリロード
-        GameObject.Find("restartTimer"); // タイマーリスタート
+        Scene nowScene = SceneManager.GetActiveScene(); // 現在のシーン名を取得
+        SceneManager.LoadScene(nowScene.name); // シーンの再読み込み
+        GameObject.Find("StageManager").SendMessage("restartMethod");
+        GameObject.Find("StageManager").SendMessage("restartTimer");
     }
 
     // メニューに戻る

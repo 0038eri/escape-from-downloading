@@ -5,19 +5,24 @@ using UnityEngine;
 public class AnimationManager : MonoBehaviour {
 
     // ゲームスタート Canvas
-    private Canvas gameStartCanvas;
+    private Animator gameStartAnimator;
 
     private void Awake()
     {
-        gameStartCanvas = GameObject.Find("GameStartCanvas").GetComponent<Canvas>();
+        gameStartAnimator = GameObject.Find("CanvasObj").GetComponent<Animator>();
     }
 
     public void StartGameMethod()
     {
         GameObject.Find("StageManager").SendMessage("startTimer"); // タイマー開始
+        GameObject.Find("Player").SendMessage("goRunning"); 
         GameObject.Find("Player").SendMessage("canInput"); // 入力可能にする
     }
 
-
+    public void readyToOnemoreGame()
+    {
+        
+        gameStartAnimator.enabled = false;
+    }
 
 }

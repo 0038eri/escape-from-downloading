@@ -14,7 +14,7 @@ public class PlayerOperation : MonoBehaviour
     // 前進速度
     public float runSpeed;
     // 前進判定
-    public bool isRunning;
+    private bool isRunning;
 
     // スライド速度
     public float[] slideSpeed;
@@ -93,6 +93,11 @@ public class PlayerOperation : MonoBehaviour
     public void canInput()
     {
         canNotSlide = false;
+    }
+
+    public void goRunning()
+    {
+        isRunning = true;
     }
 
     // 前進

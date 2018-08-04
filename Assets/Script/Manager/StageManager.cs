@@ -44,6 +44,9 @@ public class StageManager : MonoBehaviour {
     private void Start()
     {
         //audiosources = gameObject.GetComponents<AudioSource>(); // オーディオソース取得
+
+        Debug.Log("isPlayingNowは現在ゲームプレイ中であるかの真偽を問うbool型の判定です。");
+        Debug.Log("timerStopは現在タイマーが作動中であるかを真偽するbool型の判定です。");
     }
 
     void Update () {
@@ -54,7 +57,8 @@ public class StageManager : MonoBehaviour {
             updateTimer(); 
         }
 
-        Debug.Log(timerStop);
+        Debug.Log("IsPlayingNow == " + isPlayingNow);
+        Debug.Log("timerStop == " + timerStop);
 
     }
 
@@ -77,6 +81,9 @@ public class StageManager : MonoBehaviour {
 
     // タイマーを開始
     public void startTimer () {
+        int startTimerCount = 0;
+        startTimerCount++;
+        Debug.Log(startTimerCount);
         timerStop = false;
         Time.timeScale = 1.0f;
     }
@@ -118,7 +125,6 @@ public class StageManager : MonoBehaviour {
     // ポーズパネル表示
     public void pause () {
         stopTimer(); // タイマーを停止
-        // ゲームを停止
         pauseUi.SetActive(true);
         pauseButton.SetActive(false); // ポーズボタンを非表示
     }
@@ -126,6 +132,7 @@ public class StageManager : MonoBehaviour {
     // リセットメソッド
     public void resetMethod () {
         resetTimer(); // タイマー
+        GameObject.Find("CanvasObj").SendMessage("readyToOnemoreGame"); // アニメーション準備
         GameObject.Find("PlayerManager").SendMessage("resetPlayerHp"); // HP
         GameObject.Find("PlayerManager").SendMessage("resetGameJudge"); // ゲーム判定
     }
@@ -143,9 +150,7 @@ public class StageManager : MonoBehaviour {
     // ゲームを再開する
     public void playGame () {
         pauseUIFalse(); // ポーズパネルを非表示
-        startTimer(); // タイマーをうごかす
-        // ゲームを再生
-        // ポーズボタンを表示
+        restartTimer();
     }
 
     // メニューに戻る

@@ -10,13 +10,13 @@ public class PlayerSetActive : MonoBehaviour {
     private GameObject player;
 
     // ゲームスタート Animator
-    private Animator gamestartAnimator;
+    private Animator gameStartAnimator;
 
 	void Awake () 
     {
 
         player = GameObject.Find("Player"); // プレイヤー取得
-        gamestartAnimator = GameObject.Find("CanvasObj").GetComponent<Animator>();
+        gameStartAnimator = GameObject.Find("CanvasObj").GetComponent<Animator>();
 
         SceneManager.sceneLoaded += checkSceneP; // シーン移動ごとに毎回呼び出し
 
@@ -36,8 +36,8 @@ public class PlayerSetActive : MonoBehaviour {
             case "Menu":
             case "Option":
             case "Ending":
-                gamestartAnimator.enabled = false;
                 player.SetActive(false); // プレイヤー停止
+                gameStartAnimator.enabled = false;
                 break;
 
             // ステージシーン
@@ -55,8 +55,8 @@ public class PlayerSetActive : MonoBehaviour {
             case "Stage11":
             case "Stage12":
             case "StageSample":
-                gamestartAnimator.enabled = true;
                 player.SetActive(true); // プレイヤー
+                gameStartAnimator.enabled = true;
                 player.SendMessage("playerStartPos"); // Playerポジション
                 break;
 
