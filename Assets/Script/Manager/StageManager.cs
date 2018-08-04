@@ -8,6 +8,8 @@ public class StageManager : MonoBehaviour {
 
     // ステージクリア判定
     public static int stageNumber = 0;
+    // プレイ中判定
+    private bool isPlayingNow = false;
 
     // タイマー
     private float timer = 60.0f;
@@ -42,7 +44,6 @@ public class StageManager : MonoBehaviour {
     private void Start()
     {
         //audiosources = gameObject.GetComponents<AudioSource>(); // オーディオソース取得
-        notUpdateTimer();
     }
 
     void Update () {
@@ -68,12 +69,10 @@ public class StageManager : MonoBehaviour {
         {
             GameObject.Find("PlayerManager").SendMessage("gameOver"); // ゲームオーバー
         }
-    }
-
-    // 動いていないタイマー
-    public void notUpdateTimer()
-    {
-        timerStop = false;
+        if(isPlayingNow==false)
+        {
+            isPlaying();
+        }
     }
 
     // タイマーを開始
@@ -85,18 +84,35 @@ public class StageManager : MonoBehaviour {
     // タイマーを停止
     public void stopTimer () {
         timerStop = true;
-        Time.timeScale = 0.0f;
+        if(isPlayingNow==true)
+        {
+            Time.timeScale = 0.0f;
+        }
     }
 
     // タイマーリセット
     public void resetTimer () {
+        stopTimer();
         timer = 60.0f; // タイマーリセット
+        notPlaying();
     }
 
     //タイマーリスタート
     public void restartTimer(){
         resetTimer(); // タイマーリセット
         startTimer(); // タイマースタート
+    }
+
+    // プレイ中判定
+    public void isPlaying()
+    {
+        isPlayingNow = true;
+    }
+
+    // プレイ外判定
+    public void notPlaying()
+    {
+        isPlayingNow = false;
     }
 
     // ポーズパネル表示

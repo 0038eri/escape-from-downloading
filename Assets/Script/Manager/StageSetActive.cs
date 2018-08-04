@@ -33,7 +33,7 @@ public class StageSetActive : MonoBehaviour {
             case "Menu":
             case "Option":
             case "Ending":
-                GameObject.Find("StageManager").SendMessage("notUpdateTimer"); // タイマー停止
+                GameObject.Find("StageManager").SendMessage("stopTimer");
                 playerCanvas.enabled = false; // UI非表示
                 break;
 
@@ -52,6 +52,7 @@ public class StageSetActive : MonoBehaviour {
             case "Stage11":
             case "Stage12":
             case "StageSample":
+                GameObject.Find("StageManager").SendMessage("startTimer");
                 break;
 
             default:
