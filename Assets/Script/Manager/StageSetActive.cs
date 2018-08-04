@@ -21,8 +21,6 @@ public class StageSetActive : MonoBehaviour {
     private void checkSceneS(Scene scene, LoadSceneMode sceneMode)
     {
 
-        Debug.Log("checkSceneS();");
-
         /// Scene scenename,LoadSceneMode SceneMode は、SceneManager.sceneLoaded の引数である
         /// Awakeでの場合は引数は省略されている
 
