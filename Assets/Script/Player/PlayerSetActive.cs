@@ -55,7 +55,6 @@ public class PlayerSetActive : MonoBehaviour {
             case "Stage11":
             case "Stage12":
             case "StageSample":
-                GameObject.Find("CanvasObj").SendMessage("getGameStartCanvas");
                 gamestartAnimator.enabled = true;
                 player.SetActive(true); // プレイヤー
                 player.SendMessage("playerStartPos"); // Playerポジション

@@ -42,6 +42,7 @@ public class StageManager : MonoBehaviour {
     private void Start()
     {
         //audiosources = gameObject.GetComponents<AudioSource>(); // オーディオソース取得
+        notUpdateTimer();
     }
 
     void Update () {
@@ -51,6 +52,8 @@ public class StageManager : MonoBehaviour {
         if(timerStop==false){
             updateTimer(); 
         }
+
+        Debug.Log(timerStop);
 
     }
 
@@ -64,24 +67,29 @@ public class StageManager : MonoBehaviour {
         if (timer < timeLimit) // もしタイマーが制限時間に達したら
         {
             GameObject.Find("PlayerManager").SendMessage("gameOver"); // ゲームオーバー
-            resetTimer(); // タイマーをリセット
         }
+    }
+
+    // 動いていないタイマー
+    public void notUpdateTimer()
+    {
+        timerStop = false;
     }
 
     // タイマーを開始
     public void startTimer () {
-        Debug.Log("startTimer();");
         timerStop = false;
+        Time.timeScale = 1.0f;
     }
 
     // タイマーを停止
     public void stopTimer () {
-        timerStop = true;  
+        timerStop = true;
+        Time.timeScale = 0.0f;
     }
 
     // タイマーリセット
     public void resetTimer () {
-        stopTimer(); //タイマーを停止
         timer = 60.0f; // タイマーリセット
     }
 

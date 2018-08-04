@@ -18,4 +18,6 @@ public class AnimationManager : MonoBehaviour {
         GameObject.Find("Player").SendMessage("canInput"); // 入力可能にする
     }
 
+
+
 }
