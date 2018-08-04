@@ -14,11 +14,4 @@ public class Stage8Scn : MonoBehaviour {
 
     }
 
-    private void Start()
-    {
-
-        GameObject.Find("StageManager").SendMessage("startTimer"); // タイマースタート
-
-    }
-
 }

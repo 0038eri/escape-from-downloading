@@ -70,6 +70,7 @@ public class StageManager : MonoBehaviour {
 
     // タイマーを開始
     public void startTimer () {
+        Debug.Log("startTimer();");
         timerStop = false;
     }
 
@@ -125,14 +126,12 @@ public class StageManager : MonoBehaviour {
 
     // メニューに戻る
     public void backMenuP () {
-        Debug.Log("backMenuP");
         pauseUIFalse(); // ポーズパネルを非表示
         SceneManager.LoadScene("Menu");
     }
 
     // ゲームをやめる
     public void escapeGameP () {
-        Debug.Log("escapeGameP");
         pauseUIFalse(); // ポーズパネルを非表示
         // アプリ終了
     }
@@ -146,7 +145,7 @@ public class StageManager : MonoBehaviour {
         /// Scene scenename,LoadSceneMode SceneMode は、SceneManager.sceneLoaded の引数である
         /// Awakeでの場合は引数は省略されている
 
-        switch (scene.name) {
+        //switch (scene.name) {
 
             /* System */
 
@@ -186,7 +185,7 @@ public class StageManager : MonoBehaviour {
             //default:
                 //StopBgm();
                 //break;
-        }
+        //}
     }
 
 

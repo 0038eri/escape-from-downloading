@@ -62,9 +62,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\Manager\AnimationManager.cs" />
-    <Compile Include="Assets\Script\Manager\DevelopCommand.cs" />
+    <Compile Include="Assets\Script\Manager\Command\DevelopCommand.cs" />
+    <Compile Include="Assets\Script\Manager\Command\StageCommand.cs" />
     <Compile Include="Assets\Script\Manager\MoneyManager.cs" />
-    <Compile Include="Assets\Script\Manager\StageCommand.cs" />
     <Compile Include="Assets\Script\Manager\StageManager.cs" />
     <Compile Include="Assets\Script\Manager\StageSetActive.cs" />
     <Compile Include="Assets\Script\Manager\SystemParent.cs" />
