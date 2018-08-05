@@ -19,6 +19,8 @@ public class StageManager : MonoBehaviour {
     public static bool timerStop = true;
     // タイマー表示テキスト
     public Text timerText;
+    // スタートタイマー実行カウント
+    public int startTimerCount = 0;
 
     // ポーズ画面
     public GameObject pauseUi;
@@ -81,11 +83,16 @@ public class StageManager : MonoBehaviour {
 
     // タイマーを開始
     public void startTimer () {
-        int startTimerCount = 0;
+        Debug.Log("startTimer();");
         startTimerCount++;
-        Debug.Log(startTimerCount);
         timerStop = false;
         Time.timeScale = 1.0f;
+    }
+
+    // スタートタイマーカウント送信
+    public int startTimerCountMethod()
+    {
+        return startTimerCount;
     }
 
     // タイマーを停止

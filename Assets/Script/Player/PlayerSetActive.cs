@@ -16,7 +16,7 @@ public class PlayerSetActive : MonoBehaviour {
     {
 
         player = GameObject.Find("Player"); // プレイヤー取得
-        gameStartAnimator = GameObject.Find("CanvasObj").GetComponent<Animator>();
+        gameStartAnimator = GameObject.Find("GameStart").GetComponent<Animator>();
 
         SceneManager.sceneLoaded += checkSceneP; // シーン移動ごとに毎回呼び出し
 
