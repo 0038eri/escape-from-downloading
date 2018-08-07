@@ -1,12 +1,13 @@
 ﻿<Properties StartupConfiguration="{48893F69-26C4-B4A9-0F1E-C8BE09297673}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Player/PlayerOperation.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Manager/StageSetActive.cs">
     <Files>
-      <File FileName="Assets/Script/Player/PlayerState.cs" Line="287" Column="57" />
-      <File FileName="Assets/Script/Manager/StageManager.cs" Line="146" Column="5" />
+      <File FileName="Assets/Script/Player/PlayerState.cs" Line="33" Column="1" />
+      <File FileName="Assets/Script/Manager/StageManager.cs" Line="62" Column="1" />
       <File FileName="Assets/Script/Player/PlayerOperation.cs" Line="116" Column="1" />
-      <File FileName="Assets/Script/Player/PlayerSetActive.cs" Line="19" Column="37" NotebookId="1" />
-      <File FileName="Assets/Script/Manager/StageSetActive.cs" Line="54" Column="77" NotebookId="1" />
+      <File FileName="Assets/Script/Manager/MoneyManager.cs" Line="15" Column="1" />
+      <File FileName="Assets/Script/Player/PlayerSetActive.cs" Line="19" Column="1" NotebookId="1" />
+      <File FileName="Assets/Script/Manager/StageSetActive.cs" Line="9" Column="1" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -14,5 +15,6 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.escape-from-downloading PreferredExecutionTarget="Unity.Editor" />
   <MultiItemStartupConfigurations />
 </Properties>
