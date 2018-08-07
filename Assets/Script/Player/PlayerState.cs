@@ -16,25 +16,40 @@ public class PlayerState : MonoBehaviour {
     public Image hpImage;
 
     // ユーザーネーム文字列
-	public static string username;
+    public static string username;
     // ユーザーネーム表示テキスト
-	public Text usernameText;
+    public Text usernameText;
 
     // ゲーム判定
-    string gameJudge = "none";
+    private string gameJudge = "none";
+    private GameObject stagemanager;
+    private GameObject stageScn;
+    private Stage1Scn stage1scn;
+    private Stage2Scn stage2scn;
+    private Stage3Scn stage3scn;
+    private Stage4Scn stage4scn;
+    private Stage5Scn stage5scn;
+    private Stage6Scn stage6scn;
+    private Stage7Scn stage7scn;
+    private Stage8Scn stage8scn;
+    private Stage9Scn stage9scn;
+    private Stage10Scn stage10scn;
+    private Stage11Scn stage11scn;
+    private Stage12Scn stage12scn;
 
     // クリア画面
     public GameObject gameClearUi;
     // ゲームオーバー画面
     public GameObject gameOverUi;
 
-	void Start() {
+    void Start() {
         
         slider.value = playerHp; // HP反映
         hpImage = GameObject.Find("Fill").GetComponent<Image>(); // カラー取得
         playerHpText.text = playerHp.ToString(); // プレイヤーHPテキスト表示
+        stagemanager = GameObject.Find("StageManager");
 
-	}
+    }
 
     /* HP */
 
@@ -76,7 +91,7 @@ public class PlayerState : MonoBehaviour {
         {
             playerHpBarColorBlue();
         }
-	}
+    }
 
     // HPバーの色を青にする
     void playerHpBarColorBlue()
@@ -144,98 +159,122 @@ public class PlayerState : MonoBehaviour {
         {
 
             case 1:
-                if (Stage1Scn.stage1Clear == false) // ステージ1をクリアしていなかったら
+                int stageOne = stage1scn.stage1Check();
+                stageScn = GameObject.Find("Stage1Obj");
+                if (stageOne==0) // ステージ1をクリアしていなかったら
                 {
-                    StageManager.stageNumber++; // クリアステージ数追加
-                    Stage1Scn.stage1Clear = true; // ステージ1クリア済み
+                    stagemanager.SendMessage("stageNumberCount");
+                    stageScn.SendMessage("stage1Count"); // ステージ1クリア済み
                 }
                 break;
 
             case 2:
-                if (Stage2Scn.stage2Clear == false) // ステージ2をクリアしていなかったら
+                int stageTwo = stage2scn.stage2Check();
+                stageScn = GameObject.Find("Stage2Obj");
+                if (stageTwo==0) // ステージ2をクリアしていなかったら
                 {
-                    StageManager.stageNumber++; // クリアステージ数追加
-                    Stage2Scn.stage2Clear = true; // ステージ2クリア済み
+                    stagemanager.SendMessage("stageNumberCount");
+                    stageScn.SendMessage("stage2Count"); // ステージ2クリア済み
                 }
                 break;
 
             case 3:
-                if (Stage3Scn.stage3Clear == false) // ステージ3をクリアしていなかったら
+                int stageThree = stage3scn.stage3Check();
+                stageScn = GameObject.Find("Stage3Obj");
+                if (Stage3Scn.stage3Clear == 0) // ステージ3をクリアしていなかったら
                 {
-                    StageManager.stageNumber++; // クリアステージ数追加
-                    Stage3Scn.stage3Clear = true; // ステージ3クリア済み
+                    stagemanager.SendMessage("stageNumberCount");
+                    stageScn.SendMessage("stage3Count"); // ステージ3クリア済み
                 }
                 break;
 
             case 4:
-                if (Stage4Scn.stage4Clear == false) // ステージ4をクリアしていなかったら
+                int stageFour = stage4scn.stage4Check();
+                stageScn = GameObject.Find("Stage4Obj");
+                if (Stage4Scn.stage4Clear == 0) // ステージ4をクリアしていなかったら
                 {
-                    StageManager.stageNumber++; // クリアステージ数追加
-                    Stage4Scn.stage4Clear = true; // ステージ4クリア済み
+                    stagemanager.SendMessage("stageNumberCount");
+                    stageScn.SendMessage("stage4Count"); // ステージ4クリア済み
                 }
                 break;
 
             case 5:
-                if (Stage5Scn.stage5Clear == false) // ステージ5をクリアしていなかったら
+                int stageFive = stage5scn.stage5Check();
+                stageScn = GameObject.Find("Stage5Obj");
+                if (Stage5Scn.stage5Clear == 0) // ステージ5をクリアしていなかったら
                 {
-                    StageManager.stageNumber++; // クリアステージ数追加
-                    Stage5Scn.stage5Clear = true; // ステージ5クリア済み
+                    stagemanager.SendMessage("stageNumberCount");
+                    stageScn.SendMessage("stage5Count"); // ステージ5クリア済み
                 }
                 break;
 
             case 6:
-                if (Stage6Scn.stage6Clear == false) // ステージ6をクリアしていなかったら
+                int stageSix = stage6scn.stage6Check();
+                stageScn = GameObject.Find("Stage6Obj");
+                if (Stage6Scn.stage6Clear == 0) // ステージ6をクリアしていなかったら
                 {
-                    StageManager.stageNumber++; // クリアステージ数追加
-                    Stage6Scn.stage6Clear = true; // ステージ6クリア済み
+                    stagemanager.SendMessage("stageNumberCount");
+                    stageScn.SendMessage("stage6Count"); // ステージ6クリア済み
                 }
                 break;
 
             case 7:
-                if (Stage7Scn.stage7Clear == false) // ステージ7をクリアしていなかったら
+                int stageSeven = stage7scn.stage7Check();
+                stageScn = GameObject.Find("Stage7Obj");
+                if (Stage7Scn.stage7Clear == 0) // ステージ7をクリアしていなかったら
                 {
-                    StageManager.stageNumber++; // クリアステージ数追加
-                    Stage7Scn.stage7Clear = true; // ステージ7クリア済み
+                    stagemanager.SendMessage("stageNumberCount");
+                    stageScn.SendMessage("stage7Count"); // ステージ7クリア済み
                 }
                 break;
 
             case 8:
-                if (Stage8Scn.stage8Clear == false) // ステージ8をクリアしていなかったら
+                int stageEight = stage8scn.stage8Check();
+                stageScn = GameObject.Find("Stage8Obj");
+                if (Stage8Scn.stage8Clear == 0) // ステージ8をクリアしていなかったら
                 {
-                    StageManager.stageNumber++; // クリアステージ数追加
-                    Stage8Scn.stage8Clear = true; // ステージ8クリア済み
+                    stagemanager.SendMessage("stageNumberCount");
+                    stageScn.SendMessage("stage8Count"); // ステージ8クリア済み
                 }
                 break;
 
             case 9:
-                if (Stage9Scn.stage9Clear == false) // ステージ9をクリアしていなかったら
+                int stageNine = stage9scn.stage9Check();
+                stageScn = GameObject.Find("Stage9Obj");
+                if (Stage9Scn.stage9Clear == 0) // ステージ9をクリアしていなかったら
                 {
-                    StageManager.stageNumber++; // クリアステージ数追加
-                    Stage9Scn.stage9Clear = true; // ステージ9クリア済み
+                    stagemanager.SendMessage("stageNumberCount");
+                    stageScn.SendMessage("stage9Count"); // ステージ9クリア済み
                 }
                 break;
 
             case 10:
-                if (Stage10Scn.stage10Clear == false) // ステージ10をクリアしていなかったら
+                int stageTen = stage10scn.stage10Check();
+                stageScn = GameObject.Find("stage10Obj");
+                if (Stage10Scn.stage10Clear == 0) // ステージ10をクリアしていなかったら
                 {
-                    StageManager.stageNumber++; // クリアステージ数追加
-                    Stage10Scn.stage10Clear = true; // ステージ10クリア済み
+                    stagemanager.SendMessage("stageNumberCount");
+                    stageScn.SendMessage("stage10Count"); // ステージ10クリア済み
                 }
                 break;
 
             case 11:
-                if (Stage11Scn.stage11Clear == false) // ステージ11をクリアしていなかったら
+                int stageEleven = stage11scn.stage11Check();
+                stageScn = GameObject.Find("stage11Obj");
+                if (Stage11Scn.stage11Clear == 0) // ステージ11をクリアしていなかったら
                 {
-                    StageManager.stageNumber++; // クリアステージ数追加
-                    Stage11Scn.stage11Clear = true; // ステージ11クリア済み
+                    stagemanager.SendMessage("stageNumberCount");
+                    stageScn.SendMessage("stage11Scn"); // ステージ11クリア済み
                 }
                 break;
 
             case 12:
-                if (Stage12Scn.stage12Clear == false) // ステージ12をクリアしていなかったら
+                int stageTwelve = stage12scn.stage12Check();
+                stageScn = GameObject.Find("stage12Obj");
+                if (Stage12Scn.stage12Clear == 0) // ステージ12をクリアしていなかったら
                 {
-                    StageManager.stageNumber++; // クリアステージ数追加
-                    Stage12Scn.stage12Clear = true; // ステージ12クリア済み
+                    stagemanager.SendMessage("stageNumberCount");
+                    stageScn.SendMessage("stage12Count"); // ステージ12クリア済み
                 }
                 break;
 
@@ -300,5 +339,5 @@ public class PlayerState : MonoBehaviour {
     }
 
     /* UI */
-	
+    
 }

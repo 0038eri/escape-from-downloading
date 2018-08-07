@@ -9,6 +9,26 @@ public class StartScn : MonoBehaviour
     // PlayerPrefs保存切り替え判定
     public static bool prefsSave = false;
 
+    private GameObject stagemanager;
+    private StageManager stageManager;
+
+    // スタートシーン Background Color
+    private Color bgColor = new Color(0.0f / 255.0f, 113.0f / 255.0f, 188.0f / 255.0f, 255.0f / 255.0f);
+    // Player Camera
+    private Camera systemCam;
+
+    private void Awake()
+    {
+        stagemanager = GameObject.Find("StageManager");
+        stageManager = stagemanager.GetComponent<StageManager>();
+        systemCam = GameObject.Find("SystemCamera").GetComponent<Camera>();
+    }
+
+    private void Start()
+    {
+        systemCam.backgroundColor = bgColor;
+    }
+
     private void Update()
     {
         // クリックした時
@@ -16,20 +36,20 @@ public class StartScn : MonoBehaviour
             toNextScene(); // シーンをチェック
         }
 
-
-
     }
 
     // 移動するシーンを確認
     void toNextScene()
     {
-        switch (StageManager.stageNumber)
+        int checkedStageNumber = stageManager.stageNumberCheck();
+        Debug.Log("checkedStageNumber: " + checkedStageNumber);
+        switch (checkedStageNumber)
         {
             
             case 0:
-                if(StageManager.stageNumber==0){ // オープニングを経験していなかったら、
+                if(checkedStageNumber==0){ // オープニングを経験していなかったら、
                     SceneManager.LoadScene("Opening"); // オープニング
-                    StageManager.stageNumber++; // クリアステージ判定追加
+                    stagemanager.SendMessage("stageNumberCount");
                 }
                 break;
 

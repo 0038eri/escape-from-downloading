@@ -145,7 +145,7 @@ public class PlayerOperation : MonoBehaviour
                 {
                     this.transform.position += Vector3.forward * slideSpeed[0] * Time.deltaTime; // 右側に移動する
                 }
-                else if (playerPos.z >= 2.0f)
+                else if (playerPos.z >= 0.0f)
                 {
                     isWhichArrow = 0; // 右入力完了
                     slide = 1; // 真ん中に移動完了
@@ -162,22 +162,22 @@ public class PlayerOperation : MonoBehaviour
         switch(slide)
         {
             case 0: // 右にいる
-                if (playerPos.z < 0.0f) // 真ん中に移動完了していなかったら
+                if (playerPos.z > 0.0f) // 真ん中に移動完了していなかったら
                 {
                     this.transform.position += Vector3.forward * slideSpeed[1] * Time.deltaTime; // 左側に移動する
                 }
-                else if (playerPos.z >= 0.0f)
+                else if (playerPos.z <= 0.0f)
                 {
                     isWhichArrow = 0; // 左入力完了
                     slide = 1; // 真ん中に移動完了
                 }
                 break;
             case 1: // 真ん中にいるにいる
-                if (playerPos.z < -2.0f) // 左に移動完了していなかったら 
+                if (playerPos.z > -2.0f) // 左に移動完了していなかったら 
                 {
                     this.transform.position += Vector3.forward * slideSpeed[1] * Time.deltaTime; // 左側に移動する
                 }
-                else if (playerPos.z >= -2.0f)
+                else if (playerPos.z <= -2.0f)
                 {
                     isWhichArrow = 0; // 左入力完了
                     slide = 2; // 左に移動完了

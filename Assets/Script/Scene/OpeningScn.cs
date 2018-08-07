@@ -10,6 +10,11 @@ public class OpeningScn : MonoBehaviour {
     // メッセージ格納変数
     private string[] message={"こんにちは","これはテストです","スキップしてください"};
 
+    // スタートシーン Background Color
+    private Color bgColor = new Color(36.0f / 255.0f, 186.0f / 255.0f, 0.0f / 255.0f, 255.0f / 255.0f);
+    // Player Camera
+    private Camera playerCam;
+
     //// 最大文字数
     //private int maxTextNumber;
     //// 現在の文字数

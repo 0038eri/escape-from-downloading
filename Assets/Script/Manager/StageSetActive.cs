@@ -4,17 +4,36 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class StageSetActive : MonoBehaviour {
+    
+    private GameObject clearCanvas;
+    private GameObject overCanvas;
+    private GameObject pauseCanvas;
+    private GameObject gamestartCanvas;
+    private GameObject playerCanvas;
 
-    // プレイヤー Canvas
-    private Canvas playerCanvas;
+    public GameObject systemCam;
 
     void Awake()
     {
+        clearCanvas = GameObject.Find("ClearCanvas");
+        overCanvas = GameObject.Find("OverCanvas");
+        pauseCanvas = GameObject.Find("PauseCanvas");
+        gamestartCanvas = GameObject.Find("GameStartCanvas");
+        playerCanvas = GameObject.Find("PlayerCanvas");
 
-        playerCanvas = GameObject.Find("PlayerCanvas").GetComponent<Canvas>(); // プレイヤーCanvas取得
+        systemCam = GameObject.Find("SystemCamera");
 
         SceneManager.sceneLoaded += checkSceneS; // シーン移動ごとに毎回呼び出し
         Debug.Log("StageSetActive.cs");
+    }
+
+    private void Start()
+    {
+        clearCanvas.SetActive(false);
+        overCanvas.SetActive(false);
+        pauseCanvas.SetActive(false);
+        gamestartCanvas.SetActive(false);
+        playerCanvas.SetActive(false);
     }
 
     // シーン移動時毎回読み込まれる
@@ -33,6 +52,7 @@ public class StageSetActive : MonoBehaviour {
             case "Menu":
             case "Option":
             case "Ending":
+                systemCam.SetActive(true);
                 GameObject.Find("StageManager").SendMessage("stopTimer");
                 break;
 
@@ -51,7 +71,7 @@ public class StageSetActive : MonoBehaviour {
             case "Stage11":
             case "Stage12":
             case "StageSample":
-                //GameObject.Find("StageManager").SendMessage("startTimer");
+                systemCam.SetActive(false);
                 break;
 
             default:

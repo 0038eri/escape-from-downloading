@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class DevelopCommand : MonoBehaviour {
 
-    private void Start()
+    private void Awake()
     {
         DontDestroyOnLoad(gameObject);
     }

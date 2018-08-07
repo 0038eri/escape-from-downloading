@@ -12,7 +12,9 @@ public class StageManager : MonoBehaviour {
     private bool isPlayingNow = false;
 
     // タイマー
-    private float timer = 60.0f;
+    private float timer;
+    private float timerValue;
+    private bool timerSet = false;
     // 制限時間
     private float timeLimit = 0.0f;
     // タイマー停止判定
@@ -46,7 +48,6 @@ public class StageManager : MonoBehaviour {
     private void Start()
     {
         //audiosources = gameObject.GetComponents<AudioSource>(); // オーディオソース取得
-
         Debug.Log("isPlayingNowは現在ゲームプレイ中であるかの真偽を問うbool型の判定です。");
         Debug.Log("timerStopは現在タイマーが作動中であるかを真偽するbool型の判定です。");
     }
@@ -64,11 +65,35 @@ public class StageManager : MonoBehaviour {
 
     }
 
+    /* ステージナンバー */
+
+    public int stageNumberCheck()
+    {
+        Debug.Log(stageNumber);
+        return stageNumber;
+    }
+
+    public void stageNumberCount()
+    {
+        if(stageNumber < 13)
+        {
+            stageNumber++;
+        }
+    }
+
+    /* ステージナンバー */
+
+
     /* タイマー */
 
     // タイマーを動かしている
     void updateTimer()
     {
+        if(timerSet==false)
+        {
+            timer = 60.0f;
+            timerSet = true;
+        }
         timer += (-1*Time.deltaTime); // タイマーを動かす
         timerText.text = ((int)timer).ToString() + " sec"; // 時間を整数で表示する
         if (timer < timeLimit) // もしタイマーが制限時間に達したら
@@ -83,7 +108,6 @@ public class StageManager : MonoBehaviour {
 
     // タイマーを開始
     public void startTimer () {
-        Debug.Log("startTimer();");
         startTimerCount++;
         timerStop = false;
         Time.timeScale = 1.0f;
@@ -107,7 +131,7 @@ public class StageManager : MonoBehaviour {
     // タイマーリセット
     public void resetTimer () {
         stopTimer();
-        timer = 60.0f; // タイマーリセット
+        timerSet = false;
         notPlaying();
     }
 
@@ -131,6 +155,7 @@ public class StageManager : MonoBehaviour {
 
     // ポーズパネル表示
     public void pause () {
+        timerValue = timer;
         stopTimer(); // タイマーを停止
         pauseUi.SetActive(true);
         pauseButton.SetActive(false); // ポーズボタンを非表示
@@ -139,7 +164,6 @@ public class StageManager : MonoBehaviour {
     // リセットメソッド
     public void resetMethod () {
         resetTimer(); // タイマー
-        GameObject.Find("CanvasObj").SendMessage("readyToOnemoreGame"); // アニメーション準備
         GameObject.Find("PlayerManager").SendMessage("resetPlayerHp"); // HP
         GameObject.Find("PlayerManager").SendMessage("resetGameJudge"); // ゲーム判定
     }
@@ -150,6 +174,7 @@ public class StageManager : MonoBehaviour {
 
     // ポーズパネル非表示
     void pauseUIFalse () {
+        timer = timerValue;
         pauseUi.SetActive(false);
         pauseButton.SetActive(true); // ポーズボタンを表示
     }
