@@ -62,18 +62,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\Animation\GameStartAnimator.cs" />
-    <Compile Include="Assets\Script\Manager\Command\DevelopCommand.cs" />
-    <Compile Include="Assets\Script\Manager\Command\StageCommand.cs" />
-    <Compile Include="Assets\Script\Manager\MoneyManager.cs" />
-    <Compile Include="Assets\Script\Manager\StageManager.cs" />
-    <Compile Include="Assets\Script\Manager\StageSetActive.cs" />
-    <Compile Include="Assets\Script\Manager\SystemParent.cs" />
     <Compile Include="Assets\Script\Object\CoinSc.cs" />
     <Compile Include="Assets\Script\Object\EnemySc.cs" />
+    <Compile Include="Assets\Script\Player\GameMode.cs" />
     <Compile Include="Assets\Script\Player\GameParent.cs" />
+    <Compile Include="Assets\Script\Player\Hp.cs" />
     <Compile Include="Assets\Script\Player\PlayerOperation.cs" />
-    <Compile Include="Assets\Script\Player\PlayerSetActive.cs" />
     <Compile Include="Assets\Script\Player\PlayerState.cs" />
+    <Compile Include="Assets\Script\Player\PlayerUi.cs" />
+    <Compile Include="Assets\Script\Player\User.cs" />
     <Compile Include="Assets\Script\Scene\EndingScn.cs" />
     <Compile Include="Assets\Script\Scene\MenuScn.cs" />
     <Compile Include="Assets\Script\Scene\OpeningScn.cs" />
@@ -94,6 +91,14 @@
     <Compile Include="Assets\Script\Scene\Stage\Stage8Scn.cs" />
     <Compile Include="Assets\Script\Scene\Stage\Stage9Scn.cs" />
     <Compile Include="Assets\Script\Scene\StartScn.cs" />
+    <Compile Include="Assets\Script\System\Command\DevelopCommand.cs" />
+    <Compile Include="Assets\Script\System\Money.cs" />
+    <Compile Include="Assets\Script\System\StageJudge.cs" />
+    <Compile Include="Assets\Script\System\StageState.cs" />
+    <Compile Include="Assets\Script\System\SystemParent.cs" />
+    <Compile Include="Assets\Script\System\SystemUi.cs" />
+    <Compile Include="Assets\Script\System\Timer.cs" />
+    <Compile Include="Assets\Script\SystemSwitch.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>/Users/eririn/github/escape-from-downloading/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

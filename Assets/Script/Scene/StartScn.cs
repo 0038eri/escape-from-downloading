@@ -5,22 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class StartScn : MonoBehaviour
 {
-
-    // PlayerPrefs保存切り替え判定
-    public static bool prefsSave = false;
-
-    private GameObject stagemanager;
-    private StageManager stageManager;
+    private GameObject stageJudgeManager;
+    private StageJudge stageJudge;
+    private int stageJudgeNumber = 0;
 
     // スタートシーン Background Color
     private Color bgColor = new Color(0.0f / 255.0f, 113.0f / 255.0f, 188.0f / 255.0f, 255.0f / 255.0f);
-    // Player Camera
+    // System Camera
     private Camera systemCam;
 
     private void Awake()
     {
-        stagemanager = GameObject.Find("StageManager");
-        stageManager = stagemanager.GetComponent<StageManager>();
+        stageJudgeManager = GameObject.Find("StageJudgeManager");
+        stageJudge = stageJudgeManager.GetComponent<StageJudge>();
         systemCam = GameObject.Find("SystemCamera").GetComponent<Camera>();
     }
 
@@ -41,70 +38,52 @@ public class StartScn : MonoBehaviour
     // 移動するシーンを確認
     void toNextScene()
     {
-        int checkedStageNumber = stageManager.stageNumberCheck();
-        Debug.Log("checkedStageNumber: " + checkedStageNumber);
-        switch (checkedStageNumber)
+        stageJudgeNumber = stageJudge.stageNumberCheck();
+        switch (stageJudgeNumber)
         {
-            
             case 0:
-                if(checkedStageNumber==0){ // オープニングを経験していなかったら、
-                    SceneManager.LoadScene("Opening"); // オープニング
-                    stagemanager.SendMessage("stageNumberCount");
-                }
+                SceneManager.LoadScene("Opening"); // オープニング
+                stageJudgeManager.SendMessage("stageJudgeCount");
                 break;
-
             case 1:
                 SceneManager.LoadScene("Stage1"); // ステージ1
                 break;
-
             case 2:
                 SceneManager.LoadScene("Stage2"); // ステージ2
                 break;
-
             case 3:
                 SceneManager.LoadScene("Stage3"); // ステージ3
                 break;
-
             case 4:
                 SceneManager.LoadScene("Stage4"); // ステージ4
                 break;
-
             case 5:
                 SceneManager.LoadScene("Stage5"); // ステージ5
                 break;
-
             case 6:
                 SceneManager.LoadScene("Stage6"); // ステージ6
                 break;
-
             case 7:
                 SceneManager.LoadScene("Stage7"); // ステージ7
                 break;
-
             case 8:
                 SceneManager.LoadScene("Stage8"); // ステージ8
                 break;
-
             case 9:
                 SceneManager.LoadScene("Stage9"); // ステージ9
                 break;
-
             case 10:
                 SceneManager.LoadScene("Stage10"); // ステージ10
                 break;
-
             case 11:
                 SceneManager.LoadScene("Stage11"); // ステージ11
                 break;
-
             case 12:
                 SceneManager.LoadScene("Stage12"); // ステージ12
                 break;
-
             case 13:
                 SceneManager.LoadScene("Menu"); // メニュー
                 break;
-
             default:
                 break;
         }

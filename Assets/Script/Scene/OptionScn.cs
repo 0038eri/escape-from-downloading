@@ -17,7 +17,7 @@ public class OptionScn : MonoBehaviour {
 
     // ユーザーネーム変更
 	public void changeUsername () {
-        PlayerState.username = inputfield.text; // 入力されたテキストを文字列に入れる
+        //PlayerState.username = inputfield.text; // 入力されたテキストを文字列に入れる
 		GameObject.Find("PlayerManager").SendMessage ("updateUsername"); // ユーザーネームを保存
 	}
 

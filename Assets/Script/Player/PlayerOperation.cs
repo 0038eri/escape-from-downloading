@@ -12,12 +12,12 @@ public class PlayerOperation : MonoBehaviour
     private bool isPlayerCol;
 
     // 前進速度
-    public float runSpeed;
+    private float runSpeed = 12;
     // 前進判定
     private bool isRunning;
 
     // スライド速度
-    public float[] slideSpeed;
+    private float[] slideSpeed = { 4, -4 };
     // スライド判定
     private int slide;
     /// 右 : 0
@@ -33,9 +33,20 @@ public class PlayerOperation : MonoBehaviour
     // スライド変更不可能判定
     private bool canNotSlide = false;
 
+    private GameObject hpManager;
+    private GameObject moneyManager;
+    private GameObject playerManager;
+
+    void Awake()
+    {
+        hpManager = GameObject.Find("HpManager");
+        moneyManager = GameObject.Find("MoneyManager");
+        playerManager = GameObject.Find("PlayerManager");
+    }
+
     private void Start()
     {
-        //SceneManager.sceneLoaded += playerStartPos; // シーン呼び出しごとに毎回プレイヤーを中央に
+        SceneManager.sceneLoaded += playerStartPos; // シーン呼び出しごとに毎回プレイヤーを中央に
     }
 
     void Update()
@@ -89,15 +100,24 @@ public class PlayerOperation : MonoBehaviour
         }
     }
 
-    // 入力可能
     public void canInput()
     {
         canNotSlide = false;
     }
 
+    public void cannotInput()
+    {
+        canNotSlide = true;
+    }
+
     public void goRunning()
     {
         isRunning = true;
+    }
+
+    public void stopRunning()
+    {
+        isRunning = false;
     }
 
     // 前進
@@ -107,13 +127,12 @@ public class PlayerOperation : MonoBehaviour
     }
 
     // プレイヤー初期位置
-    public void playerStartPos()
+    public void playerStartPos(Scene scene, LoadSceneMode sceneMode)
     {
         Vector3 playerStartTransformPos;
         playerStartTransformPos = new Vector3(0.0f, 1.0f, 0.0f);
         this.transform.position = playerStartTransformPos;
         slide = 1;
-        Debug.Log(slide);
     }
 
     // ジャンプ入力
@@ -196,7 +215,7 @@ public class PlayerOperation : MonoBehaviour
         // オブジェクト
         if (collision.gameObject.tag == "Objects")
         {
-            GameObject.Find("PlayerManager").SendMessage("gameOver"); // ゲームオーバー
+            playerManager.SendMessage("gameOverMethod");
         }
 
     }
@@ -207,15 +226,15 @@ public class PlayerOperation : MonoBehaviour
         // エネミーに当たると      
         if (collision.gameObject.tag == "Enemy")
         {
-            PlayerState.playerHp--; // HPを1減らす
-            GameObject.Find("PlayerManager").SendMessage("updatePlayerHp"); // HP更新
+            hpManager.SendMessage("playerHpEnemy");
+            hpManager.SendMessage("updatePlayerHp");
             Destroy(gameObject); // エネミー消滅
         }
 
         // コインに当たると
         if (collision.gameObject.tag == "Coin")
         {
-            GameObject.Find("MoneyManager").SendMessage("getCoin"); // 所持金1増やす
+            moneyManager.SendMessage("getCoin"); // 所持金1増やす
             Destroy(gameObject); // コイン消滅
         }
 
@@ -231,7 +250,7 @@ public class PlayerOperation : MonoBehaviour
         // ゴールしたら
         if (other.gameObject.tag == "Goal")
         {
-            GameObject.Find("PlayerManager").SendMessage("gameClear"); // ゲームクリア
+            playerManager.SendMessage("gameClearMethod");
         }
     }
 

@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class GameStartAnimator : MonoBehaviour {
 
-    public Animator gamestartAnimator;
+    private Animator gameStartAnimator;
 
-    private void Awake()
+    void Awake()
     {
-        gamestartAnimator = GetComponent<Animator>();
+        gameStartAnimator = GameObject.Find("GameStart").GetComponent<Animator>();
     }
 
-    public void goPlayerUi()
+    public void gameStartAnimation()
     {
-        gamestartAnimator.SetBool("playerUi", true);
-        GameObject.Find("StageManager").SendMessage("startTimer");
+        gameStartAnimator.enabled = true;
+    }
+
+    public void notGameStartAnimation()
+    {
+        gameStartAnimator.enabled = false;
     }
 
 }
