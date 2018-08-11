@@ -5,6 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class MenuScn : MonoBehaviour {
 
+    private Color bgColor = new Color(0.0f / 255.0f, 113.0f / 255.0f, 188.0f / 255.0f, 255.0f / 255.0f);
+    private Camera systemCam;
+
+    void Awake()
+    {
+        systemCam = GameObject.Find("SystemCamera").GetComponent<Camera>();
+    }
+
+    void Start()
+    {
+        systemCam.backgroundColor = bgColor;
+    }
+
     // スタート画面に移動
     public void toStart ()
     {

@@ -2,10 +2,21 @@
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Player/PlayerState.cs">
     <Files>
-      <File FileName="Assets/Script/System/Timer.cs" Line="32" Column="25" />
-      <File FileName="Assets/Script/Animation/GameStartAnimator.cs" Line="28" Column="54" />
-      <File FileName="Assets/Script/Player/PlayerState.cs" Line="130" Column="23" />
-      <File FileName="Assets/Script/Player/PlayerOperation.cs" Line="103" Column="5" NotebookId="1" />
+      <File FileName="Assets/Script/Scene/Stage/Stage6Scn.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/Scene/Stage/Stage2Scn.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/Scene/Stage/Stage11Scn.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/Scene/Stage/Stage9Scn.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/Scene/Stage/Stage8Scn.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/Scene/Stage/Stage4Scn.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/Scene/Stage/Stage3Scn.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/Scene/Stage/Stage12Scn.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/Scene/Stage/Stage10Scn.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/Scene/Stage/Stage5Scn.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/Scene/Stage/Stage7Scn.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/Scene/Stage/Stage1Scn.cs" Line="29" Column="13" />
+      <File FileName="Assets/Script/System/StageJudge.cs" Line="10" Column="15" NotebookId="1" />
+      <File FileName="Assets/Script/Scene/StartScn.cs" Line="41" Column="30" NotebookId="1" />
+      <File FileName="Assets/Script/Player/PlayerState.cs" Line="44" Column="44" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

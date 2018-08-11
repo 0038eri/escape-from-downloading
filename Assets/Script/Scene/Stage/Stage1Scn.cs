@@ -5,9 +5,9 @@ using UnityEngine;
 public class Stage1Scn : MonoBehaviour {
 
     private GameObject gamestartCanvas;
-    
+
     // ステージ1クリア判定
-    public static int stage1Clear = 0;
+    public static bool stage1Clear = false;
 
     private void Awake()
     {
@@ -17,16 +17,6 @@ public class Stage1Scn : MonoBehaviour {
     private void Start()
     {
         gamestartCanvas.SetActive(true);
-    }
-
-    public int stage1Check()
-    {
-        return stage1Clear;
-    }
-
-    public void stage1Count()
-    {
-        stage1Clear++;
     }
 
 }
