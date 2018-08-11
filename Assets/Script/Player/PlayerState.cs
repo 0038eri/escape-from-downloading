@@ -41,6 +41,7 @@ public class PlayerState : MonoBehaviour {
     {
         gameModeManager.SendMessage("isPlaying");
         timerManager.SendMessage("startTimer");
+        player.SendMessage("gameStartRun");
     }
 
     // ゲーム終了

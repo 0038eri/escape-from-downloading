@@ -100,6 +100,12 @@ public class PlayerOperation : MonoBehaviour
         }
     }
 
+    public void gameStartRun()
+    {
+        canInput();
+        goRunning();
+    }
+
     public void canInput()
     {
         canNotSlide = false;

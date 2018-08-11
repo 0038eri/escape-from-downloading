@@ -17,10 +17,12 @@ public class Timer : MonoBehaviour
     // タイマー表示テキスト
     public Text timerText;
 
+    private GameObject player;
     private GameObject playerManager;
 
     void Awake()
     {
+        player = GameObject.Find("Player");
         playerManager = GameObject.Find("PlayerManager");
     }
 
