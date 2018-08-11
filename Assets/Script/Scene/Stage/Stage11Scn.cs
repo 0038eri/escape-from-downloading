@@ -5,14 +5,15 @@ using UnityEngine;
 public class Stage11Scn : MonoBehaviour {
 
     private GameObject gamestartCanvas;
+    private GameObject stageJudgeManager;
 
     // ステージ11クリア判定
-    public static int stage11Clear = 0;
+    public static bool stage11Clear = false;
 
     private void Awake()
     {
         gamestartCanvas = GameObject.Find("GameStartCanvas");
-        GameObject.Find("StageManager").SendMessage("resetMethod"); // タイマー・HPリセット
+        stageJudgeManager = GameObject.Find("StageJudgeManager");
     }
 
     private void Start()
@@ -20,14 +21,13 @@ public class Stage11Scn : MonoBehaviour {
         gamestartCanvas.SetActive(true);
     }
 
-    public int stage11Check()
+    public void clearEleven()
     {
-        return stage11Clear;
-    }
-
-    public void stag11Count()
-    {
-        stage11Clear++;
+        if (stage11Clear == false)
+        {
+            stageJudgeManager.SendMessage("stageJudgeCount");
+            stage11Clear = true;
+        }
     }
 
 }

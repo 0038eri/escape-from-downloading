@@ -5,6 +5,7 @@ using UnityEngine;
 public class Stage1Scn : MonoBehaviour {
 
     private GameObject gamestartCanvas;
+    private GameObject stageJudgeManager;
 
     // ステージ1クリア判定
     public static bool stage1Clear = false;
@@ -17,6 +18,14 @@ public class Stage1Scn : MonoBehaviour {
     private void Start()
     {
         gamestartCanvas.SetActive(true);
+    }
+
+    public void clearOne()
+    {
+        if(stage1Clear==false){
+            stageJudgeManager.SendMessage("stageJudgeCount");
+            stage1Clear = true;
+        }
     }
 
 }

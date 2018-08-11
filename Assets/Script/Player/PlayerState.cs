@@ -55,6 +55,7 @@ public class PlayerState : MonoBehaviour {
     public void gameClearMethod()
     {
         gameFinishMethod();
+        stageJudgeManager.SendMessage("checkNowClearStage");
         gameModeManager.SendMessage("gameClear");
         playerUiManager.SendMessage("displayClear");
     }
