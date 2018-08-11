@@ -12,7 +12,6 @@ public class Stage1Scn : MonoBehaviour {
     private void Awake()
     {
         gamestartCanvas = GameObject.Find("GameStartCanvas");
-        GameObject.Find("StageManager").SendMessage("resetMethod"); // タイマー・HPリセット
     }
 
     private void Start()

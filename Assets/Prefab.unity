@@ -1894,6 +1894,27 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: escapeGameP
       objectReference: {fileID: 0}
+    - target: {fileID: 114670755440239840, guid: 3d375da8280f647398ce7f9cc81120a2,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: backMenuS
+      objectReference: {fileID: 0}
+    - target: {fileID: 1599154541228040, guid: 3d375da8280f647398ce7f9cc81120a2, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1002695957689148, guid: 3d375da8280f647398ce7f9cc81120a2, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1357985887114544, guid: 3d375da8280f647398ce7f9cc81120a2, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1911656148300528, guid: 3d375da8280f647398ce7f9cc81120a2, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d375da8280f647398ce7f9cc81120a2, type: 2}
   m_IsPrefabAsset: 0
@@ -1949,6 +1970,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1298980223105490, guid: a2b5ab2d6bed64eb2b9f917ea9445312,
     type: 2}
   m_PrefabInternal: {fileID: 165732107}
+--- !u!1 &1976905254 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1357985887114544, guid: 3d375da8280f647398ce7f9cc81120a2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1924065218}
 --- !u!1001 &2053731670
 Prefab:
   m_ObjectHideFlags: 0
@@ -1988,16 +2014,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114722077912069222, guid: 33b941b3482694f15b18cda24583c437,
-        type: 2}
-      propertyPath: gameClearUi
-      value: 
-      objectReference: {fileID: 251361010}
-    - target: {fileID: 114722077912069222, guid: 33b941b3482694f15b18cda24583c437,
-        type: 2}
-      propertyPath: gameOverUi
-      value: 
-      objectReference: {fileID: 400409562}
     - target: {fileID: 114711840010226744, guid: 33b941b3482694f15b18cda24583c437,
         type: 2}
       propertyPath: playerHpText
@@ -2013,13 +2029,22 @@ Prefab:
       propertyPath: hpImage
       value: 
       objectReference: {fileID: 1401029335}
-    - target: {fileID: 114471152104494718, guid: 33b941b3482694f15b18cda24583c437,
+    - target: {fileID: 114722077912069222, guid: 33b941b3482694f15b18cda24583c437,
         type: 2}
-      propertyPath: PlayerCam
+      propertyPath: playerUi
       value: 
-      objectReference: {fileID: 1964410307}
-    m_RemovedComponents:
-    - {fileID: 114471152104494718, guid: 33b941b3482694f15b18cda24583c437, type: 2}
+      objectReference: {fileID: 1976905254}
+    - target: {fileID: 114722077912069222, guid: 33b941b3482694f15b18cda24583c437,
+        type: 2}
+      propertyPath: gameClearUi
+      value: 
+      objectReference: {fileID: 251361010}
+    - target: {fileID: 114722077912069222, guid: 33b941b3482694f15b18cda24583c437,
+        type: 2}
+      propertyPath: gameOverUi
+      value: 
+      objectReference: {fileID: 400409562}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33b941b3482694f15b18cda24583c437, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &2106352675 stripped
@@ -2113,22 +2138,22 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114354140953528338, guid: c5a81459e327f41189972a03d412d95a,
-        type: 2}
-      propertyPath: moneyText
-      value: 
-      objectReference: {fileID: 1342303054}
     - target: {fileID: 114517566211077668, guid: c5a81459e327f41189972a03d412d95a,
         type: 2}
       propertyPath: timerText
       value: 
       objectReference: {fileID: 1847522875}
-    - target: {fileID: 114809538866031598, guid: c5a81459e327f41189972a03d412d95a,
+    - target: {fileID: 114354140953528338, guid: c5a81459e327f41189972a03d412d95a,
         type: 2}
-      propertyPath: pauseUi
+      propertyPath: moneyText
       value: 
-      objectReference: {fileID: 1708621113}
-    - target: {fileID: 114809538866031598, guid: c5a81459e327f41189972a03d412d95a,
+      objectReference: {fileID: 1342303054}
+    - target: {fileID: 114094782767475600, guid: c5a81459e327f41189972a03d412d95a,
+        type: 2}
+      propertyPath: playerUi
+      value: 
+      objectReference: {fileID: 1976905254}
+    - target: {fileID: 114094782767475600, guid: c5a81459e327f41189972a03d412d95a,
         type: 2}
       propertyPath: pauseButton
       value: 
@@ -2138,7 +2163,12 @@ Prefab:
       propertyPath: pauseUi
       value: 
       objectReference: {fileID: 1708621113}
-    - target: {fileID: 114094782767475600, guid: c5a81459e327f41189972a03d412d95a,
+    - target: {fileID: 114809538866031598, guid: c5a81459e327f41189972a03d412d95a,
+        type: 2}
+      propertyPath: pauseUi
+      value: 
+      objectReference: {fileID: 1708621113}
+    - target: {fileID: 114809538866031598, guid: c5a81459e327f41189972a03d412d95a,
         type: 2}
       propertyPath: pauseButton
       value: 

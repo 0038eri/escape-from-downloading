@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4065832261743500}
-  - component: {fileID: 114471152104494718}
   - component: {fileID: 114330783704097596}
   - component: {fileID: 81715517564147478}
   m_Layer: 0
@@ -233,18 +232,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abc889bae25fd45bfb475201cc662ed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114471152104494718
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1030066385603480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c73d74978c674084944ec00cea23a5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerCam: {fileID: 0}
 --- !u!114 &114711840010226744
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -270,6 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fce2e2d6ddc044ff08a9787fb73fae45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerUi: {fileID: 0}
   gameClearUi: {fileID: 0}
   gameOverUi: {fileID: 0}
 --- !u!114 &114963507723954296
@@ -283,4 +271,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ab42542609d2432ba0f5a09e4ecba6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameMode: 

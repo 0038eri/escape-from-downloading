@@ -29,7 +29,8 @@ public class StageState : MonoBehaviour {
     // メニューに戻る
     public void backMenuS () {
         timerManager.SendMessage("resetTimer");
-        systemUiManager.SendMessage("destroyPauseUi");
+        systemUiManager.SendMessage("destroyPlayerUi");
+        Debug.Log("さん");
         SceneManager.LoadScene("Menu");
     }
 

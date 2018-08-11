@@ -320,6 +320,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8a425346771466c966ab1c5dfc55a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerUi: {fileID: 0}
+  pauseButton: {fileID: 0}
+  pauseUi: {fileID: 0}
 --- !u!114 &114354140953528338
 MonoBehaviour:
   m_ObjectHideFlags: 1

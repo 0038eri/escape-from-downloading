@@ -5,6 +5,7 @@ using UnityEngine;
 public class SystemUi : MonoBehaviour {
 
     private GameObject timerManager;
+    private GameObject playerUiManager;
 
     public GameObject pauseButton;
     public GameObject pauseUi;
@@ -12,6 +13,7 @@ public class SystemUi : MonoBehaviour {
     void Awake()
     {
         timerManager = GameObject.Find("TimerManager");
+        playerUiManager = GameObject.Find("PlayerUiManager");
     }
 
     public void openPauseUi()
@@ -27,9 +29,10 @@ public class SystemUi : MonoBehaviour {
         pauseButton.SetActive(true);
     }
 
-    public void DestroyPauseUi()
+    public void destroyPlayerUi()
     {
-        pauseUi.SetActive(false);
+        playerUiManager.SendMessage("closePlayerUi");
+        Debug.Log("に");
         pauseButton.SetActive(false);
     }
 
