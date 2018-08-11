@@ -8,14 +8,32 @@ public class MenuScn : MonoBehaviour {
     private Color bgColor = new Color(0.0f / 255.0f, 113.0f / 255.0f, 188.0f / 255.0f, 255.0f / 255.0f);
     private Camera systemCam;
 
+    public Animator[] stageAnimator;
+    private int stageJudgeNumber;
+    private GameObject stageJudgeManager;
+    private StageJudge stageJudge;
+
     void Awake()
     {
         systemCam = GameObject.Find("SystemCamera").GetComponent<Camera>();
+        stageJudge = stageJudgeManager.GetComponent<StageJudge>();
     }
 
     void Start()
     {
         systemCam.backgroundColor = bgColor;
+    }
+
+    void Update()
+    {
+        
+    }
+
+    void NowAnm()
+    {
+        stageJudgeNumber = stageJudge.stageNumberCheck();
+        stageAnimator.enabled = false;
+        stageAnimator.[stageJudgeNumber - 1].enabled = true;
     }
 
     // スタート画面に移動

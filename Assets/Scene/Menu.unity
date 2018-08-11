@@ -1890,9 +1890,64 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114256214450153768, guid: 68a8ac44cf1e9483e9eb0f7bb502efbb,
         type: 2}
-      propertyPath: toL
+      propertyPath: stageAnimator.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1541229266}
+    - target: {fileID: 114256214450153768, guid: 68a8ac44cf1e9483e9eb0f7bb502efbb,
+        type: 2}
+      propertyPath: stageAnimator.Array.data[1]
+      value: 
+      objectReference: {fileID: 869778866}
+    - target: {fileID: 114256214450153768, guid: 68a8ac44cf1e9483e9eb0f7bb502efbb,
+        type: 2}
+      propertyPath: stageAnimator.Array.data[2]
+      value: 
+      objectReference: {fileID: 1378834716}
+    - target: {fileID: 114256214450153768, guid: 68a8ac44cf1e9483e9eb0f7bb502efbb,
+        type: 2}
+      propertyPath: stageAnimator.Array.data[3]
+      value: 
+      objectReference: {fileID: 824699111}
+    - target: {fileID: 114256214450153768, guid: 68a8ac44cf1e9483e9eb0f7bb502efbb,
+        type: 2}
+      propertyPath: stageAnimator.Array.data[4]
+      value: 
+      objectReference: {fileID: 1848229494}
+    - target: {fileID: 114256214450153768, guid: 68a8ac44cf1e9483e9eb0f7bb502efbb,
+        type: 2}
+      propertyPath: stageAnimator.Array.data[5]
+      value: 
+      objectReference: {fileID: 867641671}
+    - target: {fileID: 114256214450153768, guid: 68a8ac44cf1e9483e9eb0f7bb502efbb,
+        type: 2}
+      propertyPath: stageAnimator.Array.data[6]
+      value: 
+      objectReference: {fileID: 1082391140}
+    - target: {fileID: 114256214450153768, guid: 68a8ac44cf1e9483e9eb0f7bb502efbb,
+        type: 2}
+      propertyPath: stageAnimator.Array.data[7]
+      value: 
+      objectReference: {fileID: 1108605467}
+    - target: {fileID: 114256214450153768, guid: 68a8ac44cf1e9483e9eb0f7bb502efbb,
+        type: 2}
+      propertyPath: stageAnimator.Array.data[8]
+      value: 
+      objectReference: {fileID: 1851634959}
+    - target: {fileID: 114256214450153768, guid: 68a8ac44cf1e9483e9eb0f7bb502efbb,
+        type: 2}
+      propertyPath: stageAnimator.Array.data[9]
+      value: 
+      objectReference: {fileID: 310514185}
+    - target: {fileID: 114256214450153768, guid: 68a8ac44cf1e9483e9eb0f7bb502efbb,
+        type: 2}
+      propertyPath: stageAnimator.Array.data[10]
+      value: 
+      objectReference: {fileID: 69535981}
+    - target: {fileID: 114256214450153768, guid: 68a8ac44cf1e9483e9eb0f7bb502efbb,
+        type: 2}
+      propertyPath: stageAnimator.Array.data[11]
+      value: 
+      objectReference: {fileID: 1932747019}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68a8ac44cf1e9483e9eb0f7bb502efbb, type: 2}
   m_IsPrefabAsset: 0

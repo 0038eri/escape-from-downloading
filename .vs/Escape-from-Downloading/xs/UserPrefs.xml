@@ -1,23 +1,12 @@
 ﻿<Properties StartupConfiguration="{48893F69-26C4-B4A9-0F1E-C8BE09297673}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/System/StageState.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Scene/MenuScn.cs">
     <Files>
-      <File FileName="Assets/Script/System/StageJudge.cs" Line="64" Column="1" />
+      <File FileName="Assets/Script/System/StageJudge.cs" Line="13" Column="1" />
       <File FileName="Assets/Script/Scene/StartScn.cs" Line="49" Column="29" />
       <File FileName="Assets/Script/Player/PlayerState.cs" Line="58" Column="61" />
       <File FileName="Assets/Script/System/StageState.cs" Line="30" Column="26" />
-      <File FileName="Assets/Script/Scene/Stage/Stage6Scn.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Assets/Script/Scene/Stage/Stage9Scn.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Assets/Script/Scene/Stage/Stage11Scn.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Assets/Script/Scene/Stage/Stage5Scn.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Assets/Script/Scene/Stage/Stage8Scn.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Assets/Script/Scene/Stage/Stage10Scn.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Assets/Script/Scene/Stage/Stage2Scn.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Assets/Script/Scene/Stage/Stage12Scn.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Assets/Script/Scene/Stage/Stage3Scn.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Assets/Script/Scene/Stage/Stage7Scn.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Assets/Script/Scene/Stage/Stage4Scn.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Assets/Script/Scene/Stage/Stage1Scn.cs" Line="23" Column="5" NotebookId="1" />
+      <File FileName="Assets/Script/Scene/MenuScn.cs" Line="29" Column="9" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
