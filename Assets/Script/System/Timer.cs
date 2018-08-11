@@ -51,11 +51,6 @@ public class Timer : MonoBehaviour
         }
     }
 
-    public void startUpdateTimer()
-    {
-        timerStop = false;
-    }
-
     // タイマーを開始
     public void startTimer()
     {

@@ -5,10 +5,12 @@ using UnityEngine;
 public class GameStartAnimator : MonoBehaviour {
 
     private Animator gameStartAnimator;
+    private GameObject playerManager;
 
     void Awake()
     {
         gameStartAnimator = GameObject.Find("GameStart").GetComponent<Animator>();
+        playerManager = GameObject.Find("PlayerManager");
     }
 
     public void gameStartAnimation()
@@ -20,5 +22,10 @@ public class GameStartAnimator : MonoBehaviour {
     {
         gameStartAnimator.enabled = false;
     }
+
+    public void startGame()
+    {
+        playerManager.SendMessage("isPlayingMethod");
+    } 
 
 }

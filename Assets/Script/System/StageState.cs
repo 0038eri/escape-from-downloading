@@ -5,8 +5,9 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class StageState : MonoBehaviour {
-
-    // ステージクリア判定
+    
+    private GameObject timerManager;
+    private GameObject systemUiManager;
 
     // ポーズ画面
     public GameObject pauseUi;
@@ -14,60 +15,28 @@ public class StageState : MonoBehaviour {
     public GameObject pauseButton;
 
     private void Awake()
-    {}
-
-    private void Start()
     {
-        //audiosources = gameObject.GetComponents<AudioSource>(); // オーディオソース取得
-        Debug.Log("isPlayingNowは現在ゲームプレイ中であるかの真偽を問うbool型の判定です。");
-        Debug.Log("timerStopは現在タイマーが作動中であるかを真偽するbool型の判定です。");
-    }
-
-    /* ステージナンバー */
-
-
-
-    /* ステージナンバー */
-
-
-    /* タイマー */
-
-    // リセットメソッド
-    public void resetMethod () {
-        //resetTimer(); // タイマー
-        GameObject.Find("PlayerManager").SendMessage("resetPlayerHp"); // HP
-        GameObject.Find("PlayerManager").SendMessage("resetGameJudge"); // ゲーム判定
-    }
-
-    /* タイマー */
-
-    /* UI */
-
-    // ポーズパネル非表示
-    void pauseUIFalse () {
-        
-        pauseUi.SetActive(false);
-        pauseButton.SetActive(true); // ポーズボタンを表示
+        timerManager = GameObject.Find("TimerManager");
+        systemUiManager = GameObject.Find("SystemUiManager");
     }
 
     // ゲームを再開する
     public void playGame () {
-        pauseUIFalse(); // ポーズパネルを非表示
-
+        systemUiManager.SendMessage("closePauseUi");
+        timerManager.SendMessage("startTimer");
     }
 
     // メニューに戻る
-    public void backMenuP () {
-        pauseUIFalse(); // ポーズパネルを非表示
+    public void backMenuS () {
+        timerManager.SendMessage("resetTimer");
+        systemUiManager.SendMessage("destroyPauseUi");
         SceneManager.LoadScene("Menu");
     }
 
     // ゲームをやめる
-    public void escapeGameP () {
-        pauseUIFalse(); // ポーズパネルを非表示
+    public void escapeGameS () {
+        timerManager.SendMessage("resetTimer");
         // アプリ終了
     }
 
-    /* UI */
-   
 }
