@@ -15,6 +15,7 @@ public class SystemSwitch : MonoBehaviour {
     private GameObject timerManager;
     private GameObject HpManager;
 
+    private GameObject playerUi;
     private GameObject gameStart;
 
     void Awake()
@@ -23,6 +24,7 @@ public class SystemSwitch : MonoBehaviour {
         playerState = GameObject.Find("PlayerManager");
         timerManager = GameObject.Find("TimerManager");
         HpManager = GameObject.Find("HpManager");
+        playerUi = GameObject.Find("PlayerCanvas");
         gameStart = GameObject.Find("GameStart");
     }
 
@@ -41,9 +43,10 @@ public class SystemSwitch : MonoBehaviour {
             case "Menu":
             case "Option":
             case "Ending":
-                player.SetActive(false);
+                //player.SetActive(false);
                 PlayerCam.SetActive(false);
                 SystemCam.SetActive(true);
+                gameStart.SetActive(false);
                 gameStart.SendMessage("notGameStartAnimation");
                 break;
             // ステージシーン
@@ -62,6 +65,7 @@ public class SystemSwitch : MonoBehaviour {
             case "Stage12":
             case "StageSample":
                 player.SetActive(true);
+                gameStart.SetActive(true);
                 player.SendMessage("playerStartPos");
                 PlayerCam.SetActive(true);
                 SystemCam.SetActive(false);

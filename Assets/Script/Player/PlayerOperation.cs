@@ -229,6 +229,11 @@ public class PlayerOperation : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
 
+        if (collision.gameObject.tag == "Goal")
+        {
+            playerManager.SendMessage("gameClearMethod");
+        }
+
         // エネミーに当たると      
         if (collision.gameObject.tag == "Enemy")
         {
@@ -249,15 +254,6 @@ public class PlayerOperation : MonoBehaviour
     private void OnCollisionExit(Collision collision)
     {
         isPlayerCol = false; // 地面と接していない
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        // ゴールしたら
-        if (other.gameObject.tag == "Goal")
-        {
-            playerManager.SendMessage("gameClearMethod");
-        }
     }
 
 }

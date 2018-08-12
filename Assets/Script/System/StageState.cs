@@ -22,22 +22,23 @@ public class StageState : MonoBehaviour {
 
     // ゲームを再開する
     public void playGame () {
+        Debug.Log("playGame");
         systemUiManager.SendMessage("closePauseUi");
         timerManager.SendMessage("startTimer");
     }
 
     // メニューに戻る
     public void backMenuS () {
+        Debug.Log("backMenuS");
         timerManager.SendMessage("resetTimer");
-        systemUiManager.SendMessage("destroyPlayerUi");
-        Debug.Log("さん");
         SceneManager.LoadScene("Menu");
     }
 
     // ゲームをやめる
     public void escapeGameS () {
+        Debug.Log("escapeGameS");
         timerManager.SendMessage("resetTimer");
-        // アプリ終了
+        SceneManager.LoadScene("Start");
     }
 
 }

@@ -258,8 +258,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerUi: {fileID: 0}
-  gameClearUi: {fileID: 0}
-  gameOverUi: {fileID: 0}
 --- !u!114 &114963507723954296
 MonoBehaviour:
   m_ObjectHideFlags: 1

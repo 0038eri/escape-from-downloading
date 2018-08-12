@@ -47,6 +47,7 @@ public class PlayerState : MonoBehaviour {
     // ゲーム終了
     private void gameFinishMethod()
     {
+        timerManager.SendMessage("stopTimer");
         player.SendMessage("cannotInput");
         player.SendMessage("stopRunning");
     }
@@ -57,7 +58,7 @@ public class PlayerState : MonoBehaviour {
         gameFinishMethod();
         stageJudgeManager.SendMessage("checkNowClearStage");
         gameModeManager.SendMessage("gameClear");
-        playerUiManager.SendMessage("displayClear");
+        systemUiManager.SendMessage("displayClear");
     }
 
     // ゲームオーバー
@@ -65,11 +66,12 @@ public class PlayerState : MonoBehaviour {
     {
         gameFinishMethod();
         gameModeManager.SendMessage("gameOver");
-        playerUiManager.SendMessage("displayOver");
+        systemUiManager.SendMessage("displayOver");
     }
 
     public void nextGame()
     {
+        Debug.Log("nextGame");
         stageCheckNumber = stageJudge.stageNumberCheck();
         switch (stageCheckNumber)
         {
@@ -123,20 +125,22 @@ public class PlayerState : MonoBehaviour {
 
     public void restartGame()
     {
-        
+        Debug.Log("restartGame");
     }
 
     public void backMenuP()
     {
+        Debug.Log("backMenuP");
         timerManager.SendMessage("resetTimer");
-        systemUiManager.SendMessage("closePauseUi");
         SceneManager.LoadScene("Menu");
     }
 
     public void escapeGameP()
     {
+        Debug.Log("escapeGameP");
         timerManager.SendMessage("resetTimer");
-        // アプリ終了 
+        systemUiManager.SendMessage("closePauseUi");
+        SceneManager.LoadScene("Start");
     }
 
 }

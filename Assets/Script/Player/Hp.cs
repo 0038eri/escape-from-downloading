@@ -8,8 +8,6 @@ public class Hp : MonoBehaviour {
 
     // プレイヤーHP
     private int playerHp;
-    // HPアップデート判定
-    private static bool updateHpStop = true;
     // プレイヤーHP表示テキスト
     public Text playerHpText;
     // HPバー
@@ -20,19 +18,6 @@ public class Hp : MonoBehaviour {
     private void Awake () {
         hpImage = GetComponent<Image>(); // カラー取得
 	}
-
-    void Update()
-    {
-        if(updateHpStop==false)
-        {
-            updatePlayerHp();
-        }
-    }
-
-    public void startUpdateHp()
-    {
-        updateHpStop = false;
-    }
 
     private void setupHp ()
     {

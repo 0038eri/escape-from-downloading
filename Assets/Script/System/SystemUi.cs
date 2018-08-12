@@ -4,36 +4,45 @@ using UnityEngine;
 
 public class SystemUi : MonoBehaviour {
 
-    private GameObject timerManager;
     private GameObject playerUiManager;
+    private PlayerUi playerUi;
+    private GameObject timerManager;
 
-    public GameObject pauseButton;
     public GameObject pauseUi;
+
+    public GameObject gameClearUi;
+    public GameObject gameOverUi;
 
     void Awake()
     {
-        timerManager = GameObject.Find("TimerManager");
         playerUiManager = GameObject.Find("PlayerUiManager");
+        playerUi = playerUiManager.GetComponent<PlayerUi>();
+        timerManager = GameObject.Find("TimerManager");
     }
 
     public void openPauseUi()
     {
         timerManager.SendMessage("stopTimer");
-        pauseButton.SetActive(false);
+        playerUi.closePlayerUi();
         pauseUi.SetActive(true);
     }
 
     public void closePauseUi()
     {
         pauseUi.SetActive(false);
-        pauseButton.SetActive(true);
+        playerUi.openPlayerUi();
     }
 
-    public void destroyPlayerUi()
+    public void displayClear()
     {
-        playerUiManager.SendMessage("closePlayerUi");
-        Debug.Log("に");
-        pauseButton.SetActive(false);
+        playerUi.closePlayerUi();
+        gameClearUi.SetActive(true);
+    }
+
+    public void displayOver()
+    {
+        playerUi.closePlayerUi();
+        gameOverUi.SetActive(true);
     }
 
 }

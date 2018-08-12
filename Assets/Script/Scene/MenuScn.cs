@@ -8,32 +8,75 @@ public class MenuScn : MonoBehaviour {
     private Color bgColor = new Color(0.0f / 255.0f, 113.0f / 255.0f, 188.0f / 255.0f, 255.0f / 255.0f);
     private Camera systemCam;
 
-    public Animator[] stageAnimator;
     private int stageJudgeNumber;
     private GameObject stageJudgeManager;
     private StageJudge stageJudge;
 
+    private Animator stageTrueAnimator;
+    private Animator stageFalseAnimator;
+
     void Awake()
     {
         systemCam = GameObject.Find("SystemCamera").GetComponent<Camera>();
+        stageJudgeManager = GameObject.Find("StageJudgeManager");
         stageJudge = stageJudgeManager.GetComponent<StageJudge>();
     }
 
     void Start()
     {
         systemCam.backgroundColor = bgColor;
+        stageJudgeNumber = stageJudge.stageNumberCheck();
     }
 
     void Update()
     {
-        
+        if(stageJudgeNumber>0 || stageJudgeNumber<13){
+            NowAnm();
+        }
     }
 
     void NowAnm()
     {
-        stageJudgeNumber = stageJudge.stageNumberCheck();
-        stageAnimator.enabled = false;
-        stageAnimator.[stageJudgeNumber - 1].enabled = true;
+        switch(stageJudgeNumber)
+        {
+            case 1:
+                stageTrueAnimator = GameObject.Find("Stage1").GetComponent<Animator>();
+                break;
+            case 2:
+                stageTrueAnimator = GameObject.Find("Stage2").GetComponent<Animator>();
+                break;
+            case 3:
+                stageTrueAnimator = GameObject.Find("Stage3").GetComponent<Animator>();
+                break;
+            case 4:
+                stageTrueAnimator = GameObject.Find("Stage4").GetComponent<Animator>();
+                break;
+            case 5:
+                stageTrueAnimator = GameObject.Find("Stage5").GetComponent<Animator>();
+                break;
+            case 6:
+                stageTrueAnimator = GameObject.Find("Stage6").GetComponent<Animator>();
+                break;
+            case 7:
+                stageTrueAnimator = GameObject.Find("Stage7").GetComponent<Animator>();
+                break;
+            case 8:
+                stageTrueAnimator = GameObject.Find("Stage8").GetComponent<Animator>();
+                break;
+            case 9:
+                stageTrueAnimator = GameObject.Find("Stage9").GetComponent<Animator>();
+                break;
+            case 10:
+                stageTrueAnimator = GameObject.Find("Stage10").GetComponent<Animator>();
+                break;
+            case 11:
+                stageTrueAnimator = GameObject.Find("Stage11").GetComponent<Animator>();
+                break;
+            case 12:
+                stageTrueAnimator = GameObject.Find("Stage12").GetComponent<Animator>();
+                break;
+        }
+        stageTrueAnimator.enabled = true;
     }
 
     // スタート画面に移動

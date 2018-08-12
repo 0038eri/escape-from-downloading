@@ -16,56 +16,39 @@ public class DevelopCommand : MonoBehaviour {
 
         /// ゲームクリア判定送信
         if(Input.GetKeyDown(KeyCode.C)){
-            Debug.Log("gameClear");
-            GameObject.Find("PlayerManager").SendMessage("gameClear");   
+            Debug.Log("gameClearMethod");
+            GameObject.Find("PlayerManager").SendMessage("gameClearMethod");   
         }
-
         /// ゲームオーバー判定送信
         if(Input.GetKeyDown(KeyCode.O)){
-            Debug.Log("gameOver");
-            GameObject.Find("PlayerManager").SendMessage("gameOver");   
+            Debug.Log("gameOverMethod");
+            GameObject.Find("PlayerManager").SendMessage("gameOverMethod");   
         }
-
-        /// ゲームポーズ判定送信
-        if(Input.GetKeyDown(KeyCode.P)){
-            Debug.Log("pause");
-            GameObject.Find("StageManager").SendMessage("pause");
-        }
-
         /// ゲームを再開する
-        if(Input.GetKeyDown(KeyCode.R)){
+        if(Input.GetKeyDown(KeyCode.P)){
             Debug.Log("playGame");
             GameObject.Find("StageManager").SendMessage("playGame");
         }
-
         /// 次のゲームに進む
         if(Input.GetKeyDown(KeyCode.N)){
             Debug.Log("nextGame");
             GameObject.Find("PlayerManager").SendMessage("nextGame");
         }
-
         /// もう一度遊ぶ
-        if(Input.GetKeyDown(KeyCode.M)){
-            Debug.Log("onemoreGame");
-            GameObject.Find("PlayerManager").SendMessage("onemoreGame");
+        if(Input.GetKeyDown(KeyCode.R)){
+            Debug.Log("restartGame");
+            GameObject.Find("PlayerManager").SendMessage("restartGame");
         }
-
         /// メニューに戻る
-        if(Input.GetKeyDown(KeyCode.B)){
-            Debug.Log("backMenuG");
-            GameObject.Find("PlayerManager").SendMessage("backMenuG");
+        if(Input.GetKeyDown(KeyCode.M)){
+            Debug.Log("backMenuP");
+            GameObject.Find("PlayerManager").SendMessage("backMenuP");
         }
-
         /// ゲームをやめる
-        if(Input.GetKeyDown(KeyCode.Escape)){
-            Debug.Log("escapeGameG");
-            GameObject.Find("PlayerManager").SendMessage("escapeGameG");
+        if(Input.GetKeyDown(KeyCode.E)){
+            Debug.Log("escapeGameP");
+            GameObject.Find("PlayerManager").SendMessage("escapeGameP");
         }
-
 	}
-
-    public void DebugConsole () {
-        Debug.Log("デバッグ");
-    }
 
 }
