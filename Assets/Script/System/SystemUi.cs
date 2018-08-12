@@ -45,4 +45,19 @@ public class SystemUi : MonoBehaviour {
         gameOverUi.SetActive(true);
     }
 
+    public void destroyPauseUi()
+    {
+        pauseUi.SetActive(false);
+    }
+
+    public void destroyClear()
+    {
+        gameClearUi.SetActive(false);
+    }
+
+    public void destroyOver()
+    {
+        gameOverUi.SetActive(false);
+    }
+
 }

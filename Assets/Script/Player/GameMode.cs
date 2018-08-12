@@ -7,6 +7,11 @@ public class GameMode : MonoBehaviour {
     // ゲーム判定
     private string gameMode;
 
+    public string sendMode()
+    {
+        return gameMode;
+    }
+
     public void beforeGame()
     {
         gameMode = "beforeGame";
@@ -25,6 +30,11 @@ public class GameMode : MonoBehaviour {
     public void gameOver()
     {
         gameMode = "gameOver";
+    }
+
+    public void systemScene()
+    {
+        gameMode = "systemScene";
     }
 
 }

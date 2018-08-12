@@ -5,7 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class StageState : MonoBehaviour {
-    
+
+    private GameObject gameModeManager;
     private GameObject timerManager;
     private GameObject systemUiManager;
 
@@ -16,28 +17,30 @@ public class StageState : MonoBehaviour {
 
     private void Awake()
     {
+        gameModeManager = GameObject.Find("GameModeManager");
         timerManager = GameObject.Find("TimerManager");
         systemUiManager = GameObject.Find("SystemUiManager");
     }
 
     // ゲームを再開する
     public void playGame () {
-        Debug.Log("playGame");
         systemUiManager.SendMessage("closePauseUi");
         timerManager.SendMessage("startTimer");
     }
 
     // メニューに戻る
     public void backMenuS () {
-        Debug.Log("backMenuS");
+        systemUiManager.SendMessage("destroyPauseUi");
         timerManager.SendMessage("resetTimer");
+        gameModeManager.SendMessage("systemScene");
         SceneManager.LoadScene("Menu");
     }
 
     // ゲームをやめる
     public void escapeGameS () {
-        Debug.Log("escapeGameS");
+        systemUiManager.SendMessage("destroyPauseUi");
         timerManager.SendMessage("resetTimer");
+        gameModeManager.SendMessage("systemScene");
         SceneManager.LoadScene("Start");
     }
 

@@ -8,12 +8,14 @@ public class PlayerState : MonoBehaviour {
     private GameObject player;
     private GameObject hpManager;
     private GameObject gameModeManager;
+    private GameMode gameMode;
     private GameObject playerUiManager;
     private GameObject timerManager;
     private GameObject stageJudgeManager;
     private StageJudge stageJudge;
     private GameObject systemUiManager;
 
+    private string gameModeCheck;
     private int stageCheckNumber;
 
     void Awake()
@@ -21,6 +23,7 @@ public class PlayerState : MonoBehaviour {
         player = GameObject.Find("Player");
         hpManager = GameObject.Find("HpManager");
         gameModeManager = GameObject.Find("GameModeManager");
+        gameMode = gameModeManager.GetComponent<GameMode>();
         playerUiManager = GameObject.Find("PlayerUiManager");
         timerManager = GameObject.Find("TimerManager");
         stageJudgeManager = GameObject.Find("StageJudgeManager");
@@ -39,9 +42,9 @@ public class PlayerState : MonoBehaviour {
 
     public void isPlayingMethod()
     {
-        gameModeManager.SendMessage("isPlaying");
         timerManager.SendMessage("startTimer");
         player.SendMessage("gameStartRun");
+        gameModeManager.SendMessage("isPlaying");
     }
 
     // ゲーム終了
@@ -57,21 +60,20 @@ public class PlayerState : MonoBehaviour {
     {
         gameFinishMethod();
         stageJudgeManager.SendMessage("checkNowClearStage");
-        gameModeManager.SendMessage("gameClear");
         systemUiManager.SendMessage("displayClear");
+        gameModeManager.SendMessage("gameClear");
     }
 
     // ゲームオーバー
     public void gameOverMethod()
     {
         gameFinishMethod();
-        gameModeManager.SendMessage("gameOver");
         systemUiManager.SendMessage("displayOver");
+        gameModeManager.SendMessage("gameOver");
     }
 
     public void nextGame()
     {
-        Debug.Log("nextGame");
         stageCheckNumber = stageJudge.stageNumberCheck();
         switch (stageCheckNumber)
         {
@@ -125,22 +127,35 @@ public class PlayerState : MonoBehaviour {
 
     public void restartGame()
     {
-        Debug.Log("restartGame");
     }
 
     public void backMenuP()
     {
-        Debug.Log("backMenuP");
+        destroyMode();
         timerManager.SendMessage("resetTimer");
+        gameModeManager.SendMessage("systemScene");
         SceneManager.LoadScene("Menu");
     }
 
     public void escapeGameP()
     {
-        Debug.Log("escapeGameP");
+        systemUiManager.SendMessage("destroyPauseUi");
         timerManager.SendMessage("resetTimer");
-        systemUiManager.SendMessage("closePauseUi");
+        gameModeManager.SendMessage("systemScene");
         SceneManager.LoadScene("Start");
+    }
+
+    void destroyMode()
+    {
+        destroyMode();
+        if (gameModeCheck == "gameClear")
+        {
+            systemUiManager.SendMessage("destroyClear");
+        }
+        else if (gameModeCheck == "gameOver")
+        {
+            systemUiManager.SendMessage("destroyOver");
+        }
     }
 
 }
