@@ -18,11 +18,11 @@ public class StartScn : MonoBehaviour
     {
         stageJudgeManager = GameObject.Find("StageJudgeManager");
         stageJudge = stageJudgeManager.GetComponent<StageJudge>();
-        systemCam = GameObject.Find("SystemCamera").GetComponent<Camera>();
     }
 
     private void Start()
     {
+        systemCam = GameObject.Find("SystemCamera").GetComponent<Camera>();
         systemCam.backgroundColor = bgColor;
     }
 

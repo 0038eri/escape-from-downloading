@@ -49,6 +49,10 @@ public class DevelopCommand : MonoBehaviour {
             Debug.Log("escapeGameP");
             GameObject.Find("PlayerManager").SendMessage("escapeGameP");
         }
+        if(Input.GetKeyDown(KeyCode.S)){
+            Debug.Log("start");
+            SceneManager.LoadScene("Start");
+        }
 	}
 
 }

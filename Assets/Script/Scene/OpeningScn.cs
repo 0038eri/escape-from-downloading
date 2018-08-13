@@ -17,12 +17,8 @@ public class OpeningScn : MonoBehaviour {
     // Player Camera
     private Camera systemCam;
 
-    void Awake()
-    {
-        systemCam = GameObject.Find("SystemCamera").GetComponent<Camera>();
-    }
-
     void Start(){
+        systemCam = GameObject.Find("SystemCamera").GetComponent<Camera>();
         systemCam.backgroundColor = bgColor;
         typeMessage();
     }
@@ -37,9 +33,9 @@ public class OpeningScn : MonoBehaviour {
     void typeMessage () {
         if(messageCheck==3){
             GameObject.Find("SkipObj").SendMessage("skipToStage1");
-        }else{
-        messeageText.text = message[messageCheck];
-        messageCheck++;
+        } else {
+            messeageText.text = message[messageCheck];
+            messageCheck++;
         }
     }
 

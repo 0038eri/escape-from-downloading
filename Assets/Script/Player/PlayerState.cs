@@ -59,7 +59,48 @@ public class PlayerState : MonoBehaviour {
     public void gameClearMethod()
     {
         gameFinishMethod();
-        stageJudgeManager.SendMessage("checkNowClearStage");
+        stageCheckNumber = stageJudge.stageNumberCheck();
+        switch(stageCheckNumber)
+        {
+            case 1:
+                GameObject.Find("Stage1Obj").SendMessage("clearOne");
+                break;
+            case 2:
+                GameObject.Find("Stage2Obj").SendMessage("clearTwo");
+                break;
+            case 3:
+                GameObject.Find("Stage3Obj").SendMessage("clearThree");
+                break;
+            case 4:
+                GameObject.Find("Stage4Obj").SendMessage("clearFour");
+                break;
+            case 5:
+                GameObject.Find("Stage5Obj").SendMessage("clearFive");
+                break;
+            case 6:
+                GameObject.Find("Stage6Obj").SendMessage("clearSix");
+                break;
+            case 7:
+                GameObject.Find("Stage7Obj").SendMessage("clearSeven");
+                break;
+            case 8:
+                GameObject.Find("Stage8Obj").SendMessage("clearEight");
+                break;
+            case 9:
+                GameObject.Find("Stage9Obj").SendMessage("clearSeven");
+                break;
+            case 10:
+                GameObject.Find("Stage10Obj").SendMessage("clearTen");
+                break;
+            case 11:
+                GameObject.Find("Stage11Obj").SendMessage("clearEleven");
+                break;
+            case 12:
+                GameObject.Find("Stage12Obj").SendMessage("clearTwelve");
+                break;
+            default:
+                break;
+        }
         systemUiManager.SendMessage("displayClear");
         gameModeManager.SendMessage("gameClear");
     }
@@ -74,55 +115,7 @@ public class PlayerState : MonoBehaviour {
 
     public void nextGame()
     {
-        stageCheckNumber = stageJudge.stageNumberCheck();
-        switch (stageCheckNumber)
-        {
-            case 0:
-                SceneManager.LoadScene("Opening"); // オープニング
-                stageJudgeManager.SendMessage("stageJudgeCount");
-                break;
-            case 1:
-                SceneManager.LoadScene("Stage1"); // ステージ1
-                break;
-            case 2:
-                SceneManager.LoadScene("Stage2"); // ステージ2
-                break;
-            case 3:
-                SceneManager.LoadScene("Stage3"); // ステージ3
-                break;
-            case 4:
-                SceneManager.LoadScene("Stage4"); // ステージ4
-                break;
-            case 5:
-                SceneManager.LoadScene("Stage5"); // ステージ5
-                break;
-            case 6:
-                SceneManager.LoadScene("Stage6"); // ステージ6
-                break;
-            case 7:
-                SceneManager.LoadScene("Stage7"); // ステージ7
-                break;
-            case 8:
-                SceneManager.LoadScene("Stage8"); // ステージ8
-                break;
-            case 9:
-                SceneManager.LoadScene("Stage9"); // ステージ9
-                break;
-            case 10:
-                SceneManager.LoadScene("Stage10"); // ステージ10
-                break;
-            case 11:
-                SceneManager.LoadScene("Stage11"); // ステージ11
-                break;
-            case 12:
-                SceneManager.LoadScene("Stage12"); // ステージ12
-                break;
-            case 13:
-                SceneManager.LoadScene("Menu"); // メニュー
-                break;
-            default:
-                break;
-        }
+        
     }
 
     public void restartGame()
@@ -139,6 +132,7 @@ public class PlayerState : MonoBehaviour {
 
     public void escapeGameP()
     {
+        destroyMode();
         systemUiManager.SendMessage("destroyPauseUi");
         timerManager.SendMessage("resetTimer");
         gameModeManager.SendMessage("systemScene");
@@ -147,7 +141,7 @@ public class PlayerState : MonoBehaviour {
 
     void destroyMode()
     {
-        destroyMode();
+        gameModeCheck = gameMode.sendMode();
         if (gameModeCheck == "gameClear")
         {
             systemUiManager.SendMessage("destroyClear");
