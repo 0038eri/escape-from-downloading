@@ -2,11 +2,11 @@
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/System/StageJudge.cs">
     <Files>
-      <File FileName="Assets/Script/Player/PlayerState.cs" Line="71" Column="20" />
-      <File FileName="Assets/Script/System/StageState.cs" Line="43" Column="52" />
-      <File FileName="Assets/Script/Player/PlayerUi.cs" Line="8" Column="11" NotebookId="1" />
-      <File FileName="Assets/Script/System/SystemUi.cs" Line="40" Column="6" NotebookId="1" />
-      <File FileName="Assets/Script/System/StageJudge.cs" Line="22" Column="6" NotebookId="1" />
+      <File FileName="Assets/Script/System/StageJudge.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/System/StageState.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Assets/Script/System/SystemUi.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Assets/Script/Player/PlayerState.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Assets/Script/Player/PlayerUi.cs" Line="1" Column="1" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
