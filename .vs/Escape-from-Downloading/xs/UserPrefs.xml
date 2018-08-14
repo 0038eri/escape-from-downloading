@@ -1,15 +1,10 @@
 ﻿<Properties StartupConfiguration="{48893F69-26C4-B4A9-0F1E-C8BE09297673}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Player/PlayerUi.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Player/PlayerState.cs">
     <Files>
-      <File FileName="Assets/Script/SystemSwitch.cs" Line="69" Column="50" />
-      <File FileName="Assets/Script/Player/PlayerState.cs" Line="115" Column="44" />
-      <File FileName="Assets/Script/Player/PlayerUi.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/System/StageState.cs" Line="28" Column="48" />
-      <File FileName="Assets/Script/System/SystemUi.cs" Line="31" Column="6" />
-      <File FileName="Assets/Script/Scene/Stage/Stage1Scn.cs" Line="21" Column="1" NotebookId="1" />
-      <File FileName="Assets/Script/Scene/Stage/Stage2Scn.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Assets/Script/Animation/GameStartAnimator.cs" Line="13" Column="46" NotebookId="1" />
+      <File FileName="Assets/Script/SystemSwitch.cs" Line="15" Column="34" />
+      <File FileName="Assets/Script/Player/PlayerState.cs" Line="40" Column="42" />
+      <File FileName="Assets/Script/Animation/GameStartAnimator.cs" Line="21" Column="1" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
