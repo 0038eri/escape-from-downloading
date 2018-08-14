@@ -34,8 +34,8 @@ public class PlayerState : MonoBehaviour {
     // ゲーム開始前
     public void beforeGameMethod()
     {
-        player.SendMessage("cannotInput");
-        player.SendMessage("stopRunning");
+        Debug.Log("beforeGameMethod();");
+        player.SendMessage("gamePauseStop");
         hpManager.SendMessage("setupHp");
         gameModeManager.SendMessage("beforeGame");
     }
@@ -51,17 +51,19 @@ public class PlayerState : MonoBehaviour {
     private void gameFinishMethod()
     {
         timerManager.SendMessage("stopTimer");
-        player.SendMessage("cannotInput");
-        player.SendMessage("stopRunning");
+        player.SendMessage("gamePauseStop");
+        stageCheckNumber = stageJudge.stageNumberCheck();
     }
 
     // ゲームクリア
     public void gameClearMethod()
     {
         gameFinishMethod();
-        stageCheckNumber = stageJudge.stageNumberCheck();
         switch(stageCheckNumber)
         {
+            case 0:
+                Debug.Log("エラー");
+                break;
             case 1:
                 GameObject.Find("Stage1Obj").SendMessage("clearOne");
                 break;

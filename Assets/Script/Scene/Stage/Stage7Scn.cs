@@ -13,7 +13,7 @@ public class Stage7Scn : MonoBehaviour {
     private void Awake()
     {
         gamestartCanvas = GameObject.Find("GameStartCanvas");
-        stageJudgeManager = GameObject.Find("stageJudgeManager");
+        stageJudgeManager = GameObject.Find("StageJudgeManager");
     }
 
     private void Start()

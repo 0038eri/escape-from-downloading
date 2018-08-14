@@ -24,6 +24,7 @@ public class StartScn : MonoBehaviour
     {
         systemCam = GameObject.Find("SystemCamera").GetComponent<Camera>();
         systemCam.backgroundColor = bgColor;
+        stageJudgeNumber = stageJudge.stageNumberCheck();
     }
 
     private void Update()
@@ -38,12 +39,11 @@ public class StartScn : MonoBehaviour
     // 移動するシーンを確認
     void toNextScene()
     {
-        stageJudgeNumber = stageJudge.stageNumberCheck();
         switch (stageJudgeNumber)
         {
             case 0:
-                SceneManager.LoadScene("Opening"); // オープニング
                 stageJudgeManager.SendMessage("stageJudgeCount");
+                SceneManager.LoadScene("Opening"); // オープニング
                 break;
             case 1:
                 SceneManager.LoadScene("Stage1"); // ステージ1

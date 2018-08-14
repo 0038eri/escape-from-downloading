@@ -13,6 +13,7 @@ public class Stage1Scn : MonoBehaviour {
     private void Awake()
     {
         gamestartCanvas = GameObject.Find("GameStartCanvas");
+        stageJudgeManager = GameObject.Find("StageJudgeManager");
     }
 
     private void Start()
@@ -22,7 +23,8 @@ public class Stage1Scn : MonoBehaviour {
 
     public void clearOne()
     {
-        if(stage1Clear==false){
+        if (stage1Clear == false)
+        {
             stageJudgeManager.SendMessage("stageJudgeCount");
             stage1Clear = true;
         }

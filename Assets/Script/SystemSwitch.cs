@@ -10,21 +10,18 @@ public class SystemSwitch : MonoBehaviour {
     public GameObject PlayerCam;
     public GameObject SystemCam;
 
-    private GameObject playerState;
-
+    private GameObject playerManager;
     private GameObject timerManager;
     private GameObject HpManager;
 
-    private GameObject playerUi;
     private GameObject gameStart;
 
     void Awake()
     {
         DontDestroyOnLoad(this);
-        playerState = GameObject.Find("PlayerManager");
+        playerManager = GameObject.Find("PlayerManager");
         timerManager = GameObject.Find("TimerManager");
         HpManager = GameObject.Find("HpManager");
-        playerUi = GameObject.Find("PlayerCanvas");
         gameStart = GameObject.Find("GameStart");
     }
 
@@ -43,11 +40,10 @@ public class SystemSwitch : MonoBehaviour {
             case "Menu":
             case "Option":
             case "Ending":
-                //player.SetActive(false);
+                player.SetActive(false);
                 PlayerCam.SetActive(false);
                 SystemCam.SetActive(true);
-                gameStart.SetActive(false);
-                gameStart.SendMessage("notGameStartAnimation");
+                //gameStart.SendMessage("notGameStartAnimation");
                 break;
             // ステージシーン
             //case "Prefab":
@@ -64,12 +60,11 @@ public class SystemSwitch : MonoBehaviour {
             case "Stage11":
             case "Stage12":
             case "StageSample":
+                playerManager.SendMessage("beforeGameMethod");
                 player.SetActive(true);
-                gameStart.SetActive(true);
                 player.SendMessage("playerStartPos");
                 PlayerCam.SetActive(true);
                 SystemCam.SetActive(false);
-                playerState.SendMessage("beforeGameMethod");
                 gameStart.SendMessage("gameStartAnimation");
                 break;
             default:
