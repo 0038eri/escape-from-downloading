@@ -14,6 +14,7 @@ public class PlayerState : MonoBehaviour {
     private GameObject stageJudgeManager;
     private StageJudge stageJudge;
     private GameObject systemUiManager;
+    private GameObject gameStart;
 
     private string gameModeCheck;
     private int stageCheckNumber;
@@ -29,12 +30,14 @@ public class PlayerState : MonoBehaviour {
         stageJudgeManager = GameObject.Find("StageJudgeManager");
         stageJudge = stageJudgeManager.GetComponent<StageJudge>();
         systemUiManager = GameObject.Find("SystemUiManager");
+        gameStart = GameObject.Find("GameStart");
     }
 
     // ゲーム開始前
     public void beforeGameMethod()
     {
         Debug.Log("beforeGameMethod();");
+        gameStart.SendMessage("gameStartAnimation");
         player.SendMessage("gamePauseStop");
         hpManager.SendMessage("setupHp");
         gameModeManager.SendMessage("beforeGame");
