@@ -14,6 +14,10 @@ public class StartScn : MonoBehaviour
     // System Camera
     private Camera systemCam;
 
+    private static bool gameStartUp = true;
+    private GameObject player;
+    private GameObject gameStart;
+
     private void Awake()
     {
         stageJudgeManager = GameObject.Find("StageJudgeManager");
@@ -24,6 +28,13 @@ public class StartScn : MonoBehaviour
     {
         systemCam = GameObject.Find("SystemCamera").GetComponent<Camera>();
         systemCam.backgroundColor = bgColor;
+        if (gameStartUp == true){
+            player = GameObject.Find("Player");
+            player.SetActive(false);
+            gameStart = GameObject.Find("GameStart");
+            gameStart.SetActive(false);
+            gameStartUp = false;
+        }
         stageJudgeNumber = stageJudge.stageNumberCheck();
     }
 

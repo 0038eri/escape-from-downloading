@@ -11,19 +11,19 @@ public class GameStartAnimator : MonoBehaviour {
 
     void Awake()
     {
+        
         gameStartAnimator = GetComponent<Animator>();
         playerManager = GameObject.Find("PlayerManager");
     }
 
     public void gameStartAnimation()
     {
-        gameStartAnimator.enabled = true;
-        //gameStartAnimator.Play("GameStart");
+        
     }
 
     public void notGameStartAnimation()
     {
-        gameStartAnimator.enabled = false;
+        
     }
 
     public void startGame()

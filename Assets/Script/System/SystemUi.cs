@@ -5,59 +5,67 @@ using UnityEngine;
 public class SystemUi : MonoBehaviour {
 
     private GameObject playerUiManager;
-    private PlayerUi playerUi;
     private GameObject timerManager;
 
-    public GameObject pauseUi;
+    private GameObject pauseUi;
+    private Canvas pauseCanvas;
 
-    public GameObject gameClearUi;
-    public GameObject gameOverUi;
+    private GameObject gameClearUi;
+    private Canvas clearCanvas;
+    private GameObject gameOverUi;
+    private Canvas overCanvas;
 
     void Awake()
     {
         playerUiManager = GameObject.Find("PlayerUiManager");
-        playerUi = playerUiManager.GetComponent<PlayerUi>();
         timerManager = GameObject.Find("TimerManager");
+
+        pauseUi = GameObject.Find("PauseCanvas");
+        pauseCanvas = pauseUi.GetComponent<Canvas>();
+        gameClearUi = GameObject.Find("ClearCanvas");
+        clearCanvas = gameClearUi.GetComponent<Canvas>();
+        gameOverUi = GameObject.Find("OverCanvas");
+        overCanvas = gameOverUi.GetComponent<Canvas>();
     }
 
     public void openPauseUi()
     {
         timerManager.SendMessage("stopTimer");
-        playerUi.closePlayerUi();
-        pauseUi.SetActive(true);
+        playerUiManager.SendMessage("falsePlayerUi");
+        pauseCanvas.enabled = true;
     }
 
     public void closePauseUi()
     {
-        pauseUi.SetActive(false);
-        playerUi.openPlayerUi();
+        pauseCanvas.enabled = false;
+        playerUiManager.SendMessage("truePlayerUi");
     }
 
     public void displayClear()
     {
-        playerUi.closePlayerUi();
-        gameClearUi.SetActive(true);
+        playerUiManager.SendMessage("falsePlayerUi");
+        clearCanvas.enabled = true;
     }
 
     public void displayOver()
     {
-        playerUi.closePlayerUi();
-        gameOverUi.SetActive(true);
+        playerUiManager.SendMessage("falsePlayerUi");
+        overCanvas.enabled = true;
     }
 
     public void destroyPauseUi()
     {
-        pauseUi.SetActive(false);
+        pauseCanvas.enabled = false;
     }
 
     public void destroyClear()
     {
-        gameClearUi.SetActive(false);
+        clearCanvas.enabled = false;
     }
 
     public void destroyOver()
     {
-        gameOverUi.SetActive(false);
+        overCanvas.enabled = false;
     }
 
 }

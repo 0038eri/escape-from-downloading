@@ -5,16 +5,23 @@ using UnityEngine.UI;
 
 public class PlayerUi : MonoBehaviour {
 
-    public GameObject playerUi;
+    private GameObject playerCanvas;
+    private Canvas playerUiCanvas;
 
-    public void openPlayerUi()
+    private void Awake()
     {
-        playerUi.SetActive(true);
+        playerCanvas = GameObject.Find("PlayerCanvas");
+        playerUiCanvas = playerCanvas.GetComponent<Canvas>();
     }
 
-    public void closePlayerUi()
+    public void truePlayerUi()
     {
-        playerUi.SetActive(false);
+        playerUiCanvas.enabled = true;
+    }
+
+    public void falsePlayerUi()
+    {
+        playerUiCanvas.enabled = false;
     }
 
 }

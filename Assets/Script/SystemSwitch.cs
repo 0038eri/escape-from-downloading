@@ -11,6 +11,7 @@ public class SystemSwitch : MonoBehaviour {
     public GameObject SystemCam;
 
     private GameObject playerManager;
+    private GameObject playerUiManager;
     private GameObject timerManager;
     private GameObject HpManager;
 
@@ -20,6 +21,7 @@ public class SystemSwitch : MonoBehaviour {
     {
         DontDestroyOnLoad(this);
         playerManager = GameObject.Find("PlayerManager");
+        playerUiManager = GameObject.Find("PlayerUiManager");
         timerManager = GameObject.Find("TimerManager");
         HpManager = GameObject.Find("HpManager");
         gameStart = GameObject.Find("GameStart");
@@ -61,6 +63,7 @@ public class SystemSwitch : MonoBehaviour {
             case "Stage12":
             case "StageSample":
                 gameStart.SetActive(true);
+                playerUiManager.SendMessage("truePlayerUi");
                 playerManager.SendMessage("beforeGameMethod");
                 player.SetActive(true);
                 player.SendMessage("playerStartPos");

@@ -1872,7 +1872,32 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1357985887114544, guid: 3d375da8280f647398ce7f9cc81120a2, type: 2}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 223794517679034102, guid: 3d375da8280f647398ce7f9cc81120a2,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 223794517679034102, guid: 3d375da8280f647398ce7f9cc81120a2,
+        type: 2}
+      propertyPath: m_PixelPerfect
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 225000875902868940, guid: 3d375da8280f647398ce7f9cc81120a2,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114171668515784214, guid: 3d375da8280f647398ce7f9cc81120a2,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114248501086963342, guid: 3d375da8280f647398ce7f9cc81120a2,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d375da8280f647398ce7f9cc81120a2, type: 2}
