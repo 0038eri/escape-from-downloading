@@ -350,6 +350,7 @@ GameObject:
   - component: {fileID: 1224659197}
   - component: {fileID: 1224659196}
   - component: {fileID: 1224659195}
+  - component: {fileID: 1224659199}
   - component: {fileID: 1224659198}
   m_Layer: 5
   m_Name: Text
@@ -445,6 +446,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27043db0d7798450eba0929d3b33804b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!111 &1224659199
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1224659193}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 084abb02891d649ec96e06a735a5a570, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1001 &1390269824
 Prefab:
   m_ObjectHideFlags: 0
