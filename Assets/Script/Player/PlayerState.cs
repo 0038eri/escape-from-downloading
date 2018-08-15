@@ -14,7 +14,6 @@ public class PlayerState : MonoBehaviour {
     private GameObject stageJudgeManager;
     private StageJudge stageJudge;
     private GameObject systemUiManager;
-    private GameObject gameStart;
 
     private string gameModeCheck;
     private int stageCheckNumber;
@@ -30,14 +29,12 @@ public class PlayerState : MonoBehaviour {
         stageJudgeManager = GameObject.Find("StageJudgeManager");
         stageJudge = stageJudgeManager.GetComponent<StageJudge>();
         systemUiManager = GameObject.Find("SystemUiManager");
-        gameStart = GameObject.Find("GameStart");
     }
 
     // ゲーム開始前
     public void beforeGameMethod()
     {
         Debug.Log("beforeGameMethod();");
-        gameStart.SendMessage("gameStartAnimation");
         player.SendMessage("gamePauseStop");
         hpManager.SendMessage("setupHp");
         gameModeManager.SendMessage("beforeGame");
@@ -62,7 +59,9 @@ public class PlayerState : MonoBehaviour {
     public void gameClearMethod()
     {
         gameFinishMethod();
-        switch(stageCheckNumber)
+        playerUiManager.SendMessage("falsePlayerUi");
+        systemUiManager.SendMessage("displayClear");
+        switch (stageCheckNumber)
         {
             case 0:
                 Debug.Log("エラー");
@@ -106,7 +105,6 @@ public class PlayerState : MonoBehaviour {
             default:
                 break;
         }
-        systemUiManager.SendMessage("displayClear");
         gameModeManager.SendMessage("gameClear");
     }
 
@@ -114,6 +112,7 @@ public class PlayerState : MonoBehaviour {
     public void gameOverMethod()
     {
         gameFinishMethod();
+        playerUiManager.SendMessage("falsePlayerUi");
         systemUiManager.SendMessage("displayOver");
         gameModeManager.SendMessage("gameOver");
     }
@@ -138,7 +137,6 @@ public class PlayerState : MonoBehaviour {
     public void escapeGameP()
     {
         destroyMode();
-        systemUiManager.SendMessage("destroyPauseUi");
         timerManager.SendMessage("resetTimer");
         gameModeManager.SendMessage("systemScene");
         SceneManager.LoadScene("Start");

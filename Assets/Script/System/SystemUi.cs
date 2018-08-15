@@ -43,13 +43,11 @@ public class SystemUi : MonoBehaviour {
 
     public void displayClear()
     {
-        playerUiManager.SendMessage("falsePlayerUi");
         clearCanvas.enabled = true;
     }
 
     public void displayOver()
     {
-        playerUiManager.SendMessage("falsePlayerUi");
         overCanvas.enabled = true;
     }
 

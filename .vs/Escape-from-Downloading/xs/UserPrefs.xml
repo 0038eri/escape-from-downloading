@@ -2,12 +2,14 @@
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Animation/GameStartAnimator.cs">
     <Files>
-      <File FileName="Assets/Script/SystemSwitch.cs" Line="65" Column="23" />
-      <File FileName="Assets/Script/Player/PlayerState.cs" Line="49" Column="44" />
-      <File FileName="Assets/Script/Animation/GameStartAnimator.cs" Line="26" Column="9" />
-      <File FileName="Assets/Script/Player/PlayerUi.cs" Line="24" Column="40" NotebookId="1" />
-      <File FileName="Assets/Script/System/SystemUi.cs" Line="68" Column="36" NotebookId="1" />
-      <File FileName="Assets/Script/Scene/StartScn.cs" Line="35" Column="40" NotebookId="1" />
+      <File FileName="Assets/Script/SystemSwitch.cs" Line="18" Column="34" />
+      <File FileName="Assets/Script/Player/PlayerState.cs" Line="31" Column="62" />
+      <File FileName="Assets/Script/Scene/StartScn.cs" Line="19" Column="34" />
+      <File FileName="Assets/Script/Player/PlayerOperation.cs" Line="240" Column="45" />
+      <File FileName="Assets/Script/Player/PlayerUi.cs" Line="25" Column="6" NotebookId="1" />
+      <File FileName="Assets/Script/System/SystemUi.cs" Line="16" Column="31" NotebookId="1" />
+      <File FileName="Assets/Script/Animation/GameStartAnimator.cs" Line="19" Column="18" NotebookId="1" />
+      <File FileName="Assets/Script/Animation/TapToStartAnimator.cs" Line="18" Column="68" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

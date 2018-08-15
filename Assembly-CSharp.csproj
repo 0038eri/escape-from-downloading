@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\Animation\GameStartAnimator.cs" />
+    <Compile Include="Assets\Script\Animation\TapToStartAnimator.cs" />
     <Compile Include="Assets\Script\Object\CoinSc.cs" />
     <Compile Include="Assets\Script\Object\EnemySc.cs" />
     <Compile Include="Assets\Script\Player\GameMode.cs" />
