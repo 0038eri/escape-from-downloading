@@ -17,37 +17,37 @@ public class DevelopCommand : MonoBehaviour {
         /// ゲームクリア判定送信
         if(Input.GetKeyDown(KeyCode.C)){
             Debug.Log("gameClearMethod");
-            GameObject.Find("PlayerManager").SendMessage("gameClearMethod");   
+            PlayerStateManager.Instance.gameClearMethod();
         }
         /// ゲームオーバー判定送信
         if(Input.GetKeyDown(KeyCode.O)){
             Debug.Log("gameOverMethod");
-            GameObject.Find("PlayerManager").SendMessage("gameOverMethod");   
+            PlayerStateManager.Instance.gameOverMethod();
         }
         /// ゲームを再開する
         if(Input.GetKeyDown(KeyCode.P)){
             Debug.Log("playGame");
-            GameObject.Find("StageManager").SendMessage("playGame");
+            StageStateManager.Instance.playGame();
         }
         /// 次のゲームに進む
         if(Input.GetKeyDown(KeyCode.N)){
             Debug.Log("nextGame");
-            GameObject.Find("PlayerManager").SendMessage("nextGame");
+            PlayerStateManager.Instance.nextGame();
         }
         /// もう一度遊ぶ
         if(Input.GetKeyDown(KeyCode.R)){
             Debug.Log("restartGame");
-            GameObject.Find("PlayerManager").SendMessage("restartGame");
+            PlayerStateManager.Instance.restartGame();
         }
         /// メニューに戻る
         if(Input.GetKeyDown(KeyCode.M)){
             Debug.Log("backMenuP");
-            GameObject.Find("PlayerManager").SendMessage("backMenuP");
+            PlayerStateManager.Instance.backMenuP();
         }
         /// ゲームをやめる
         if(Input.GetKeyDown(KeyCode.E)){
             Debug.Log("escapeGameP");
-            GameObject.Find("PlayerManager").SendMessage("escapeGameP");
+            PlayerStateManager.Instance.escapeGameP();
         }
         if(Input.GetKeyDown(KeyCode.S)){
             Debug.Log("start");

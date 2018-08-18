@@ -5,17 +5,15 @@ using UnityEngine;
 public class TapToStartAnimator : MonoBehaviour {
 
     private Animator thisAnimator;
-    private AnimatorStateInfo thisAnimatorState;
 
     private void Awake()
     {
         thisAnimator = GetComponent<Animator>();
-        thisAnimatorState = thisAnimator.GetCurrentAnimatorStateInfo(0);
     }
 
-    private void Start()
+    public void animatorBool()
     {
-        thisAnimator.Play(thisAnimatorState.fullPathHash, 0, 0.0f); 
+        thisAnimator.SetBool("tapToStart", false);
     }
 
 }

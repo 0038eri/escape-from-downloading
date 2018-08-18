@@ -12,14 +12,7 @@ public class OpeningScn : MonoBehaviour {
     // メッセージ格納変数
     private string[] message = { "こんにちは", "これはテストです", "スキップしてください" };
 
-    // スタートシーン Background Color
-    private Color bgColor = new Color(0.0f / 255.0f, 188.0f / 255.0f, 90.0f / 255.0f, 255.0f / 255.0f);
-    // Player Camera
-    private Camera systemCam;
-
     void Start(){
-        systemCam = GameObject.Find("SystemCamera").GetComponent<Camera>();
-        systemCam.backgroundColor = bgColor;
         typeMessage();
     }
 

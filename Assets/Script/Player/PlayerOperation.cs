@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerOperation : MonoBehaviour
+public class PlayerOperation : SingletonMonoBehaviour<PlayerOperation>
 {
 
     // プレイヤー座標
@@ -32,22 +32,6 @@ public class PlayerOperation : MonoBehaviour
 
     // スライド変更不可能判定
     private bool canNotSlide = false;
-
-    private GameObject hpManager;
-    private GameObject moneyManager;
-    private GameObject playerManager;
-
-    void Awake()
-    {
-        hpManager = GameObject.Find("HpManager");
-        moneyManager = GameObject.Find("MoneyManager");
-        playerManager = GameObject.Find("PlayerManager");
-    }
-
-    private void Start()
-    {
-        SceneManager.sceneLoaded += playerStartPos; // シーン呼び出しごとに毎回プレイヤーを中央に
-    }
 
     void Update()
     {
@@ -139,7 +123,7 @@ public class PlayerOperation : MonoBehaviour
     }
 
     // プレイヤー初期位置
-    public void playerStartPos(Scene scene, LoadSceneMode sceneMode)
+    public void playerStartPos()
     {
         Vector3 playerStartTransformPos;
         playerStartTransformPos = new Vector3(0.0f, 1.0f, 0.0f);
@@ -227,7 +211,7 @@ public class PlayerOperation : MonoBehaviour
         // オブジェクト
         if (collision.gameObject.tag == "Objects")
         {
-            playerManager.SendMessage("gameOverMethod");
+            PlayerStateManager.Instance.gameOverMethod();
         }
 
     }
@@ -237,21 +221,21 @@ public class PlayerOperation : MonoBehaviour
 
         if (collision.gameObject.tag == "Goal")
         {
-            playerManager.SendMessage("gameClearMethod");
+            PlayerStateManager.Instance.gameClearMethod();
         }
 
         // エネミーに当たると      
         if (collision.gameObject.tag == "Enemy")
         {
-            hpManager.SendMessage("playerHpEnemy");
-            hpManager.SendMessage("updatePlayerHp");
+            HpManager.Instance.playerHpEnemy();
+            HpManager.Instance.updatePlayerHp();
             Destroy(gameObject); // エネミー消滅
         }
 
         // コインに当たると
         if (collision.gameObject.tag == "Coin")
         {
-            moneyManager.SendMessage("getCoin"); // 所持金1増やす
+            MoneyManager.Instance.getCoin();
             Destroy(gameObject); // コイン消滅
         }
 

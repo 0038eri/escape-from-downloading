@@ -65,13 +65,13 @@
     <Compile Include="Assets\Script\Animation\TapToStartAnimator.cs" />
     <Compile Include="Assets\Script\Object\CoinSc.cs" />
     <Compile Include="Assets\Script\Object\EnemySc.cs" />
-    <Compile Include="Assets\Script\Player\GameMode.cs" />
+    <Compile Include="Assets\Script\Player\GameModeManager.cs" />
     <Compile Include="Assets\Script\Player\GameParent.cs" />
-    <Compile Include="Assets\Script\Player\Hp.cs" />
+    <Compile Include="Assets\Script\Player\HpManager.cs" />
     <Compile Include="Assets\Script\Player\PlayerOperation.cs" />
-    <Compile Include="Assets\Script\Player\PlayerState.cs" />
-    <Compile Include="Assets\Script\Player\PlayerUi.cs" />
-    <Compile Include="Assets\Script\Player\User.cs" />
+    <Compile Include="Assets\Script\Player\PlayerStateManager.cs" />
+    <Compile Include="Assets\Script\Player\PlayerUiManager.cs" />
+    <Compile Include="Assets\Script\Player\UserManager.cs" />
     <Compile Include="Assets\Script\Scene\EndingScn.cs" />
     <Compile Include="Assets\Script\Scene\MenuScn.cs" />
     <Compile Include="Assets\Script\Scene\OpeningScn.cs" />
@@ -92,14 +92,15 @@
     <Compile Include="Assets\Script\Scene\Stage\Stage8Scn.cs" />
     <Compile Include="Assets\Script\Scene\Stage\Stage9Scn.cs" />
     <Compile Include="Assets\Script\Scene\StartScn.cs" />
+    <Compile Include="Assets\Script\SingletonMonobehaviour.cs" />
     <Compile Include="Assets\Script\System\Command\DevelopCommand.cs" />
-    <Compile Include="Assets\Script\System\Money.cs" />
-    <Compile Include="Assets\Script\System\StageJudge.cs" />
-    <Compile Include="Assets\Script\System\StageState.cs" />
+    <Compile Include="Assets\Script\System\MoneyManager.cs" />
+    <Compile Include="Assets\Script\System\StageJudgeManager.cs" />
+    <Compile Include="Assets\Script\System\StageStateManager.cs" />
     <Compile Include="Assets\Script\System\SystemParent.cs" />
-    <Compile Include="Assets\Script\System\SystemUi.cs" />
-    <Compile Include="Assets\Script\System\Timer.cs" />
-    <Compile Include="Assets\Script\SystemSwitch.cs" />
+    <Compile Include="Assets\Script\System\SystemUiManager.cs" />
+    <Compile Include="Assets\Script\System\TimerManager.cs" />
+    <Compile Include="Assets\Script\SystemSwitchManager.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>/Users/eririn/github/escape-from-downloading/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

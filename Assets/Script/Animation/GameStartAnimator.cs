@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameStartAnimator : MonoBehaviour {
+public class GameStartAnimator : SingletonMonoBehaviour<GameStartAnimator> {
 
     private Animator gameStartAnimator;
-    private GameObject playerManager;
 
     private void Awake()
     {
         gameStartAnimator = GetComponent<Animator>();
-        playerManager = GameObject.Find("PlayerManager");
     }
 
     public void startGameAnimation()
@@ -25,7 +23,7 @@ public class GameStartAnimator : MonoBehaviour {
 
     public void startGame()
     {
-        playerManager.SendMessage("isPlayingMethod");
+        PlayerStateManager.Instance.isPlayingMethod();
     } 
 
 }

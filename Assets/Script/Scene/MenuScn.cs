@@ -10,22 +10,19 @@ public class MenuScn : MonoBehaviour {
 
     private int stageJudgeNumber;
     private GameObject stageJudgeManager;
-    private StageJudge stageJudge;
 
     private Animator stageTrueAnimator;
     private Animator stageFalseAnimator;
 
     void Awake()
     {
-        stageJudgeManager = GameObject.Find("StageJudgeManager");
-        stageJudge = stageJudgeManager.GetComponent<StageJudge>();
     }
 
     void Start()
     {
         systemCam = GameObject.Find("SystemCamera").GetComponent<Camera>();
         systemCam.backgroundColor = bgColor;
-        stageJudgeNumber = stageJudge.stageNumberCheck();
+        stageJudgeNumber = StageJudgeManager.Instance.stageNumberCheck();
         NowAnm();
     }
 
@@ -36,7 +33,6 @@ public class MenuScn : MonoBehaviour {
 
     void NowAnm()
     {
-        Debug.Log("NowAnm();");
         if (stageJudgeNumber > 0 || stageJudgeNumber < 13)
         {
             switch (stageJudgeNumber)

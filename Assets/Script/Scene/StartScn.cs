@@ -5,37 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class StartScn : MonoBehaviour
 {
-    private GameObject stageJudgeManager;
-    private StageJudge stageJudge;
     private int stageJudgeNumber = 0;
-
-    // スタートシーン Background Color
-    private Color bgColor = new Color(0.0f / 255.0f, 113.0f / 255.0f, 188.0f / 255.0f, 255.0f / 255.0f);
-    // System Camera
-    private Camera systemCam;
-
-    private static bool gameStartUp = true;
-    private GameObject player;
-    private GameObject gameStart;
-
-    private void Awake()
-    {
-        stageJudgeManager = GameObject.Find("StageJudgeManager");
-        stageJudge = stageJudgeManager.GetComponent<StageJudge>();
-    }
 
     private void Start()
     {
-        systemCam = GameObject.Find("SystemCamera").GetComponent<Camera>();
-        systemCam.backgroundColor = bgColor;
-        if (gameStartUp == true){
-            player = GameObject.Find("Player");
-            player.SetActive(false);
-            gameStart = GameObject.Find("GameStart");
-            gameStart.SetActive(false);
-            gameStartUp = false;
-        }
-        stageJudgeNumber = stageJudge.stageNumberCheck();
+        stageJudgeNumber = StageJudgeManager.Instance.stageNumberCheck();
     }
 
     private void Update()
@@ -53,7 +27,7 @@ public class StartScn : MonoBehaviour
         switch (stageJudgeNumber)
         {
             case 0:
-                stageJudgeManager.SendMessage("stageJudgeCount");
+                StageJudgeManager.Instance.stageJudgeCount();
                 SceneManager.LoadScene("Opening"); // オープニング
                 break;
             case 1:

@@ -1,31 +1,13 @@
 ﻿<Properties StartupConfiguration="{48893F69-26C4-B4A9-0F1E-C8BE09297673}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Player/PlayerState.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Player/PlayerUiManager.cs">
     <Files>
-      <File FileName="Assets/Script/Player/PlayerState.cs" Line="35" Column="28" />
-      <File FileName="Assets/Script/Scene/StartScn.cs" Line="16" Column="5" />
-      <File FileName="Assets/Script/Animation/GameStartAnimator.cs" Line="23" Column="51" />
-      <File FileName="Assets/Script/Player/PlayerUi.cs" Line="6" Column="40" NotebookId="1" />
-      <File FileName="Assets/Script/System/SystemUi.cs" Line="39" Column="6" NotebookId="1" />
-      <File FileName="Assets/Script/SystemSwitch.cs" Line="72" Column="34" NotebookId="1" />
-      <File FileName="Assets/Script/Player/PlayerOperation.cs" Line="111" Column="8" NotebookId="1" />
-      <File FileName="Assets/Script/Animation/TapToStartAnimator.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Assets/Script/Player/Hp.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Assets/Script/Player/GameMode.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Assets/Script/Object/CoinSc.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Assets/Script/System/Money.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Assets/Script/System/StageState.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Assets/Script/Scene/EndingScn.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Assets/Script/Object/EnemySc.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Assets/Script/Scene/PrefabScn.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Assets/Script/Player/User.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Assets/Script/Player/GameParent.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Assets/Script/System/Timer.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Assets/Script/System/StageJudge.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Assets/Script/Scene/OpeningScn.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Assets/Script/System/SystemParent.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Assets/Script/Scene/MenuScn.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Assets/Script/Scene/OptionScn.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Assets/Script/Animation/TapToStartAnimator.cs" Line="16" Column="51" />
+      <File FileName="Assets/Script/Scene/StartScn.cs" Line="10" Column="23" />
+      <File FileName="Assets/Script/Scene/OpeningScn.cs" Line="28" Column="32" />
+      <File FileName="Assets/Script/Player/PlayerUiManager.cs" Line="14" Column="62" NotebookId="1" />
+      <File FileName="Assets/Script/Animation/GameStartAnimator.cs" Line="26" Column="18" NotebookId="1" />
+      <File FileName="Assets/Script/Player/PlayerStateManager.cs" Line="22" Column="31" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
