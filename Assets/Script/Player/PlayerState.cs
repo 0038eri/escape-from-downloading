@@ -35,9 +35,9 @@ public class PlayerState : MonoBehaviour {
     public void beforeGameMethod()
     {
         Debug.Log("beforeGameMethod();");
-        player.SendMessage("gamePauseStop");
         hpManager.SendMessage("setupHp");
         gameModeManager.SendMessage("beforeGame");
+        player.SendMessage("gamePauseStop");
     }
 
     public void isPlayingMethod()

@@ -36,6 +36,7 @@ public class SystemSwitch : MonoBehaviour {
 
     void sceneSwitch(Scene scene, LoadSceneMode sceneMode)
     {
+        Debug.Log(scene.name);
         switch (scene.name)
         {
             // システムシーン
@@ -48,6 +49,7 @@ public class SystemSwitch : MonoBehaviour {
                 PlayerCam.SetActive(false);
                 SystemCam.SetActive(true);
                 gameStart.SetActive(false);
+                gameStart.SendMessage("readyStartAnimation");
                 break;
             // ステージシーン
             //case "Prefab":
@@ -65,6 +67,7 @@ public class SystemSwitch : MonoBehaviour {
             case "Stage12":
             case "StageSample":
                 gameStart.SetActive(true);
+                gameStart.SendMessage("startGameAnimation");
                 playerUiManager.SendMessage("truePlayerUi");
                 playerManager.SendMessage("beforeGameMethod");
                 player.SetActive(true);

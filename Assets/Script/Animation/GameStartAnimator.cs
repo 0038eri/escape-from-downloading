@@ -10,6 +10,7 @@ public class GameStartAnimator : MonoBehaviour {
     private void Awake()
     {
         gameStartAnimator = GetComponent<Animator>();
+        playerManager = GameObject.Find("PlayerManager");
     }
 
     public void startGameAnimation()
