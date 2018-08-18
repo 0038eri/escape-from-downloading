@@ -16,6 +16,7 @@ public class SystemSwitch : MonoBehaviour {
     private GameObject HpManager;
 
     private GameObject gameStart;
+    private Animator gameStartAnimator;
 
     void Awake()
     {
@@ -25,6 +26,7 @@ public class SystemSwitch : MonoBehaviour {
         timerManager = GameObject.Find("TimerManager");
         HpManager = GameObject.Find("HpManager");
         gameStart = GameObject.Find("GameStart");
+        gameStartAnimator = gameStart.GetComponent<Animator>();
     }
 
     void Start()

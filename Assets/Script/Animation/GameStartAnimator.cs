@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class GameStartAnimator : MonoBehaviour {
 
-    private GameObject playerManager;
     private Animator gameStartAnimator;
-    private AnimatorStateInfo startState;
+    private GameObject playerManager;
 
-    void Awake()
+    private void Awake()
     {
-        playerManager = GameObject.Find("PlayerManager");
         gameStartAnimator = GetComponent<Animator>();
     }
 
-    private void OnEnable()
+    public void startGameAnimation()
     {
-        startState = gameStartAnimator.GetCurrentAnimatorStateInfo(0);
-        gameStartAnimator.Play(startState.fullPathHash, 0, 0.0f);
+        gameStartAnimator.SetBool("gameStart", true);
+    }
+
+    public void readyStartAnimation()
+    {
+        gameStartAnimator.SetBool("gameStart", false);
     }
 
     public void startGame()
