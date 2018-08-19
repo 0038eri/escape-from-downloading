@@ -1,17 +1,17 @@
 ﻿<Properties StartupConfiguration="{48893F69-26C4-B4A9-0F1E-C8BE09297673}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/StageParent/SystemUiManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Animation/GameStartAnimator.cs">
     <Files>
-      <File FileName="Assets/Script/Scene/Stage/StageScn.cs" Line="7" Column="23" />
+      <File FileName="Assets/Script/Scene/Stage/StageScn.cs" Line="10" Column="59" />
       <File FileName="Assets/Script/PlayerParent/StageJudgeManager.cs" Line="4" Column="35" />
-      <File FileName="Assets/Script/PlayerParent/PlayerStateManager.cs" Line="44" Column="21" />
-      <File FileName="Assets/Script/StageParent/SystemUiManager.cs" Line="18" Column="29" />
+      <File FileName="Assets/Script/PlayerParent/PlayerStateManager.cs" Line="34" Column="51" />
+      <File FileName="Assets/Script/StageParent/SystemUiManager.cs" Line="23" Column="25" />
       <File FileName="Assets/Script/Scene/MenuScn.cs" Line="58" Column="64" NotebookId="1" />
       <File FileName="Assets/Script/Scene/StartScn.cs" Line="19" Column="58" NotebookId="1" />
       <File FileName="Assets/Script/PlayerParent/GameModeManager.cs" Line="1" Column="1" NotebookId="1" />
       <File FileName="Assets/Script/StageParent/HpManager.cs" Line="20" Column="48" NotebookId="1" />
-      <File FileName="Assets/Script/Animation/GameStartAnimator.cs" Line="31" Column="47" NotebookId="1" />
-      <File FileName="Assets/Script/StageParent/PlayerUiManager.cs" Line="34" Column="6" NotebookId="1" />
+      <File FileName="Assets/Script/Animation/GameStartAnimator.cs" Line="21" Column="33" NotebookId="1" />
+      <File FileName="Assets/Script/StageParent/PlayerUiManager.cs" Line="35" Column="44" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
