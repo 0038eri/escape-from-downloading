@@ -28,7 +28,7 @@ public class GameStartAnimator : SingletonMonoBehaviour<GameStartAnimator> {
 
     public void playStartAnimation()
     {
-        gameStartAnimator.Play("GameStart");
+        //gameStartAnimator.Play("GameStart");
     }
 
 }
