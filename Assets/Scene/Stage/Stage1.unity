@@ -197,6 +197,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 354296800}
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!225 &354296807 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 225000875902868940, guid: 3d375da8280f647398ce7f9cc81120a2,
+    type: 2}
+  m_PrefabInternal: {fileID: 354296800}
 --- !u!114 &539266534 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114546345031165918, guid: 3d375da8280f647398ce7f9cc81120a2,
@@ -475,6 +480,11 @@ Prefab:
       propertyPath: buttonFromO.Array.data[2]
       value: 
       objectReference: {fileID: 354296801}
+    - target: {fileID: 114140464922362292, guid: 89f9d9cca668643c7a52da4b9448884d,
+        type: 2}
+      propertyPath: playerCanvasGroup
+      value: 
+      objectReference: {fileID: 354296807}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89f9d9cca668643c7a52da4b9448884d, type: 2}
   m_IsPrefabAsset: 0

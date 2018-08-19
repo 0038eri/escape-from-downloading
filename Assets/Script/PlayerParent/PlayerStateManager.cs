@@ -28,7 +28,10 @@ public class PlayerStateManager : SingletonMonoBehaviour<PlayerStateManager> {
     // ゲーム終了
     private void gameFinishMethod()
     {
+        Debug.Log("gameFinishMethodが呼び出された");
         TimerManager.Instance.stopTimer();
+        //PlayerUiManager.Instance.falsePlayerUi();
+        GameStartAnimator.Instance.finishedGame();
         PlayerOperation.Instance.gamePauseStop();
         stageCheckNumber = StageJudgeManager.Instance.stageNumberCheck();
     }
@@ -36,8 +39,8 @@ public class PlayerStateManager : SingletonMonoBehaviour<PlayerStateManager> {
     // ゲームクリア
     public void gameClearMethod()
     {
+        Debug.Log("gameClearMethodが呼び出されたよ");
         gameFinishMethod();
-        PlayerUiManager.Instance.falsePlayerUi();
         SystemUiManager.Instance.displayClear();
         switch (stageCheckNumber)
         {
@@ -90,7 +93,6 @@ public class PlayerStateManager : SingletonMonoBehaviour<PlayerStateManager> {
     public void gameOverMethod()
     {
         gameFinishMethod();
-        PlayerUiManager.Instance.falsePlayerUi();
         SystemUiManager.Instance.displayOver();
         GameModeManager.Instance.gameOver();
     }

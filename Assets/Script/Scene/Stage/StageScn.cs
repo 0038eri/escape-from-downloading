@@ -7,7 +7,7 @@ public class StageScn : MonoBehaviour {
     private void Awake()
     {
         PlayerStateManager.Instance.beforeGameMethod();
-        GameStartAnimator.Instance.playStartAnimation();
+        //GameStartAnimator.Instance.playStartAnimation();
     }
 
 }
