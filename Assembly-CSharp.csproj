@@ -63,15 +63,16 @@
   <ItemGroup>
     <Compile Include="Assets\Script\Animation\GameStartAnimator.cs" />
     <Compile Include="Assets\Script\Animation\TapToStartAnimator.cs" />
+    <Compile Include="Assets\Script\Command\DevelopCommand.cs" />
+    <Compile Include="Assets\Script\Command\Parent.cs" />
     <Compile Include="Assets\Script\Object\CoinSc.cs" />
     <Compile Include="Assets\Script\Object\EnemySc.cs" />
-    <Compile Include="Assets\Script\Player\GameModeManager.cs" />
-    <Compile Include="Assets\Script\Player\GameParent.cs" />
-    <Compile Include="Assets\Script\Player\HpManager.cs" />
-    <Compile Include="Assets\Script\Player\PlayerOperation.cs" />
-    <Compile Include="Assets\Script\Player\PlayerStateManager.cs" />
-    <Compile Include="Assets\Script\Player\PlayerUiManager.cs" />
-    <Compile Include="Assets\Script\Player\UserManager.cs" />
+    <Compile Include="Assets\Script\PlayerParent\GameModeManager.cs" />
+    <Compile Include="Assets\Script\PlayerParent\MoneyManager.cs" />
+    <Compile Include="Assets\Script\PlayerParent\PlayerOperation.cs" />
+    <Compile Include="Assets\Script\PlayerParent\PlayerStateManager.cs" />
+    <Compile Include="Assets\Script\PlayerParent\StageJudgeManager.cs" />
+    <Compile Include="Assets\Script\PlayerParent\UserManager.cs" />
     <Compile Include="Assets\Script\Scene\EndingScn.cs" />
     <Compile Include="Assets\Script\Scene\MenuScn.cs" />
     <Compile Include="Assets\Script\Scene\OpeningScn.cs" />
@@ -91,16 +92,14 @@
     <Compile Include="Assets\Script\Scene\Stage\Stage7Scn.cs" />
     <Compile Include="Assets\Script\Scene\Stage\Stage8Scn.cs" />
     <Compile Include="Assets\Script\Scene\Stage\Stage9Scn.cs" />
+    <Compile Include="Assets\Script\Scene\Stage\StageScn.cs" />
     <Compile Include="Assets\Script\Scene\StartScn.cs" />
     <Compile Include="Assets\Script\SingletonMonobehaviour.cs" />
-    <Compile Include="Assets\Script\System\Command\DevelopCommand.cs" />
-    <Compile Include="Assets\Script\System\MoneyManager.cs" />
-    <Compile Include="Assets\Script\System\StageJudgeManager.cs" />
-    <Compile Include="Assets\Script\System\StageStateManager.cs" />
-    <Compile Include="Assets\Script\System\SystemParent.cs" />
-    <Compile Include="Assets\Script\System\SystemUiManager.cs" />
-    <Compile Include="Assets\Script\System\TimerManager.cs" />
-    <Compile Include="Assets\Script\SystemSwitchManager.cs" />
+    <Compile Include="Assets\Script\StageParent\HpManager.cs" />
+    <Compile Include="Assets\Script\StageParent\PlayerUiManager.cs" />
+    <Compile Include="Assets\Script\StageParent\StageStateManager.cs" />
+    <Compile Include="Assets\Script\StageParent\SystemUiManager.cs" />
+    <Compile Include="Assets\Script\StageParent\TimerManager.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>/Users/eririn/github/escape-from-downloading/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

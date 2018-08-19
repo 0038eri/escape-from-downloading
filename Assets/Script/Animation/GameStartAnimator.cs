@@ -11,19 +11,24 @@ public class GameStartAnimator : SingletonMonoBehaviour<GameStartAnimator> {
         gameStartAnimator = GetComponent<Animator>();
     }
 
-    public void startGameAnimation()
-    {
-        gameStartAnimator.SetBool("gameStart", true);
-    }
+    //public void startGameAnimation()
+    //{
+    //    //gameStartAnimator.SetBool("gameStart", true);
+    //}
 
-    public void readyStartAnimation()
-    {
-        gameStartAnimator.SetBool("gameStart", false);
-    }
+    //public void readyStartAnimation()
+    //{
+    //    gameStartAnimator.SetBool("gameStart", false);
+    //}
 
     public void startGame()
     {
         PlayerStateManager.Instance.isPlayingMethod();
-    } 
+    }
+
+    public void playStartAnimation()
+    {
+        gameStartAnimator.Play("GameStart");
+    }
 
 }

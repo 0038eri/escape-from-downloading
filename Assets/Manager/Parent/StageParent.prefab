@@ -200,9 +200,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9630281e69084134a52f13478d393fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHpText: {fileID: 0}
-  slider: {fileID: 0}
-  hpImage: {fileID: 0}
 --- !u!114 &114132408657991786
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -214,6 +211,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8a425346771466c966ab1c5dfc55a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonFromP:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  buttonFromC:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  buttonFromO:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114140464922362292
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -236,7 +245,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c0441b9198b4069b1a43c56a339a32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerText: {fileID: 0}
 --- !u!114 &114301931156606100
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -248,5 +256,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2bf744e87604320baacfb5bbea2682, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseUi: {fileID: 0}
-  pauseButton: {fileID: 0}

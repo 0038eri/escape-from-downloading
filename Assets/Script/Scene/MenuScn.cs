@@ -1,81 +1,64 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MenuScn : MonoBehaviour {
 
-    private Color bgColor = new Color(0.0f / 255.0f, 113.0f / 255.0f, 188.0f / 255.0f, 255.0f / 255.0f);
-    private Camera systemCam;
-
     private int stageJudgeNumber;
     private GameObject stageJudgeManager;
 
-    private Animator stageTrueAnimator;
-    private Animator stageFalseAnimator;
-
-    void Awake()
-    {
-    }
+    public Button[] stageButton;
 
     void Start()
     {
-        systemCam = GameObject.Find("SystemCamera").GetComponent<Camera>();
-        systemCam.backgroundColor = bgColor;
         stageJudgeNumber = StageJudgeManager.Instance.stageNumberCheck();
-        NowAnm();
+        CanPlay();
     }
 
-    void Update()
+    void CanPlay()
     {
-        
-    }
-
-    void NowAnm()
-    {
-        if (stageJudgeNumber > 0 || stageJudgeNumber < 13)
+        switch (stageJudgeNumber)
         {
-            switch (stageJudgeNumber)
-            {
-                case 1:
-                    stageTrueAnimator = GameObject.Find("Stage1").GetComponent<Animator>();
-                    stageTrueAnimator.Play("Stage1Animation");
-                    break;
-                case 2:
-                    stageTrueAnimator = GameObject.Find("Stage2").GetComponent<Animator>();
-                    break;
-                case 3:
-                    stageTrueAnimator = GameObject.Find("Stage3").GetComponent<Animator>();
-                    break;
-                case 4:
-                    stageTrueAnimator = GameObject.Find("Stage4").GetComponent<Animator>();
-                    break;
-                case 5:
-                    stageTrueAnimator = GameObject.Find("Stage5").GetComponent<Animator>();
-                    break;
-                case 6:
-                    stageTrueAnimator = GameObject.Find("Stage6").GetComponent<Animator>();
-                    break;
-                case 7:
-                    stageTrueAnimator = GameObject.Find("Stage7").GetComponent<Animator>();
-                    break;
-                case 8:
-                    stageTrueAnimator = GameObject.Find("Stage8").GetComponent<Animator>();
-                    break;
-                case 9:
-                    stageTrueAnimator = GameObject.Find("Stage9").GetComponent<Animator>();
-                    break;
-                case 10:
-                    stageTrueAnimator = GameObject.Find("Stage10").GetComponent<Animator>();
-                    break;
-                case 11:
-                    stageTrueAnimator = GameObject.Find("Stage11").GetComponent<Animator>();
-                    break;
-                case 12:
-                    stageTrueAnimator = GameObject.Find("Stage12").GetComponent<Animator>();
-                    break;
-            }
-            stageTrueAnimator.enabled = true;
+            case 1:
+                stageButton[0].onClick.AddListener(toStage1);
+                break;
+            case 2:
+                stageButton[1].onClick.AddListener(toStage2);
+                break;
+            case 3:
+                stageButton[2].onClick.AddListener(toStage3);
+                break;
+            case 4:
+                stageButton[3].onClick.AddListener(toStage4);
+                break;
+            case 5:
+                stageButton[4].onClick.AddListener(toStage5);
+                break;
+            case 6:
+                stageButton[5].onClick.AddListener(toStage6);
+                break;
+            case 7:
+                stageButton[6].onClick.AddListener(toStage7);
+                break;
+            case 8:
+                stageButton[7].onClick.AddListener(toStage8);
+                break;
+            case 9:
+                stageButton[8].onClick.AddListener(toStage9);
+                break;
+            case 10:
+                stageButton[9].onClick.AddListener(toStage10);
+                break;
+            case 11:
+                stageButton[10].onClick.AddListener(toStage11);
+                break;
+            case 12:
+                stageButton[11].onClick.AddListener(toStage12);
+                break;
+            default:
+                break;
         }
     }
 

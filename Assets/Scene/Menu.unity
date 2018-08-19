@@ -221,18 +221,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 69535978}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1195301385}
-        m_MethodName: toStage11
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &69535978
@@ -637,18 +626,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 310514182}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1195301385}
-        m_MethodName: toStage10
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &310514182
@@ -975,18 +953,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 824699108}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1195301385}
-        m_MethodName: toStage4
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &824699108
@@ -1132,18 +1099,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 867641668}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1195301385}
-        m_MethodName: toStage6
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &867641668
@@ -1289,19 +1245,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 869778863}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114256214450153768, guid: 68a8ac44cf1e9483e9eb0f7bb502efbb,
-          type: 2}
-        m_MethodName: toStage2
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &869778863
@@ -1505,7 +1449,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1077640515
 GameObject:
@@ -1659,18 +1603,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1082391137}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1195301385}
-        m_MethodName: toStage7
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1082391137
@@ -1891,18 +1824,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1108605464}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1195301385}
-        m_MethodName: toStage8
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1108605464
@@ -2012,64 +1934,64 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114256214450153768, guid: 68a8ac44cf1e9483e9eb0f7bb502efbb,
         type: 2}
-      propertyPath: allAnimators.Array.data[0]
+      propertyPath: stageButton.Array.data[0]
       value: 
-      objectReference: {fileID: 1541229266}
+      objectReference: {fileID: 1541229262}
     - target: {fileID: 114256214450153768, guid: 68a8ac44cf1e9483e9eb0f7bb502efbb,
         type: 2}
-      propertyPath: allAnimators.Array.data[1]
+      propertyPath: stageButton.Array.data[1]
       value: 
-      objectReference: {fileID: 869778866}
+      objectReference: {fileID: 869778862}
     - target: {fileID: 114256214450153768, guid: 68a8ac44cf1e9483e9eb0f7bb502efbb,
         type: 2}
-      propertyPath: allAnimators.Array.data[2]
+      propertyPath: stageButton.Array.data[2]
       value: 
-      objectReference: {fileID: 1378834716}
+      objectReference: {fileID: 1378834712}
     - target: {fileID: 114256214450153768, guid: 68a8ac44cf1e9483e9eb0f7bb502efbb,
         type: 2}
-      propertyPath: allAnimators.Array.data[3]
+      propertyPath: stageButton.Array.data[3]
       value: 
-      objectReference: {fileID: 824699111}
+      objectReference: {fileID: 824699107}
     - target: {fileID: 114256214450153768, guid: 68a8ac44cf1e9483e9eb0f7bb502efbb,
         type: 2}
-      propertyPath: allAnimators.Array.data[4]
+      propertyPath: stageButton.Array.data[4]
       value: 
-      objectReference: {fileID: 1848229494}
+      objectReference: {fileID: 1848229490}
     - target: {fileID: 114256214450153768, guid: 68a8ac44cf1e9483e9eb0f7bb502efbb,
         type: 2}
-      propertyPath: allAnimators.Array.data[5]
+      propertyPath: stageButton.Array.data[5]
       value: 
-      objectReference: {fileID: 867641671}
+      objectReference: {fileID: 867641667}
     - target: {fileID: 114256214450153768, guid: 68a8ac44cf1e9483e9eb0f7bb502efbb,
         type: 2}
-      propertyPath: allAnimators.Array.data[6]
+      propertyPath: stageButton.Array.data[6]
       value: 
-      objectReference: {fileID: 1082391140}
+      objectReference: {fileID: 1082391136}
     - target: {fileID: 114256214450153768, guid: 68a8ac44cf1e9483e9eb0f7bb502efbb,
         type: 2}
-      propertyPath: allAnimators.Array.data[7]
+      propertyPath: stageButton.Array.data[7]
       value: 
-      objectReference: {fileID: 1108605467}
+      objectReference: {fileID: 1108605463}
     - target: {fileID: 114256214450153768, guid: 68a8ac44cf1e9483e9eb0f7bb502efbb,
         type: 2}
-      propertyPath: allAnimators.Array.data[8]
+      propertyPath: stageButton.Array.data[8]
       value: 
-      objectReference: {fileID: 1851634959}
+      objectReference: {fileID: 1851634955}
     - target: {fileID: 114256214450153768, guid: 68a8ac44cf1e9483e9eb0f7bb502efbb,
         type: 2}
-      propertyPath: allAnimators.Array.data[9]
+      propertyPath: stageButton.Array.data[9]
       value: 
-      objectReference: {fileID: 310514185}
+      objectReference: {fileID: 310514181}
     - target: {fileID: 114256214450153768, guid: 68a8ac44cf1e9483e9eb0f7bb502efbb,
         type: 2}
-      propertyPath: allAnimators.Array.data[10]
+      propertyPath: stageButton.Array.data[10]
       value: 
-      objectReference: {fileID: 69535981}
+      objectReference: {fileID: 69535977}
     - target: {fileID: 114256214450153768, guid: 68a8ac44cf1e9483e9eb0f7bb502efbb,
         type: 2}
-      propertyPath: allAnimators.Array.data[11]
+      propertyPath: stageButton.Array.data[11]
       value: 
-      objectReference: {fileID: 1932747019}
+      objectReference: {fileID: 1932747015}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68a8ac44cf1e9483e9eb0f7bb502efbb, type: 2}
   m_IsPrefabAsset: 0
@@ -2522,19 +2444,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1378834713}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114256214450153768, guid: 68a8ac44cf1e9483e9eb0f7bb502efbb,
-          type: 2}
-        m_MethodName: toStage3
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1378834713
@@ -2749,19 +2659,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1541229263}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114256214450153768, guid: 68a8ac44cf1e9483e9eb0f7bb502efbb,
-          type: 2}
-        m_MethodName: toStage1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1541229263
@@ -2982,18 +2880,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1848229491}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1195301385}
-        m_MethodName: toStage5
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1848229491
@@ -3139,18 +3026,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1851634956}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1195301385}
-        m_MethodName: toStage9
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1851634956
@@ -3448,18 +3324,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1932747016}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1195301385}
-        m_MethodName: toStage12
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1932747016
@@ -3621,7 +3486,7 @@ RectTransform:
   - {fileID: 809576382}
   - {fileID: 110020501}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

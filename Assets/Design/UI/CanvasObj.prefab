@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 114357234820274678}
   - component: {fileID: 114470092955819200}
   m_Layer: 0
-  m_Name: Escape
+  m_Name: EscapeC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 114372777249675004}
   - component: {fileID: 114795243054488246}
   m_Layer: 0
-  m_Name: Menu
+  m_Name: MenuO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -287,7 +287,7 @@ GameObject:
   - component: {fileID: 114899607912829052}
   - component: {fileID: 114633142038412514}
   m_Layer: 0
-  m_Name: Escape
+  m_Name: EscapeO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -357,7 +357,7 @@ GameObject:
   - component: {fileID: 114526243158195340}
   - component: {fileID: 114207336846489472}
   m_Layer: 0
-  m_Name: Menu
+  m_Name: MenuC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -595,7 +595,7 @@ GameObject:
   - component: {fileID: 114614325193948792}
   - component: {fileID: 114110027869143848}
   m_Layer: 0
-  m_Name: Escape
+  m_Name: EscapeP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -632,7 +632,7 @@ GameObject:
   - component: {fileID: 114114414847197700}
   - component: {fileID: 114670755440239840}
   m_Layer: 0
-  m_Name: Menu
+  m_Name: MenuP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2065,18 +2065,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114707366450160098}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: openPauseUi
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114877951486857008
