@@ -7,9 +7,9 @@ using UnityEngine.SceneManagement;
 public class MenuScn : MonoBehaviour {
 
     private int stageJudgeNumber;
-    private GameObject stageJudgeManager;
 
     public Button[] stageButton;
+   
 
     void Start()
     {
@@ -25,36 +25,103 @@ public class MenuScn : MonoBehaviour {
                 stageButton[0].onClick.AddListener(toStage1);
                 break;
             case 2:
+                stageButton[0].onClick.AddListener(toStage1);
                 stageButton[1].onClick.AddListener(toStage2);
                 break;
             case 3:
+                stageButton[0].onClick.AddListener(toStage1);
+                stageButton[1].onClick.AddListener(toStage2);
                 stageButton[2].onClick.AddListener(toStage3);
                 break;
             case 4:
+                stageButton[0].onClick.AddListener(toStage1);
+                stageButton[1].onClick.AddListener(toStage2);
+                stageButton[2].onClick.AddListener(toStage3);
                 stageButton[3].onClick.AddListener(toStage4);
                 break;
             case 5:
+                stageButton[0].onClick.AddListener(toStage1);
+                stageButton[1].onClick.AddListener(toStage2);
+                stageButton[2].onClick.AddListener(toStage3);
+                stageButton[3].onClick.AddListener(toStage4);
                 stageButton[4].onClick.AddListener(toStage5);
                 break;
             case 6:
+                stageButton[0].onClick.AddListener(toStage1);
+                stageButton[1].onClick.AddListener(toStage2);
+                stageButton[2].onClick.AddListener(toStage3);
+                stageButton[3].onClick.AddListener(toStage4);
+                stageButton[4].onClick.AddListener(toStage5);
                 stageButton[5].onClick.AddListener(toStage6);
                 break;
             case 7:
+                stageButton[0].onClick.AddListener(toStage1);
+                stageButton[1].onClick.AddListener(toStage2);
+                stageButton[2].onClick.AddListener(toStage3);
+                stageButton[3].onClick.AddListener(toStage4);
+                stageButton[4].onClick.AddListener(toStage5);
+                stageButton[5].onClick.AddListener(toStage6);
                 stageButton[6].onClick.AddListener(toStage7);
                 break;
             case 8:
+                stageButton[0].onClick.AddListener(toStage1);
+                stageButton[1].onClick.AddListener(toStage2);
+                stageButton[2].onClick.AddListener(toStage3);
+                stageButton[3].onClick.AddListener(toStage4);
+                stageButton[4].onClick.AddListener(toStage5);
+                stageButton[5].onClick.AddListener(toStage6);
+                stageButton[6].onClick.AddListener(toStage7);
                 stageButton[7].onClick.AddListener(toStage8);
                 break;
             case 9:
+                stageButton[0].onClick.AddListener(toStage1);
+                stageButton[1].onClick.AddListener(toStage2);
+                stageButton[2].onClick.AddListener(toStage3);
+                stageButton[3].onClick.AddListener(toStage4);
+                stageButton[4].onClick.AddListener(toStage5);
+                stageButton[5].onClick.AddListener(toStage6);
+                stageButton[6].onClick.AddListener(toStage7);
+                stageButton[7].onClick.AddListener(toStage8);
                 stageButton[8].onClick.AddListener(toStage9);
                 break;
             case 10:
+                stageButton[0].onClick.AddListener(toStage1);
+                stageButton[1].onClick.AddListener(toStage2);
+                stageButton[2].onClick.AddListener(toStage3);
+                stageButton[3].onClick.AddListener(toStage4);
+                stageButton[4].onClick.AddListener(toStage5);
+                stageButton[5].onClick.AddListener(toStage6);
+                stageButton[6].onClick.AddListener(toStage7);
+                stageButton[7].onClick.AddListener(toStage8);
+                stageButton[8].onClick.AddListener(toStage9);
                 stageButton[9].onClick.AddListener(toStage10);
                 break;
             case 11:
+                stageButton[0].onClick.AddListener(toStage1);
+                stageButton[1].onClick.AddListener(toStage2);
+                stageButton[2].onClick.AddListener(toStage3);
+                stageButton[3].onClick.AddListener(toStage4);
+                stageButton[4].onClick.AddListener(toStage5);
+                stageButton[5].onClick.AddListener(toStage6);
+                stageButton[6].onClick.AddListener(toStage7);
+                stageButton[7].onClick.AddListener(toStage8);
+                stageButton[8].onClick.AddListener(toStage9);
+                stageButton[9].onClick.AddListener(toStage10);
                 stageButton[10].onClick.AddListener(toStage11);
                 break;
             case 12:
+            case 13:
+                stageButton[0].onClick.AddListener(toStage1);
+                stageButton[1].onClick.AddListener(toStage2);
+                stageButton[2].onClick.AddListener(toStage3);
+                stageButton[3].onClick.AddListener(toStage4);
+                stageButton[4].onClick.AddListener(toStage5);
+                stageButton[5].onClick.AddListener(toStage6);
+                stageButton[6].onClick.AddListener(toStage7);
+                stageButton[7].onClick.AddListener(toStage8);
+                stageButton[8].onClick.AddListener(toStage9);
+                stageButton[9].onClick.AddListener(toStage10);
+                stageButton[10].onClick.AddListener(toStage11);
                 stageButton[11].onClick.AddListener(toStage12);
                 break;
             default:

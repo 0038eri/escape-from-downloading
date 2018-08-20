@@ -10,10 +10,16 @@ public class UserManager : SingletonMonoBehaviour<UserManager> {
     // ユーザーネーム表示テキスト
     public Text usernameText;
 
+    private void Start()
+    {
+        //username = PlayerPrefs.GetString("usernameSave");
+    }
+
     // ユーザーネーム更新
     public void updateUsername()
     {
-        usernameText.text = username; // 実行された時の現在のユーザーネームを表示      
+        usernameText.text = username;
+        PlayerPrefs.SetString("usernameSave", username);
     }
 
 }

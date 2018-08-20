@@ -6,6 +6,9 @@ using UnityEngine.UI;
 using System.Text.RegularExpressions;
 
 public class OptionScn : MonoBehaviour {
+
+    private bool bgmFlag;
+    private bool seFlag;
     
     // 入力フィールド
 	public InputField inputfield;
@@ -13,6 +16,36 @@ public class OptionScn : MonoBehaviour {
     // メニューに戻る
     public void backMenu () {
         SceneManager.LoadScene("Menu");
+    }
+
+    public void trueBgm()
+    {
+        bgmFlag = true;
+    }
+
+    public void falseBgm()
+    {
+        bgmFlag = false;
+    }
+
+    public void trueSe()
+    {
+        seFlag = true;
+    }
+
+    public void falseSe()
+    {
+        seFlag = false;
+    }
+
+    public bool switchBgm()
+    {
+        return bgmFlag;
+    }
+
+    public bool switchSe()
+    {
+        return seFlag;
     }
 
     // ユーザーネーム変更

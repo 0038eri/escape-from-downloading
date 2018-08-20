@@ -7,6 +7,17 @@ public class StageJudgeManager : SingletonMonoBehaviour<StageJudgeManager> {
 
     public static int stageJudge = 0;
 
+
+    private void Start()
+    {
+        //stageJudge = PlayerPrefs.GetInt("stageJudgeSave");
+        if(stageJudge==0){
+            Debug.Log("playerPrefsはつかってないよ。");
+        } else {
+            Debug.Log("現在のStageJudgeは、" + stageJudge);
+        }
+    }
+
     // Startシーンで呼ぶ
     public int stageNumberCheck()
     {
@@ -19,6 +30,7 @@ public class StageJudgeManager : SingletonMonoBehaviour<StageJudgeManager> {
         if (stageJudge < 13)
         {
             stageJudge++;
+            PlayerPrefs.SetInt("stageJudgeSave", stageJudge);
         }
     }
 

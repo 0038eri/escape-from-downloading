@@ -19,7 +19,7 @@ public class PlayerUiManager : SingletonMonoBehaviour<PlayerUiManager> {
 
     public void Update()
     {
-        Debug.Log(playerCanvasGroup.alpha);
+        //Debug.Log(playerCanvasGroup.alpha);
     }
 
     private void Start()

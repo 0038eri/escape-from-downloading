@@ -28,7 +28,6 @@ public class PlayerStateManager : SingletonMonoBehaviour<PlayerStateManager> {
     // ゲーム終了
     private void gameFinishMethod()
     {
-        Debug.Log("gameFinishMethodが呼び出された");
         TimerManager.Instance.stopTimer();
         //PlayerUiManager.Instance.falsePlayerUi();
         GameStartAnimator.Instance.finishedGame();
@@ -39,7 +38,6 @@ public class PlayerStateManager : SingletonMonoBehaviour<PlayerStateManager> {
     // ゲームクリア
     public void gameClearMethod()
     {
-        Debug.Log("gameClearMethodが呼び出されたよ");
         gameFinishMethod();
         SystemUiManager.Instance.displayClear();
         switch (stageCheckNumber)
@@ -106,7 +104,8 @@ public class PlayerStateManager : SingletonMonoBehaviour<PlayerStateManager> {
     public void restartGame()
     {
         destroyMode();
-
+        string sceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(sceneName);
     }
 
     public void backMenuP()
