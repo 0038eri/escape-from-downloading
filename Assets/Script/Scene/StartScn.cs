@@ -9,6 +9,7 @@ public class StartScn : MonoBehaviour
 
     private void Start()
     {
+        SoundManager.Instance.playBgm();
         stageJudgeNumber = StageJudgeManager.Instance.stageNumberCheck();
     }
 

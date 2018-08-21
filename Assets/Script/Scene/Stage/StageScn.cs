@@ -10,4 +10,9 @@ public class StageScn : MonoBehaviour {
         //GameStartAnimator.Instance.playStartAnimation();
     }
 
+    private void Start()
+    {
+        SoundManager.Instance.playBgm();
+    }
+
 }

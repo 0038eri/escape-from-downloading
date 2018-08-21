@@ -51,4 +51,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebb7ffbfcadf54408815529a8adad82b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  usernameOp: 
+  soundSprites:
+  - {fileID: 21300000, guid: b922b6c504290465e85586bdd885c8e8, type: 3}
+  - {fileID: 21300000, guid: 45654d979f4f544d6b1ccadd91f183b5, type: 3}
+  soundImages:
+  - {fileID: 0}
+  - {fileID: 0}
   inputfield: {fileID: 0}

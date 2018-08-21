@@ -18,6 +18,7 @@ public class UserManager : SingletonMonoBehaviour<UserManager> {
     // ユーザーネーム更新
     public void updateUsername()
     {
+        username = OptionScn.Instance.sendName();
         usernameText.text = username;
         PlayerPrefs.SetString("usernameSave", username);
     }

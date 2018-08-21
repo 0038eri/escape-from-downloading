@@ -9,11 +9,15 @@ public class MenuScn : MonoBehaviour {
     private int stageJudgeNumber;
 
     public Button[] stageButton;
-   
+
+    private void Awake()
+    {
+        stageJudgeNumber = StageJudgeManager.Instance.stageNumberCheck();
+    }
 
     void Start()
     {
-        stageJudgeNumber = StageJudgeManager.Instance.stageNumberCheck();
+        SoundManager.Instance.playBgm();
         CanPlay();
     }
 

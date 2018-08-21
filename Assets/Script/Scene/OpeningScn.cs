@@ -13,6 +13,7 @@ public class OpeningScn : MonoBehaviour {
     private string[] message = { "こんにちは", "これはテストです", "スキップしてください" };
 
     void Start(){
+        SoundManager.Instance.playBgm();
         typeMessage();
     }
 

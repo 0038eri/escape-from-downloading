@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4775322985953724}
-  - component: {fileID: 111777424672780606}
   - component: {fileID: 95526372052347476}
   - component: {fileID: 114008860614312720}
   m_Layer: 0
@@ -720,22 +719,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!111 &111777424672780606
-Animation:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1002695957689148}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 2594c8f2696264ca3a96213dba052662, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 2594c8f2696264ca3a96213dba052662, type: 2}
-  - {fileID: 7400000, guid: 7215819d9f28d4b5fb888c9353907100, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &114008860614312720
 MonoBehaviour:
   m_ObjectHideFlags: 1

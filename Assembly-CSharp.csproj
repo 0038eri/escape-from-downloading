@@ -71,6 +71,7 @@
     <Compile Include="Assets\Script\PlayerParent\GameModeManager.cs" />
     <Compile Include="Assets\Script\PlayerParent\MoneyManager.cs" />
     <Compile Include="Assets\Script\PlayerParent\PlayerStateManager.cs" />
+    <Compile Include="Assets\Script\PlayerParent\SoundManager.cs" />
     <Compile Include="Assets\Script\PlayerParent\StageJudgeManager.cs" />
     <Compile Include="Assets\Script\PlayerParent\UserManager.cs" />
     <Compile Include="Assets\Script\Scene\EndingScn.cs" />
