@@ -90,6 +90,7 @@ public class PlayerStateManager : SingletonMonoBehaviour<PlayerStateManager> {
     // ゲームオーバー
     public void gameOverMethod()
     {
+        Debug.Log("ge-mu");
         gameFinishMethod();
         SystemUiManager.Instance.displayOver();
         GameModeManager.Instance.gameOver();

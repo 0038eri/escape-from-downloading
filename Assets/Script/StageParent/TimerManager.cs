@@ -11,7 +11,7 @@ public class TimerManager : SingletonMonoBehaviour<TimerManager>
     // タイマーセット判定
     private bool timerSet = false;
     // 制限時間
-    private float timeLimit = 0.0f;
+    private float timeLimit = 1.0f;
     // タイマー停止判定
     private static bool timerStop = true;
     // タイマー表示テキスト
@@ -66,7 +66,7 @@ public class TimerManager : SingletonMonoBehaviour<TimerManager>
     // タイマーセット
     public void setupTimer()
     {
-        timer = 60.0f;
+        timer = 10.0f;
     }
 
     // タイマーリセット

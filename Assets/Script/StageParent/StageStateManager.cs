@@ -17,6 +17,11 @@ public class StageStateManager : SingletonMonoBehaviour<StageStateManager> {
         pauseButton = GameObject.Find("PauseButton");
     }
 
+    public void pauseGame()
+    {
+        Time.timeScale = 0.0f;
+    }
+
     // ゲームを再開する
     public void playGame () {
         SystemUiManager.Instance.closePauseUi();
