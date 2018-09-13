@@ -5,32 +5,18 @@ using UnityEngine.UI;
 
 public class OpeningScn : MonoBehaviour {
 
-    // メッセージ判定変数
-    private int messageCheck = 0;
-    // メッセージ表示テキスト
-    public Text messeageText;
-    // メッセージ格納変数
-    private string[] message = { "こんにちは", "これはテストです", "スキップしてください" };
+    private float fadeTime = 2.0f;
 
-    void Start(){
-        SoundManager.Instance.playBgm();
-        typeMessage();
-    }
-
-    private void Update()
+    void Start()
     {
-        if(Input.GetMouseButtonDown(0)){
-            typeMessage();
-        }
+        FadeAnimation.Instance.goFadeIn();
+        StartCoroutine(openingCoroutine());
     }
 
-    void typeMessage () {
-        if(messageCheck==3){
-            GameObject.Find("SkipObj").SendMessage("skipToStage1");
-        } else {
-            messeageText.text = message[messageCheck];
-            messageCheck++;
-        }
+    IEnumerator openingCoroutine()
+    {
+        yield return new WaitForSeconds(fadeTime);
+        SoundManager.Instance.playBgm();
     }
 
 }

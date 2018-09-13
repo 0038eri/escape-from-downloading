@@ -9,133 +9,41 @@ public class MenuScn : MonoBehaviour {
     private int stageJudgeNumber;
 
     public Button[] stageButton;
-
-    private void Awake()
-    {
-        stageJudgeNumber = StageJudgeManager.Instance.stageNumberCheck();
-    }
+    private float fadeTime = 2.0f;
 
     void Start()
     {
+        FadeAnimation.Instance.goFadeIn();
+        StartCoroutine(StartMethodM());
+        stageJudgeNumber = StageJudgeManager.Instance.stageNumberCheck();
+    }
+
+    IEnumerator StartMethodM()
+    {
+        yield return new WaitForSeconds(fadeTime);
         SoundManager.Instance.playBgm();
         CanPlay();
     }
 
     void CanPlay()
     {
-        switch (stageJudgeNumber)
+        for(int i = 0; i < stageJudgeNumber; i++)
         {
-            case 1:
-                stageButton[0].onClick.AddListener(toStage1);
-                break;
-            case 2:
-                stageButton[0].onClick.AddListener(toStage1);
-                stageButton[1].onClick.AddListener(toStage2);
-                break;
-            case 3:
-                stageButton[0].onClick.AddListener(toStage1);
-                stageButton[1].onClick.AddListener(toStage2);
-                stageButton[2].onClick.AddListener(toStage3);
-                break;
-            case 4:
-                stageButton[0].onClick.AddListener(toStage1);
-                stageButton[1].onClick.AddListener(toStage2);
-                stageButton[2].onClick.AddListener(toStage3);
-                stageButton[3].onClick.AddListener(toStage4);
-                break;
-            case 5:
-                stageButton[0].onClick.AddListener(toStage1);
-                stageButton[1].onClick.AddListener(toStage2);
-                stageButton[2].onClick.AddListener(toStage3);
-                stageButton[3].onClick.AddListener(toStage4);
-                stageButton[4].onClick.AddListener(toStage5);
-                break;
-            case 6:
-                stageButton[0].onClick.AddListener(toStage1);
-                stageButton[1].onClick.AddListener(toStage2);
-                stageButton[2].onClick.AddListener(toStage3);
-                stageButton[3].onClick.AddListener(toStage4);
-                stageButton[4].onClick.AddListener(toStage5);
-                stageButton[5].onClick.AddListener(toStage6);
-                break;
-            case 7:
-                stageButton[0].onClick.AddListener(toStage1);
-                stageButton[1].onClick.AddListener(toStage2);
-                stageButton[2].onClick.AddListener(toStage3);
-                stageButton[3].onClick.AddListener(toStage4);
-                stageButton[4].onClick.AddListener(toStage5);
-                stageButton[5].onClick.AddListener(toStage6);
-                stageButton[6].onClick.AddListener(toStage7);
-                break;
-            case 8:
-                stageButton[0].onClick.AddListener(toStage1);
-                stageButton[1].onClick.AddListener(toStage2);
-                stageButton[2].onClick.AddListener(toStage3);
-                stageButton[3].onClick.AddListener(toStage4);
-                stageButton[4].onClick.AddListener(toStage5);
-                stageButton[5].onClick.AddListener(toStage6);
-                stageButton[6].onClick.AddListener(toStage7);
-                stageButton[7].onClick.AddListener(toStage8);
-                break;
-            case 9:
-                stageButton[0].onClick.AddListener(toStage1);
-                stageButton[1].onClick.AddListener(toStage2);
-                stageButton[2].onClick.AddListener(toStage3);
-                stageButton[3].onClick.AddListener(toStage4);
-                stageButton[4].onClick.AddListener(toStage5);
-                stageButton[5].onClick.AddListener(toStage6);
-                stageButton[6].onClick.AddListener(toStage7);
-                stageButton[7].onClick.AddListener(toStage8);
-                stageButton[8].onClick.AddListener(toStage9);
-                break;
-            case 10:
-                stageButton[0].onClick.AddListener(toStage1);
-                stageButton[1].onClick.AddListener(toStage2);
-                stageButton[2].onClick.AddListener(toStage3);
-                stageButton[3].onClick.AddListener(toStage4);
-                stageButton[4].onClick.AddListener(toStage5);
-                stageButton[5].onClick.AddListener(toStage6);
-                stageButton[6].onClick.AddListener(toStage7);
-                stageButton[7].onClick.AddListener(toStage8);
-                stageButton[8].onClick.AddListener(toStage9);
-                stageButton[9].onClick.AddListener(toStage10);
-                break;
-            case 11:
-                stageButton[0].onClick.AddListener(toStage1);
-                stageButton[1].onClick.AddListener(toStage2);
-                stageButton[2].onClick.AddListener(toStage3);
-                stageButton[3].onClick.AddListener(toStage4);
-                stageButton[4].onClick.AddListener(toStage5);
-                stageButton[5].onClick.AddListener(toStage6);
-                stageButton[6].onClick.AddListener(toStage7);
-                stageButton[7].onClick.AddListener(toStage8);
-                stageButton[8].onClick.AddListener(toStage9);
-                stageButton[9].onClick.AddListener(toStage10);
-                stageButton[10].onClick.AddListener(toStage11);
-                break;
-            case 12:
-            case 13:
-                stageButton[0].onClick.AddListener(toStage1);
-                stageButton[1].onClick.AddListener(toStage2);
-                stageButton[2].onClick.AddListener(toStage3);
-                stageButton[3].onClick.AddListener(toStage4);
-                stageButton[4].onClick.AddListener(toStage5);
-                stageButton[5].onClick.AddListener(toStage6);
-                stageButton[6].onClick.AddListener(toStage7);
-                stageButton[7].onClick.AddListener(toStage8);
-                stageButton[8].onClick.AddListener(toStage9);
-                stageButton[9].onClick.AddListener(toStage10);
-                stageButton[10].onClick.AddListener(toStage11);
-                stageButton[11].onClick.AddListener(toStage12);
-                break;
-            default:
-                break;
+            stageButton[i].interactable = true;
         }
+
     }
 
     // スタート画面に移動
     public void toStart ()
     {
+        FadeAnimation.Instance.goFadeOut();
+        StartCoroutine(scnStartCoroutine());
+    }
+
+    IEnumerator scnStartCoroutine()
+    {
+        yield return new WaitForSeconds(fadeTime);
         SceneManager.LoadScene("Start");
     }
 
@@ -148,66 +56,157 @@ public class MenuScn : MonoBehaviour {
 	// ステージ1に移動
 	public void toStage1 () 
     {
-		SceneManager.LoadScene ("Stage1");
+        FadeAnimation.Instance.goFadeOut();
+        StartCoroutine(oneCoroutine());
 	}
+
+    IEnumerator oneCoroutine()
+    {
+        yield return new WaitForSeconds(fadeTime);
+        SceneManager.LoadScene ("Stage1");
+    }
 
     // ステージ2に移動
     public void toStage2 ()
     {
-        SceneManager.LoadScene("Stage2");
+        FadeAnimation.Instance.goFadeOut();
+        StartCoroutine(twoCoroutine());
+    }
+
+    IEnumerator twoCoroutine()
+    {
+        yield return new WaitForSeconds(fadeTime);
+        SceneManager.LoadScene ("Stage2");
     }
 
     // ステージ3に移動
     public void toStage3 ()
     {
-        SceneManager.LoadScene("Stage3");
+        FadeAnimation.Instance.goFadeOut();
+        StartCoroutine(threeCoroutine());
+    }
+
+    IEnumerator threeCoroutine()
+    {
+        yield return new WaitForSeconds(fadeTime);
+        SceneManager.LoadScene ("Stage3");
     }
 
     // ステージ4に移動
-    public void toStage4 () {
-        SceneManager.LoadScene("Stage4");
+    public void toStage4 ()
+    {
+        FadeAnimation.Instance.goFadeOut();
+        StartCoroutine(fourCoroutine());
+    }
 
+    IEnumerator fourCoroutine()
+    {
+        yield return new WaitForSeconds(fadeTime);
+        SceneManager.LoadScene ("Stage4");
     }
 
     // ステージ5に移動
-    public void toStage5 () {
-        SceneManager.LoadScene("Stage5");
+    public void toStage5 ()
+    {
+        FadeAnimation.Instance.goFadeOut();
+        StartCoroutine(fiveCoroutine());
+    }
 
+    IEnumerator fiveCoroutine()
+    {
+        yield return new WaitForSeconds(fadeTime);
+        SceneManager.LoadScene ("Stage5");
     }
 
     // ステージ6に移動
-    public void toStage6 () {
-        SceneManager.LoadScene("Stage6");
+    public void toStage6 ()
+    {
+        FadeAnimation.Instance.goFadeOut();
+        StartCoroutine(sixCoroutine());
+    }
+
+    IEnumerator sixCoroutine()
+    {
+        yield return new WaitForSeconds(fadeTime);
+        SceneManager.LoadScene ("Stage6");
     }
 
     // ステージ7に移動
-    public void toStage7 () {
-        SceneManager.LoadScene("Stage7");
+    public void toStage7 ()
+    {
+        FadeAnimation.Instance.goFadeOut();
+        StartCoroutine(sevenCoroutine());
+    }
+
+    IEnumerator sevenCoroutine()
+    {
+        yield return new WaitForSeconds(fadeTime);
+        SceneManager.LoadScene ("Stage7");
     }
 
     // ステージ8に移動
-    public void toStage8 () {
-        SceneManager.LoadScene("Stage8");
+    public void toStage8 ()
+    {
+        FadeAnimation.Instance.goFadeOut();
+        StartCoroutine(eightCoroutine());
+    }
+
+    IEnumerator eightCoroutine()
+    {
+        yield return new WaitForSeconds(fadeTime);
+        SceneManager.LoadScene ("Stage8");
     }
 
     // ステージ9に移動
-    public void toStage9 () {
-        SceneManager.LoadScene("Stage9");
+    public void toStage9 ()
+    {
+        FadeAnimation.Instance.goFadeOut();
+        StartCoroutine(nineCoroutine());
+    }
+
+    IEnumerator nineCoroutine()
+    {
+        yield return new WaitForSeconds(fadeTime);
+        SceneManager.LoadScene ("Stage9");
     }
 
     // ステージ10に移動
-    public void toStage10 () {
-        SceneManager.LoadScene("Stage10");
+    public void toStage10 ()
+    {
+        FadeAnimation.Instance.goFadeOut();
+        StartCoroutine(tenCoroutine());
+    }
+
+    IEnumerator tenCoroutine()
+    {
+        yield return new WaitForSeconds(fadeTime);
+        SceneManager.LoadScene ("Stage10");
     }
 
     // ステージ11に移動
-    public void toStage11 () {
-        SceneManager.LoadScene("Stage11");
+    public void toStage11 ()
+    {
+        FadeAnimation.Instance.goFadeOut();
+        StartCoroutine(elevenCoroutine());
+    }
+
+    IEnumerator elevenCoroutine()
+    {
+        yield return new WaitForSeconds(fadeTime);
+        SceneManager.LoadScene ("Stage11");
     }
 
     // ステージ12に移動
-    public void toStage12 () {
-        SceneManager.LoadScene("Stage12");
+    public void toStage12 ()
+    {
+        FadeAnimation.Instance.goFadeOut();
+        StartCoroutine(twelveCoroutine());
+    }
+
+    IEnumerator twelveCoroutine()
+    {
+        yield return new WaitForSeconds(fadeTime);
+        SceneManager.LoadScene ("Stage12");
     }
    
 }

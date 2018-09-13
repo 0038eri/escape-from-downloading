@@ -7,31 +7,28 @@ public class PlayerStateManager : SingletonMonoBehaviour<PlayerStateManager> {
 
     private string gameModeCheck;
     private int stageCheckNumber;
+    private float fadeTime = 2.0f;
 
     // ゲーム開始前
     public void beforeGameMethod()
     {
         PlayerOperation.Instance.playerStartPos();
-        //GameStartAnimator.Instance.startGameAnimation();
         HpManager.Instance.setupHp();
         GameModeManager.Instance.beforeGame();
-        PlayerOperation.Instance.gamePauseStop();
     }
 
     public void isPlayingMethod()
     {
+        PlayerOperation.Instance.canInput();
         TimerManager.Instance.startTimer();
-        PlayerOperation.Instance.gameStartRun();
         GameModeManager.Instance.isPlaying();
     }
 
     // ゲーム終了
     private void gameFinishMethod()
     {
-        TimerManager.Instance.stopTimer();
-        //PlayerUiManager.Instance.falsePlayerUi();
-        GameStartAnimator.Instance.finishedGame();
-        PlayerOperation.Instance.gamePauseStop();
+        PlayerUiManager.Instance.falsePlayerUi();
+        // GameStartAnimator.Instance.finishedGame();
         stageCheckNumber = StageJudgeManager.Instance.stageNumberCheck();
     }
 
@@ -90,7 +87,6 @@ public class PlayerStateManager : SingletonMonoBehaviour<PlayerStateManager> {
     // ゲームオーバー
     public void gameOverMethod()
     {
-        Debug.Log("ge-mu");
         gameFinishMethod();
         SystemUiManager.Instance.displayOver();
         GameModeManager.Instance.gameOver();
@@ -98,20 +94,41 @@ public class PlayerStateManager : SingletonMonoBehaviour<PlayerStateManager> {
 
     public void nextGame()
     {
-        destroyMode();
+        FadeAnimation.Instance.goFadeOut();
+        StartCoroutine(nextCoroutine());
+    }
+
+    IEnumerator nextCoroutine()
+    {
+        yield return new WaitForSeconds(fadeTime);
+        destroyUi();
         StageJudgeManager.Instance.sceneTransition();
     }
 
     public void restartGame()
     {
-        destroyMode();
+        FadeAnimation.Instance.goFadeOut();
+        StartCoroutine(restartCoroutine());
+    }
+
+    IEnumerator restartCoroutine()
+    {
+        yield return new WaitForSeconds(fadeTime);
+        destroyUi();
         string sceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(sceneName);
     }
 
     public void backMenuP()
     {
-        destroyMode();
+        FadeAnimation.Instance.goFadeOut();
+        StartCoroutine(backMenuP_Coroutine());
+    }
+
+    IEnumerator backMenuP_Coroutine()
+    {
+        yield return new WaitForSeconds(fadeTime);
+        destroyUi();
         TimerManager.Instance.resetTimer();
         GameModeManager.Instance.systemScene();
         SceneManager.LoadScene("Menu");
@@ -119,13 +136,20 @@ public class PlayerStateManager : SingletonMonoBehaviour<PlayerStateManager> {
 
     public void escapeGameP()
     {
-        destroyMode();
+        FadeAnimation.Instance.goFadeOut();
+        StartCoroutine(escapeGameP_Corountine());
+    }
+
+    IEnumerator escapeGameP_Corountine()
+    {
+        yield return new WaitForSeconds(fadeTime);
+        destroyUi();
         TimerManager.Instance.resetTimer();
         GameModeManager.Instance.systemScene();
         SceneManager.LoadScene("Start");
     }
 
-    void destroyMode()
+    void destroyUi()
     {
         gameModeCheck = GameModeManager.Instance.sendMode();
         if (gameModeCheck == "gameClear")

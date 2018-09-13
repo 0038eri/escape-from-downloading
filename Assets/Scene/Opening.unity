@@ -733,13 +733,22 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114187617107601432, guid: b724f830d43e04e90a7d11d1cd1c469c,
+    - target: {fileID: 114438488040369350, guid: b724f830d43e04e90a7d11d1cd1c469c,
         type: 2}
-      propertyPath: sentencesText.Array.data[0]
+      propertyPath: serif
       value: 
+      objectReference: {fileID: 1824649397}
+    - target: {fileID: 114438488040369350, guid: b724f830d43e04e90a7d11d1cd1c469c,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114187617107601432, guid: b724f830d43e04e90a7d11d1cd1c469c, type: 2}
+    - target: {fileID: 114481780170746258, guid: b724f830d43e04e90a7d11d1cd1c469c,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b724f830d43e04e90a7d11d1cd1c469c, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &1824649396
@@ -866,7 +875,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1242225817380628, guid: eec9c672b197342cc862564a67ede4de, type: 2}
       propertyPath: m_Name
-      value: Sentence
+      value: Serif
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eec9c672b197342cc862564a67ede4de, type: 2}
@@ -877,20 +886,3 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1824649396}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
---- !u!1 &2035048970 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1015030707759272, guid: b724f830d43e04e90a7d11d1cd1c469c,
-    type: 2}
-  m_PrefabInternal: {fileID: 1613300345}
---- !u!114 &2035048971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2035048970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd68230de7c1d44d1bc03057b14bb082, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  messeageText: {fileID: 1824649397}

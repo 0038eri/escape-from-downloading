@@ -6,120 +6,110 @@ using UnityEngine.SceneManagement;
 public class PlayerOperation : SingletonMonoBehaviour<PlayerOperation>
 {
 
-    // プレイヤー座標
     private Vector3 playerPos;
-    // プレイヤー地面接触判定
-    private bool isPlayerCol;
-
-    // 前進速度
+    private Rigidbody playerRb;
+    private float timer = 0.0f;
     private float runSpeed = 12;
-    // 前進判定
-    private bool isRunning;
-
-    // スライド速度
+    private float squatTime = 1.0f;
     private float[] slideSpeed = { 4, -4 };
-    // スライド判定
-    private int slide;
+    private int slide = 1;
     /// 右 : 0
     /// 真ん中 : 1
     /// 左 : 2
-
-    // 矢印ボタン入力
     private int isWhichArrow = 0;
     /// 0 : 入力なし
     /// 1 : 右入力
     /// 2 : 左入力 
+    /// 3 : 下入力
+    /// 4 : ジャンプ入力
+    private bool gameJudge;
+    private bool canNotSlide;
+    private bool isJumping = false;
+    private bool isPlayerCol;
 
-    // スライド変更不可能判定
-    private bool canNotSlide = false;
+private void Start()
+{
+    canNotSlide = true;
+    playerRb = GetComponent<Rigidbody>();
+}
+void Update()
+{
+    // Debug.Log("canNotSlide == " + canNotSlide);
+    // Debug.Log(isWhichArrow);
+    playerPos = this.transform.position; // プレイヤー座標取得
 
-    void Update()
-    {
-        playerPos = this.transform.position; // プレイヤー座標取得
-        // 前進
-        if (isRunning == true)
-        {
-            RunningMethod();
-        }
-
-        // ジャンプ
-        if (isPlayerCol == true) // 地面に触れていたら
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                inputJump();
-            }
-        }
-
-        if (canNotSlide == false) // スライド変更不可能判定が可能
-        {
-            // 右
-            if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                isWhichArrow = 1; // 右キー入力した判定
-                canNotSlide = true; // スライド変更判定不可能
-            }
-            // 左
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                isWhichArrow = 2; // 左キー入力した判定
-                canNotSlide = true; // スライド変更判定不可能
-            }
-        }
-
-        // 右キー入力したら
-        if (isWhichArrow == 1)
-        {
-            slideToRight();
-        }
-        // 左キー入力したら
-        else if (isWhichArrow == 2)
-        {
-            slideToLeft();
-        }
-        // なにも入力していなかったら
-        else if (isWhichArrow == 0)
-        {
-            canNotSlide = false; // スライド可能になる
-        }
-    }
-
-    public void gameStartRun()
-    {
-        canInput();
-        goRunning();
-    }
-
-    public void gamePauseStop()
-    {
-        cannotInput();
-        stopRunning();
-    }
-
-    public void canInput()
-    {
-        canNotSlide = false;
-    }
-
-    public void cannotInput()
+    gameJudge = GameModeManager.Instance.sendFlag();
+    if(gameJudge == false)
     {
         canNotSlide = true;
     }
-
-    public void goRunning()
+    else if(gameJudge == true)
     {
-        isRunning = true;
+        RunningMethod();
+
+        if(canNotSlide == false) // スライド変更不可能判定が可能
+        {
+
+            if(Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                isWhichArrow = 1;
+                canNotSlide = true; // スライド変更判定不可能
+            }
+            if(Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                isWhichArrow = 2;
+                canNotSlide = true; // スライド変更判定不可能
+            }
+            if(Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                isWhichArrow = 3;
+                canNotSlide = true;
+            }
+            if(isPlayerCol == true) // 地面に触れていたら
+            {
+                if(Input.GetKeyDown(KeyCode.Space))
+                {
+                    isWhichArrow = 4;
+                    isJumping = true;
+                    canNotSlide = true;
+                }
+            }
+
+        }
+           
+        if(isWhichArrow == 1)
+        {
+            slideToRight();
+        }
+        else if(isWhichArrow == 2)
+        {
+            slideToLeft();
+        }
+        else if(isWhichArrow == 3)
+        {
+            slideToDown();
+        }
+        else if(isWhichArrow == 4)
+        {
+            inputJump();
+        }
+        else if(isWhichArrow == 0)
+        {
+            canNotSlide = false;
+        } 
+
     }
 
-    public void stopRunning()
-    {
-        isRunning = false;
-    }
+}
 
-    // 前進
+public void canInput()
+{
+    canNotSlide = false;
+}
+
     public void RunningMethod()
     {
-        this.transform.position -= transform.up * runSpeed * Time.deltaTime;
+        playerRb.AddForce(Vector3.left * runSpeed);
     }
 
     // プレイヤー初期位置
@@ -128,15 +118,19 @@ public class PlayerOperation : SingletonMonoBehaviour<PlayerOperation>
         Vector3 playerStartTransformPos;
         playerStartTransformPos = new Vector3(0.0f, 1.0f, 0.0f);
         this.transform.position = playerStartTransformPos;
-        slide = 1;
+        slide = 2;
     }
 
     // ジャンプ入力
     void inputJump()
     {
-        float jumpHeight = 2.5f; // ジャンプの高さ
+        if(isJumping == true)
+        {
+        float jumpHeight = 4.0f; // ジャンプの高さ
         playerPos.y += jumpHeight; // Y軸1.5ジャンプ
         this.transform.position = playerPos;
+        isJumping = false;
+        }
     }
 
     // 右側に移動する
@@ -145,14 +139,14 @@ public class PlayerOperation : SingletonMonoBehaviour<PlayerOperation>
         switch (slide)
         {
             case 1: // 真ん中にいる
-                if (playerPos.z < 2.0f) // 右に移動完了していなかったら
+                if (playerPos.z < 1.5f) // 右に移動完了していなかったら
                 {
                     this.transform.position += Vector3.forward * slideSpeed[0] * Time.deltaTime; // 右側に移動する
                 }
-                else if (playerPos.z >= 2.0f)
+                else if (playerPos.z >= 1.5f)
                 {
-                    isWhichArrow = 0; // 右入力完了
                     slide = 0; // 右に移動完了
+                    isWhichArrow = 0; // 右入力完了
                 }
                 break;
             case 2: // 左にいる
@@ -162,11 +156,12 @@ public class PlayerOperation : SingletonMonoBehaviour<PlayerOperation>
                 }
                 else if (playerPos.z >= 0.0f)
                 {
-                    isWhichArrow = 0; // 右入力完了
                     slide = 1; // 真ん中に移動完了
+                    isWhichArrow = 0; // 右入力完了
                 }
                 break;
             default:
+                canNotSlide = false; // スライド可能になる
                 break;
         }
     }
@@ -181,25 +176,44 @@ public class PlayerOperation : SingletonMonoBehaviour<PlayerOperation>
                 {
                     this.transform.position += Vector3.forward * slideSpeed[1] * Time.deltaTime; // 左側に移動する
                 }
-                else if (playerPos.z <= 0.0f)
+                else if (playerPos.z <= 1.5f)
                 {
-                    isWhichArrow = 0; // 左入力完了
                     slide = 1; // 真ん中に移動完了
+                    isWhichArrow = 0; // 左入力完了
                 }
                 break;
             case 1: // 真ん中にいるにいる
-                if (playerPos.z > -2.0f) // 左に移動完了していなかったら 
+                if (playerPos.z > -1.5f) // 左に移動完了していなかったら 
                 {
                     this.transform.position += Vector3.forward * slideSpeed[1] * Time.deltaTime; // 左側に移動する
                 }
-                else if (playerPos.z <= -2.0f)
+                else if (playerPos.z <= -1.5f)
                 {
-                    isWhichArrow = 0; // 左入力完了
                     slide = 2; // 左に移動完了
+                    isWhichArrow = 0; // 左入力完了
                 }
                 break;
             default:
+                canNotSlide = false; // スライド可能になる
                 break;
+        }
+    }
+
+    void slideToDown()
+    {
+        Vector3 playerSca = this.transform.localScale;
+        timer += Time.deltaTime;
+        Debug.Log(timer);
+        if(timer<squatTime){
+            playerSca.z = 0.4f;
+            this.transform.localScale = playerSca;
+        }
+        else if (timer>=squatTime)
+        {
+            playerSca.z = 1.0f;
+            this.transform.localScale = playerSca;
+            timer = 0.0f;
+            isWhichArrow = 0;
         }
     }
 
@@ -218,6 +232,10 @@ public class PlayerOperation : SingletonMonoBehaviour<PlayerOperation>
 
     private void OnCollisionEnter(Collision collision)
     {
+        if(isWhichArrow != 0)
+        {
+            isWhichArrow = 0;
+        }
 
         if (collision.gameObject.tag == "Goal")
         {

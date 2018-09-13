@@ -5,32 +5,43 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class StageStateManager : SingletonMonoBehaviour<StageStateManager> {
-
-    // ポーズ画面
+    
     private GameObject pauseUi;
-    // ポーズボタン
     private GameObject pauseButton;
+    private float fadeTime = 2.0f;
 
-    private void Awake()
+    private void Start()
     {
         pauseUi = GameObject.Find("PauseCanvas");
         pauseButton = GameObject.Find("PauseButton");
     }
 
-    public void pauseGame()
+    public void pauseMethod()
     {
+        SystemUiManager.Instance.openPauseUi();
+        PlayerUiManager.Instance.falsePlayerUi();
         Time.timeScale = 0.0f;
     }
 
     // ゲームを再開する
     public void playGame () {
         SystemUiManager.Instance.closePauseUi();
-        TimerManager.Instance.startTimer();
+        PlayerUiManager.Instance.truePlayerUi();
+        Time.timeScale = 1.0f;
     }
 
     // メニューに戻る
-    public void backMenuS () {
-        SystemUiManager.Instance.destroyPauseUi();
+    public void backMenuS ()
+    {
+        Time.timeScale = 1.0f;
+        FadeAnimation.Instance.goFadeOut();
+        StartCoroutine(backMenuS_Coroutine());
+    }
+
+    IEnumerator backMenuS_Coroutine()
+    {
+        yield return new WaitForSeconds(fadeTime);
+        SystemUiManager.Instance.closePauseUi();
         TimerManager.Instance.resetTimer();
         GameModeManager.Instance.systemScene();
         SceneManager.LoadScene("Menu");
@@ -38,10 +49,18 @@ public class StageStateManager : SingletonMonoBehaviour<StageStateManager> {
 
     // ゲームをやめる
     public void escapeGameS () {
-        SystemUiManager.Instance.destroyPauseUi();
+        Time.timeScale = 1.0f;
+        FadeAnimation.Instance.goFadeOut();
+        StartCoroutine(escapeGameS_Coroutine());
+    }
+
+    IEnumerator escapeGameS_Coroutine()
+    {
+        yield return new WaitForSeconds(fadeTime);
+        SystemUiManager.Instance.closePauseUi();
         TimerManager.Instance.resetTimer();
         GameModeManager.Instance.systemScene();
-        SceneManager.LoadScene("Start");
+        SceneManager.LoadScene("Start");        
     }
 
 }

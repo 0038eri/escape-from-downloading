@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PrefabScn : MonoBehaviour {
 
 	// Startに移動
-	void Awake () {
+	void Start () {
 		SceneManager.LoadScene("Start");
 	}
 

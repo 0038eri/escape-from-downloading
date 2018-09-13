@@ -19,7 +19,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 224618407926213480}
-  - component: {fileID: 114187617107601432}
+  - component: {fileID: 114481780170746258}
+  - component: {fileID: 114438488040369350}
   m_Layer: 5
   m_Name: OpeningObj
   m_TagString: Untagged
@@ -27,7 +28,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &114187617107601432
+--- !u!114 &114438488040369350
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -35,10 +36,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 1015030707759272}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a10a299bb2de4dffbbff8a2f71d43e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paragraphDeta:
+  - "\u3066\u3059\u3068"
+  - "\u30C6\u30B9\u30C8"
+  - TEST
+  paragraphNumber: 3
+  serif: {fileID: 0}
+--- !u!114 &114481780170746258
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1015030707759272}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd68230de7c1d44d1bc03057b14bb082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messeageText: {fileID: 0}
 --- !u!224 &224618407926213480
 RectTransform:
   m_ObjectHideFlags: 1

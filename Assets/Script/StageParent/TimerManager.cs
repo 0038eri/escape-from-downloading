@@ -42,6 +42,7 @@ public class TimerManager : SingletonMonoBehaviour<TimerManager>
         }
         timer += (-1 * Time.deltaTime); // タイマーを動かす
         timerText.text = ((int)timer).ToString() + " sec"; // 時間を整数で表示する
+        //Debug.Log((int)timer);
         if (timer < timeLimit) // もしタイマーが制限時間に達したら
         {
             stopTimer();
@@ -53,20 +54,18 @@ public class TimerManager : SingletonMonoBehaviour<TimerManager>
     public void startTimer()
     {
         timerStop = false;
-        //Time.timeScale = 1.0f;
     }
 
     // タイマーを停止
     public void stopTimer()
     {
         timerStop = true;
-        //Time.timeScale = 0.0f;
     }
 
     // タイマーセット
     public void setupTimer()
     {
-        timer = 10.0f;
+        timer = 60.0f;
     }
 
     // タイマーリセット

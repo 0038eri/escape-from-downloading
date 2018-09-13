@@ -211,15 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8a425346771466c966ab1c5dfc55a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonFromP:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  buttonFromC:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  buttonFromO:
+  canvases:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

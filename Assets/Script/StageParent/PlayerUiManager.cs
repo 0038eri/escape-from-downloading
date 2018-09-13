@@ -5,47 +5,34 @@ using UnityEngine.UI;
 
 public class PlayerUiManager : SingletonMonoBehaviour<PlayerUiManager> {
 
-    public CanvasGroup playerCanvasGroup;
+    private GameObject playerCanvas;
     private int moneyForTtext;
     private Text moneyText;
     private Button pauseButton;
 
-    private void Awake()
-    {
-        playerCanvasGroup = GameObject.Find("PlayerCanvas").GetComponent<CanvasGroup>();
-        moneyText = GameObject.Find("Money").GetComponent<Text>();
-        pauseButton = GameObject.Find("PauseButton").GetComponent<Button>();
-    }
-
-    public void Update()
-    {
-        //Debug.Log(playerCanvasGroup.alpha);
-    }
-
     private void Start()
     {
+        playerCanvas = GameObject.Find("PlayerCanvas");
         moneyForTtext = MoneyManager.Instance.sendMoney(); 
+        moneyText = GameObject.Find("Money").GetComponent<Text>();
         moneyText.text = moneyForTtext.ToString();
-        pauseButton.onClick.AddListener(pauseEvent);
+        pauseButton = GameObject.Find("PauseButton").GetComponent<Button>();
+        pauseButton.onClick.AddListener(doPause);
     }
 
     public void truePlayerUi()
     {
-        playerCanvasGroup.alpha = 1.0f;
-        playerCanvasGroup.interactable = true;
+        playerCanvas.SetActive(true);
     }
 
     public void falsePlayerUi()
     {
-        
-        playerCanvasGroup.alpha = 0.0f;
-
-        playerCanvasGroup.interactable = false;
+        playerCanvas.SetActive(false);
     }
 
-    void pauseEvent()
+    public void doPause()
     {
-        SystemUiManager.Instance.openPauseUi();
+        StageStateManager.Instance.pauseMethod();
     }
 
     public void updateMoneyText()

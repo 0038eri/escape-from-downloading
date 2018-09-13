@@ -9,10 +9,40 @@ public class UserManager : SingletonMonoBehaviour<UserManager> {
     public static string username;
     // ユーザーネーム表示テキスト
     public Text usernameText;
+    private int selectGender;
+    /// <summary>
+    /// 0 : boy
+    /// 1 : girl
+    /// </summary>
+    private bool gender;
+    /// <summary>
+    /// true : boy
+    /// false : girl
+    /// </summary>
 
     private void Start()
     {
-        //username = PlayerPrefs.GetString("usernameSave");
+        username = PlayerPrefs.GetString("usernameSave");
+        //selectGender = PlayerPrefs.GetInt("genderSave");
+        //decidedGender();
+    }
+
+    //public void decidedGender()
+    //{
+    //    if (selectGender == 0)
+    //    {
+    //        gender = true;
+    //    }
+    //    else if (selectGender == 1)
+    //    {
+    //        gender = false;
+    //    }
+    //    PlayerPrefs.SetInt("genderSave", selectGender);
+    //}
+
+    public void decidedUsername()
+    {
+        PlayerPrefs.SetString("usernameSave", username);
     }
 
     // ユーザーネーム更新
