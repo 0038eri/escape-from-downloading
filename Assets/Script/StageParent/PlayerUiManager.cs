@@ -28,6 +28,7 @@ public class PlayerUiManager : SingletonMonoBehaviour<PlayerUiManager> {
     public void falsePlayerUi()
     {
         playerCanvas.SetActive(false);
+        Debug.Log("じっこうされるよん");
     }
 
     public void doPause()

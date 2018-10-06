@@ -9,10 +9,11 @@ public class MenuScn : MonoBehaviour {
     private int stageJudgeNumber;
 
     public Button[] stageButton;
-    private float fadeTime = 2.0f;
+    private float fadeTime;
 
     void Start()
     {
+        fadeTime = FadeAnimation.Instance.valueFadeTime();
         FadeAnimation.Instance.goFadeIn();
         StartCoroutine(StartMethodM());
         stageJudgeNumber = StageJudgeManager.Instance.stageNumberCheck();

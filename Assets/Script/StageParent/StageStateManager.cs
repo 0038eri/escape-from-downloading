@@ -8,18 +8,21 @@ public class StageStateManager : SingletonMonoBehaviour<StageStateManager> {
     
     private GameObject pauseUi;
     private GameObject pauseButton;
-    private float fadeTime = 2.0f;
+    private float fadeTime;
+    private FadeAnimation fadeAnm;
 
     private void Start()
     {
+        fadeTime = FadeAnimation.Instance.valueFadeTime();
+        fadeAnm = GameObject.Find("SceneFadeSystem").GetComponent<FadeAnimation>();
         pauseUi = GameObject.Find("PauseCanvas");
         pauseButton = GameObject.Find("PauseButton");
     }
 
     public void pauseMethod()
     {
-        SystemUiManager.Instance.openPauseUi();
         PlayerUiManager.Instance.falsePlayerUi();
+        SystemUiManager.Instance.openPauseUi();
         Time.timeScale = 0.0f;
     }
 
@@ -60,7 +63,8 @@ public class StageStateManager : SingletonMonoBehaviour<StageStateManager> {
         SystemUiManager.Instance.closePauseUi();
         TimerManager.Instance.resetTimer();
         GameModeManager.Instance.systemScene();
-        SceneManager.LoadScene("Start");        
+        SceneManager.LoadScene("Start"); 
+        fadeAnm.nextSceneName = "Start";
     }
 
 }

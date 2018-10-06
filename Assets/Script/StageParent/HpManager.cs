@@ -15,14 +15,11 @@ public class HpManager : SingletonMonoBehaviour<HpManager> {
     // HPバー背景画像
     private Image hpImage;
 
-    private void Awake () {
+    public void setupHp ()
+    {
         playerHpText = GameObject.Find("HP").GetComponent<Text>();
         slider = GameObject.Find("Slider").GetComponent<Slider>();
         hpImage = GameObject.Find("Fill").GetComponent<Image>();
-	}
-
-    public void setupHp ()
-    {
         playerHp = 100; // HPリセット
         slider.value = playerHp; // HP反映
         playerHpText.text = playerHp.ToString(); // HPテキスト表示

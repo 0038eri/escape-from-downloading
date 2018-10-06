@@ -15,13 +15,9 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
     public AudioClip[] stageBgmClips;
     public AudioClip[] seClips;
 
-    private void Awake()
-    {
-        audioSources = GetComponents<AudioSource>();
-    }
-
     private void Start()
     {
+        audioSources = GetComponents<AudioSource>();
         bgmSwitch = PlayerPrefs.GetInt("bgmSave");
         seSwitch = PlayerPrefs.GetInt("seSave");
     }

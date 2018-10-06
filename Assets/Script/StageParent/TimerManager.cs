@@ -17,7 +17,7 @@ public class TimerManager : SingletonMonoBehaviour<TimerManager>
     // タイマー表示テキスト
     private Text timerText;
 
-    private void Awake()
+    private void Start()
     {
         timerText = GameObject.Find("Timer").GetComponent<Text>();
     }

@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class OpeningScn : MonoBehaviour {
 
-    private float fadeTime = 2.0f;
+    private float fadeTime;
 
     void Start()
     {
+        fadeTime = FadeAnimation.Instance.valueFadeTime();
         FadeAnimation.Instance.goFadeIn();
         StartCoroutine(openingCoroutine());
     }

@@ -8,12 +8,6 @@ public class SystemUiManager : SingletonMonoBehaviour<SystemUiManager> {
     public GameObject[] canvases;
     private string gamemode;
 
-    private void Awake()
-    {
-        //q
-        //Debug.Log(canvases[1]);
-    }
-
     public void openPauseUi()
     {
         canvases[0].SetActive(true);

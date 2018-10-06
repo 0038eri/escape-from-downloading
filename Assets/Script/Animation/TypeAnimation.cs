@@ -3,49 +3,68 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// 参照HP
+// http://pafu-of-duck.hatenablog.com/entry/2017/06/14/101139
+
 public class TypeAnimation : MonoBehaviour {
 
-    public string[] paragraphDeta;
-    public int paragraphNumber = 0;
-    private string currentText;
-    public Text serif;
-    int lastUpdate;
-    float clickTime = Time.time;
-    float displayTime = 2.0f;
-    bool displayTextFlag = false;
+    public string[] sentences;
+    [SerializeField] Text uiText;   // uiTextへの参照
 
-    private void Start()
-    {
-        //currentText = paragraphDeta[0];
-        //serif.text = currentText;
-        readyClick();
+    [SerializeField][Range(0.001f, 0.3f)]
+    float intervalForCharDisplay = 0.05f;   // 1文字の表示にかける時間
+
+    private int currentSentenceNum = 0; //現在表示している文章番号
+    private string currentSentence = string.Empty;  // 現在の文字列
+    private float timeUntilDisplay = 0;     // 表示にかかる時間
+    private float timeBeganDisplay = 1;         // 文字列の表示を開始した時間
+    private int lastUpdateCharCount = -1;      // 表示中の文字数
+
+
+    void Start () {
+        SetNextSentence ();
     }
 
     void Update () {
-        //if(Input.GetMouseButtonDown(0)){
-        //    displayTextFlag = false;
-        //}
-        //if (displayTextFlag == false)
-        //{
-            int displayCount = (int)(Mathf.Clamp01((Time.time - clickTime) / displayTime) * currentText.Length);
-        if (displayCount != lastUpdate)
-        {
-            currentText = paragraphDeta[paragraphNumber];
-            serif.text = currentText.Substring(0, displayCount);
-            lastUpdate = displayCount;
-            if (displayCount == currentText.Length)
+        // 文章の表示完了 / 未完了
+        if (IsDisplayComplete ()) {
+            //最後の文章ではない & ボタンが押された
+            if (currentSentenceNum < sentences.Length && Input.GetMouseButtonDown (0))
             {
-                displayTextFlag = true;
-                readyClick();
+                SetNextSentence ();
+            }
+            else if(currentSentenceNum == sentences.Length && Input.GetMouseButtonDown (0))
+            {
+                SceneSkip.Instance.skipToStage1();
+            }
+        } else {
+            //ボタンが押された
+            if (Input.GetMouseButtonDown(0))
+            {
+                timeUntilDisplay = 0; //※1
             }
         }
-        //}
-	}
 
-    void readyClick()
-    {
-        currentText = paragraphDeta[paragraphNumber];
-        paragraphNumber++;
+        //表示される文字数を計算
+        int displayCharCount = (int)(Mathf.Clamp01((Time.time - timeBeganDisplay) / timeUntilDisplay) * currentSentence.Length);
+        //表示される文字数が表示している文字数と違う
+        if (displayCharCount != lastUpdateCharCount) {
+            uiText.text = currentSentence.Substring (0, displayCharCount);
+            //表示している文字数の更新
+            lastUpdateCharCount = displayCharCount;
+        }
     }
 
+    // 次の文章をセットする
+    void SetNextSentence(){
+        currentSentence = sentences [currentSentenceNum];
+        timeUntilDisplay = currentSentence.Length * intervalForCharDisplay;
+        timeBeganDisplay = Time.time;
+        currentSentenceNum++;
+        lastUpdateCharCount = 0;
+    }
+
+    bool IsDisplayComplete(){
+        return Time.time > timeBeganDisplay + timeUntilDisplay; //※2
+    }
 }

@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneSkip : MonoBehaviour {
+public class SceneSkip : SingletonMonoBehaviour<SceneSkip> {
 
-	private float fadeTime = 2.0f;
+	private float fadeTime;
+	
+	private void Start()
+	{
+		fadeTime = FadeAnimation.Instance.valueFadeTime();
+	}
 
     /// オープニングより
 	/// ステージ1に移動

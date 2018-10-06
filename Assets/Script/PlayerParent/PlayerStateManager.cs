@@ -7,7 +7,12 @@ public class PlayerStateManager : SingletonMonoBehaviour<PlayerStateManager> {
 
     private string gameModeCheck;
     private int stageCheckNumber;
-    private float fadeTime = 2.0f;
+    private float fadeTime;
+
+    private void Start()
+    {
+        fadeTime = FadeAnimation.Instance.valueFadeTime();
+    }
 
     // ゲーム開始前
     public void beforeGameMethod()

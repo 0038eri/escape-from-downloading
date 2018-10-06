@@ -9,7 +9,7 @@ public class PlayerOperation : SingletonMonoBehaviour<PlayerOperation>
     private Vector3 playerPos;
     private Rigidbody playerRb;
     private float timer = 0.0f;
-    private float runSpeed = 12;
+    private float runSpeed = 20;
     private float squatTime = 1.0f;
     private float[] slideSpeed = { 4, -4 };
     private int slide = 1;
@@ -34,8 +34,7 @@ private void Start()
 }
 void Update()
 {
-    // Debug.Log("canNotSlide == " + canNotSlide);
-    // Debug.Log(isWhichArrow);
+
     playerPos = this.transform.position; // プレイヤー座標取得
 
     gameJudge = GameModeManager.Instance.sendFlag();
@@ -98,6 +97,9 @@ void Update()
             canNotSlide = false;
         } 
 
+        // Debug.Log(isWhichArrow);
+        // Debug.Log(slide);
+
     }
 
 }
@@ -118,7 +120,7 @@ public void canInput()
         Vector3 playerStartTransformPos;
         playerStartTransformPos = new Vector3(0.0f, 1.0f, 0.0f);
         this.transform.position = playerStartTransformPos;
-        slide = 2;
+        slide = 1;
     }
 
     // ジャンプ入力
@@ -182,7 +184,7 @@ public void canInput()
                     isWhichArrow = 0; // 左入力完了
                 }
                 break;
-            case 1: // 真ん中にいるにいる
+            case 1: // 真ん中にいる
                 if (playerPos.z > -1.5f) // 左に移動完了していなかったら 
                 {
                     this.transform.position += Vector3.forward * slideSpeed[1] * Time.deltaTime; // 左側に移動する
@@ -205,11 +207,13 @@ public void canInput()
         timer += Time.deltaTime;
         Debug.Log(timer);
         if(timer<squatTime){
+            Debug.Log("しゃがんでいる");
             playerSca.z = 0.4f;
             this.transform.localScale = playerSca;
         }
         else if (timer>=squatTime)
         {
+            Debug.Log("しゃがみおわったから、りせっとしよ！");
             playerSca.z = 1.0f;
             this.transform.localScale = playerSca;
             timer = 0.0f;
@@ -232,7 +236,10 @@ public void canInput()
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(isWhichArrow != 0)
+        /// ジャンプして、着地したとき、
+        /// isWhichArrowが0でなかったとき
+        /// デフォルトに戻す
+        if(isWhichArrow == 4)
         {
             isWhichArrow = 0;
         }

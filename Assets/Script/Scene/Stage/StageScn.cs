@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class StageScn : MonoBehaviour {
 
-    public GameObject gameStart;
-    private float fadeTime = 2.0f;
+    private float fadeTime;
 
     private void Start()
     {
+        fadeTime = FadeAnimation.Instance.valueFadeTime();
         FadeAnimation.Instance.goFadeIn();
         PlayerStateManager.Instance.beforeGameMethod();
         StartCoroutine(startMethodS());
@@ -17,8 +17,7 @@ public class StageScn : MonoBehaviour {
     IEnumerator startMethodS()
     {
         yield return new WaitForSeconds(fadeTime);
-        Debug.Log("hogehoge");
-        gameStart.SetActive(true);
+        GameStartAnimator.Instance.trueAnimation();
         SoundManager.Instance.playBgm();
     }
 
