@@ -64,7 +64,7 @@ public class StageStateManager : SingletonMonoBehaviour<StageStateManager> {
         TimerManager.Instance.resetTimer();
         GameModeManager.Instance.systemScene();
         SceneManager.LoadScene("Start"); 
-        fadeAnm.nextSceneName = "Start";
+        // fadeAnm.nextSceneName = "Start";
     }
 
 }

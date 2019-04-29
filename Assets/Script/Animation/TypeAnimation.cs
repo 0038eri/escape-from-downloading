@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 // 参照HP
 // http://pafu-of-duck.hatenablog.com/entry/2017/06/14/101139
@@ -11,8 +12,7 @@ public class TypeAnimation : MonoBehaviour {
     public string[] sentences;
     [SerializeField] Text uiText;   // uiTextへの参照
 
-    [SerializeField][Range(0.001f, 0.3f)]
-    float intervalForCharDisplay = 0.05f;   // 1文字の表示にかける時間
+    [SerializeField, Range(0.001f, 0.3f)] float intervalForCharDisplay = 0.05f;   // 1文字の表示にかける時間
 
     private int currentSentenceNum = 0; //現在表示している文章番号
     private string currentSentence = string.Empty;  // 現在の文字列
@@ -20,30 +20,37 @@ public class TypeAnimation : MonoBehaviour {
     private float timeBeganDisplay = 1;         // 文字列の表示を開始した時間
     private int lastUpdateCharCount = -1;      // 表示中の文字数
 
+    private bool isSkip = false;
 
     void Start () {
         SetNextSentence ();
     }
 
     void Update () {
+
+        // if(EventSystem.current.IsPointerOverGameObject()){
+        //     return;
+        // }
+
         // 文章の表示完了 / 未完了
         if (IsDisplayComplete ()) {
             //最後の文章ではない & ボタンが押された
-            if (currentSentenceNum < sentences.Length && Input.GetMouseButtonDown (0))
+            if (currentSentenceNum < sentences.Length && isSkip == true )
             {
                 SetNextSentence ();
             }
-            else if(currentSentenceNum == sentences.Length && Input.GetMouseButtonDown (0))
+            else if(currentSentenceNum == sentences.Length && isSkip == true)
             {
                 SceneSkip.Instance.skipToStage1();
             }
         } else {
             //ボタンが押された
-            if (Input.GetMouseButtonDown(0))
+            if (isSkip == true)
             {
                 timeUntilDisplay = 0; //※1
             }
         }
+        isSkip = false;
 
         //表示される文字数を計算
         int displayCharCount = (int)(Mathf.Clamp01((Time.time - timeBeganDisplay) / timeUntilDisplay) * currentSentence.Length);
@@ -66,5 +73,9 @@ public class TypeAnimation : MonoBehaviour {
 
     bool IsDisplayComplete(){
         return Time.time > timeBeganDisplay + timeUntilDisplay; //※2
+    }
+
+    public void skipSerif() {
+        isSkip = true;
     }
 }

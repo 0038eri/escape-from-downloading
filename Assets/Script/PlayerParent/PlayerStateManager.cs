@@ -45,7 +45,7 @@ public class PlayerStateManager : SingletonMonoBehaviour<PlayerStateManager> {
         switch (stageCheckNumber)
         {
             case 0:
-                Debug.Log("エラー");
+                Debug.Log("オープニング");
                 break;
             case 1:
                 GameObject.Find("Stage1Obj").SendMessage("clearOne");
@@ -72,7 +72,7 @@ public class PlayerStateManager : SingletonMonoBehaviour<PlayerStateManager> {
                 GameObject.Find("Stage8Obj").SendMessage("clearEight");
                 break;
             case 9:
-                GameObject.Find("Stage9Obj").SendMessage("clearSeven");
+                GameObject.Find("Stage9Obj").SendMessage("clearNine");
                 break;
             case 10:
                 GameObject.Find("Stage10Obj").SendMessage("clearTen");
@@ -82,6 +82,9 @@ public class PlayerStateManager : SingletonMonoBehaviour<PlayerStateManager> {
                 break;
             case 12:
                 GameObject.Find("Stage12Obj").SendMessage("clearTwelve");
+                break;
+            case 13:
+                Debug.Log("エンディング");
                 break;
             default:
                 break;

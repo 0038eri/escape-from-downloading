@@ -7,7 +7,6 @@ public class StageJudgeManager : SingletonMonoBehaviour<StageJudgeManager> {
 
     public static int stageJudge = 0;
 
-
     private void Start()
     {
         //stageJudge = PlayerPrefs.GetInt("stageJudgeSave");
@@ -22,7 +21,7 @@ public class StageJudgeManager : SingletonMonoBehaviour<StageJudgeManager> {
     // 以前クリアしたことのないステージでクリアした際に呼び出す
     public void stageJudgeCount()
     {
-        if (stageJudge < 13)
+        if (stageJudge < 14)
         {
             stageJudge++;
             //PlayerPrefs.SetInt("stageJudgeSave", stageJudge);

@@ -19,7 +19,7 @@ public class SkipBtn : MonoBehaviour {
     /// 0.5秒経過したら
 	/// ボタンを表示させる
 	IEnumerator Btn () {
-		yield return new WaitForSeconds(0.5f);      
+		yield return new WaitForSeconds(1.0f);      
 		skipBt.SetActive (true);
 	}
 
