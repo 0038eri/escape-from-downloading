@@ -226,6 +226,22 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88a7cc8ea44cf4e2ba505b7073f5d3bf, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &397628998 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1550020434266178, guid: 8d36b91cd55a04efba6600748d040c70,
+    type: 2}
+  m_PrefabInternal: {fileID: 746533509}
+--- !u!114 &397629001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 397628998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bee4491a6082402a8086d42202502cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &470662373
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,6 +442,11 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114981631539260930, guid: 5884dfb9a777545509e3513106e5c2fe,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5884dfb9a777545509e3513106e5c2fe, type: 2}

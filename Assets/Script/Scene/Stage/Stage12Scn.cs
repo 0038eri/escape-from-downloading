@@ -1,33 +1,55 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Stage12Scn : MonoBehaviour {
+public class Stage12Scn : MonoBehaviour
+{
 
-    private GameObject gamestartCanvas;
-    private GameObject stageJudgeManager;
+  private GameObject gamestartCanvas;
+  private GameObject stageJudgeManager;
 
-    // ステージ12クリア判定
-    public static bool stage12Clear = false;
+  // ステージ12クリア判定
+  public static bool stage12Clear = false;
 
-    private void Awake()
+  private float fadeTime;
+
+  private void Awake()
+  {
+    gamestartCanvas = GameObject.Find("GameStartCanvas");
+    stageJudgeManager = GameObject.Find("StageJudgeManager");
+  }
+
+  private void Start()
+  {
+    gamestartCanvas.SetActive(true);
+
+    fadeTime = FadeAnimation.Instance.valueFadeTime();
+  }
+
+  public void clearTwelve()
+  {
+    if (stage12Clear == false)
     {
-        gamestartCanvas = GameObject.Find("GameStartCanvas");
-        stageJudgeManager = GameObject.Find("StageJudgeManager");
+      stageJudgeManager.SendMessage("stageJudgeCount");
+      stage12Clear = true;
     }
+  }
 
-    private void Start()
-    {
-        gamestartCanvas.SetActive(true);
-    }
+  public void endMethod()
+  {
+    PlayerStateManager.Instance.gameFinishMethod();
+    PlayerStateManager.Instance.sendClear();
+    GameModeManager.Instance.gameClear();
+    StageJudgeManager.Instance.stageJudgeCount();
+    FadeAnimation.Instance.goFadeOut();
+    StartCoroutine(endCor());
+  }
 
-    public void clearTwelve()
-    {
-        if (stage12Clear == false)
-        {
-            stageJudgeManager.SendMessage("stageJudgeCount");
-            stage12Clear = true;
-        }
-    }
+  IEnumerator endCor()
+  {
+    yield return new WaitForSeconds(fadeTime);
+    SceneManager.LoadScene("Ending");
+  }
 
 }

@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scene/Start.unity
     guid: e5a91465fa7474427a9010e82961e0d3
   - enabled: 1
+    path: Assets/Scene/Selectmode.unity
+    guid: 7093a6ec0db0b44c3a11445579acaf73
+  - enabled: 1
     path: Assets/Scene/Stage/Stage1.unity
     guid: d4c4031ccf117474c9cd6931fb6bbce7
   - enabled: 1

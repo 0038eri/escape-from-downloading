@@ -4,67 +4,72 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class StageStateManager : SingletonMonoBehaviour<StageStateManager> {
-    
-    private GameObject pauseUi;
-    private GameObject pauseButton;
-    private float fadeTime;
-    private FadeAnimation fadeAnm;
+public class StageStateManager : SingletonMonoBehaviour<StageStateManager>
+{
 
-    private void Start()
-    {
-        fadeTime = FadeAnimation.Instance.valueFadeTime();
-        fadeAnm = GameObject.Find("SceneFadeSystem").GetComponent<FadeAnimation>();
-        pauseUi = GameObject.Find("PauseCanvas");
-        pauseButton = GameObject.Find("PauseButton");
-    }
+  private GameObject pauseUi;
+  private GameObject pauseButton;
+  private float fadeTime;
+  private FadeAnimation fadeAnm;
 
-    public void pauseMethod()
-    {
-        PlayerUiManager.Instance.falsePlayerUi();
-        SystemUiManager.Instance.openPauseUi();
-        Time.timeScale = 0.0f;
-    }
+  private void Start()
+  {
+    fadeTime = FadeAnimation.Instance.valueFadeTime();
+    fadeAnm = GameObject.Find("SceneFadeSystem").GetComponent<FadeAnimation>();
+    pauseUi = GameObject.Find("PauseCanvas");
+    pauseButton = GameObject.Find("PauseButton");
+  }
 
-    // ゲームを再開する
-    public void playGame () {
-        SystemUiManager.Instance.closePauseUi();
-        PlayerUiManager.Instance.truePlayerUi();
-        Time.timeScale = 1.0f;
-    }
+  public void pauseMethod()
+  {
+    GameModeManager.Instance.stopPlaying();
+    PlayerUiManager.Instance.falsePlayerUi();
+    SystemUiManager.Instance.openPauseUi();
+    Time.timeScale = 0.0f;
+  }
 
-    // メニューに戻る
-    public void backMenuS ()
-    {
-        Time.timeScale = 1.0f;
-        FadeAnimation.Instance.goFadeOut();
-        StartCoroutine(backMenuS_Coroutine());
-    }
+  // ゲームを再開する
+  public void playGame()
+  {
+    GameModeManager.Instance.isPlaying();
+    SystemUiManager.Instance.closePauseUi();
+    PlayerUiManager.Instance.truePlayerUi();
+    Time.timeScale = 1.0f;
+  }
 
-    IEnumerator backMenuS_Coroutine()
-    {
-        yield return new WaitForSeconds(fadeTime);
-        SystemUiManager.Instance.closePauseUi();
-        TimerManager.Instance.resetTimer();
-        GameModeManager.Instance.systemScene();
-        SceneManager.LoadScene("Menu");
-    }
+  // メニューに戻る
+  public void backMenuS()
+  {
+    Time.timeScale = 1.0f;
+    FadeAnimation.Instance.goFadeOut();
+    StartCoroutine(backMenuS_Coroutine());
+  }
 
-    // ゲームをやめる
-    public void escapeGameS () {
-        Time.timeScale = 1.0f;
-        FadeAnimation.Instance.goFadeOut();
-        StartCoroutine(escapeGameS_Coroutine());
-    }
+  IEnumerator backMenuS_Coroutine()
+  {
+    yield return new WaitForSeconds(fadeTime);
+    SystemUiManager.Instance.closePauseUi();
+    TimerManager.Instance.resetTimer();
+    GameModeManager.Instance.systemScene();
+    SceneManager.LoadScene("Menu");
+  }
 
-    IEnumerator escapeGameS_Coroutine()
-    {
-        yield return new WaitForSeconds(fadeTime);
-        SystemUiManager.Instance.closePauseUi();
-        TimerManager.Instance.resetTimer();
-        GameModeManager.Instance.systemScene();
-        SceneManager.LoadScene("Start"); 
-        // fadeAnm.nextSceneName = "Start";
-    }
+  // ゲームをやめる
+  public void escapeGameS()
+  {
+    Time.timeScale = 1.0f;
+    FadeAnimation.Instance.goFadeOut();
+    StartCoroutine(escapeGameS_Coroutine());
+  }
+
+  IEnumerator escapeGameS_Coroutine()
+  {
+    yield return new WaitForSeconds(fadeTime);
+    SystemUiManager.Instance.closePauseUi();
+    TimerManager.Instance.resetTimer();
+    GameModeManager.Instance.systemScene();
+    SceneManager.LoadScene("Start");
+    // fadeAnm.nextSceneName = "Start";
+  }
 
 }

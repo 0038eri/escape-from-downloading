@@ -3,21 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class OpeningScn : MonoBehaviour {
+public class OpeningScn : MonoBehaviour
+{
 
-    private float fadeTime;
+  private float fadeTime;
 
-    void Start()
-    {
-        fadeTime = FadeAnimation.Instance.valueFadeTime();
-        FadeAnimation.Instance.goFadeIn();
-        StartCoroutine(openingCoroutine());
-    }
+  void Start()
+  {
+    GameModeManager.Instance.talkScene();
+    fadeTime = FadeAnimation.Instance.valueFadeTime();
+    FadeAnimation.Instance.goFadeIn();
+    StartCoroutine(openingCoroutine());
+  }
 
-    IEnumerator openingCoroutine()
-    {
-        yield return new WaitForSeconds(fadeTime);
-        SoundManager.Instance.playBgm();
-    }
+  IEnumerator openingCoroutine()
+  {
+    yield return new WaitForSeconds(fadeTime);
+    SoundManager.Instance.playBgm();
+  }
 
 }

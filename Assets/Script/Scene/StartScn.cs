@@ -5,30 +5,50 @@ using UnityEngine.SceneManagement;
 
 public class StartScn : MonoBehaviour
 {
-    private int stageJudgeNumber = 0;
-    private float fadeTime = 2.0f;
 
-    private void Start()
+  private float fadeTime;
+
+  // シーン遷移洗濯用ステージ1クリア判定
+  private bool stage1Flag = false;
+
+  private void Start()
+  {
+    stage1Flag = StageJudgeManager.Instance.stage1ClearSelect();
+    GameModeManager.Instance.systemScene();
+    SoundManager.Instance.playBgm();
+    fadeTime = FadeAnimation.Instance.valueFadeTime();
+    FadeAnimation.Instance.goFadeIn();
+
+  }
+
+  private void Update()
+  {
+    // クリックした時
+    if (Input.GetMouseButtonDown(0))
     {
-        SoundManager.Instance.playBgm();
-        stageJudgeNumber = StageJudgeManager.Instance.stageNumberCheck();
+      FadeAnimation.Instance.goFadeOut();
+      if (stage1Flag)
+      {
+        StartCoroutine(selectCoroutine());
+      }
+      else
+      {
+        StartCoroutine(nextScnCoroutine());
+      }
     }
 
-    private void Update()
-    {
-        // クリックした時
-        if (Input.GetMouseButtonDown(0))
-        {
-            FadeAnimation.Instance.goFadeOut();
-            StartCoroutine(nextScnCoroutine());
-        }
+  }
 
-    }
+  IEnumerator selectCoroutine()
+  {
+    yield return new WaitForSeconds(fadeTime);
+    SceneManager.LoadScene("Selectmode");
+  }
 
-    IEnumerator nextScnCoroutine()
-    {
-        yield return new WaitForSeconds(fadeTime);
-        StageJudgeManager.Instance.sceneTransition();
-    }
+  IEnumerator nextScnCoroutine()
+  {
+    yield return new WaitForSeconds(fadeTime);
+    StageJudgeManager.Instance.sceneTransition();
+  }
 
 }

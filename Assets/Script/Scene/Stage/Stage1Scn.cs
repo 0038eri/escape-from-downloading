@@ -2,25 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stage1Scn : MonoBehaviour {
-    
-    private GameObject stageJudgeManager;
+public class Stage1Scn : MonoBehaviour
+{
 
-    // ステージ1クリア判定
-    public static bool stage1Clear = false;
+  private GameObject stageJudgeManager;
 
-    private void Awake()
+  // ステージ1クリア判定
+  public static bool stage1Clear = false;
+
+  private void Awake()
+  {
+    stageJudgeManager = GameObject.Find("StageJudgeManager");
+  }
+
+  public void clearOne()
+  {
+    if (stage1Clear == false)
     {
-        stageJudgeManager = GameObject.Find("StageJudgeManager");
+      stageJudgeManager.SendMessage("stageJudgeCount");
+      stage1Clear = true;
+      StageJudgeManager.stage1Clear_select = true;
     }
-
-    public void clearOne()
-    {
-        if (stage1Clear == false)
-        {
-            stageJudgeManager.SendMessage("stageJudgeCount");
-            stage1Clear = true;
-        }
-    }
+  }
 
 }
