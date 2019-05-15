@@ -73,6 +73,7 @@
      <Compile Include="Assets\Script\Scene\OpeningScn.cs" />
      <Compile Include="Assets\Script\Scene\OptionScn.cs" />
      <Compile Include="Assets\Script\Scene\PrefabScn.cs" />
+     <Compile Include="Assets\Script\Scene\SelectScn.cs" />
      <Compile Include="Assets\Script\Scene\Skip\SceneSkip.cs" />
      <Compile Include="Assets\Script\Scene\Skip\SkipBtn.cs" />
      <Compile Include="Assets\Script\Scene\Stage\Stage10Scn.cs" />

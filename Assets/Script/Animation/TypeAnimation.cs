@@ -10,7 +10,7 @@ using UnityEngine.EventSystems;
 public class TypeAnimation : MonoBehaviour
 {
 
-  public string[] sentences;
+  [Multiline] public string[] sentences;
   [SerializeField] Text uiText;   // uiTextへの参照
 
   [SerializeField, Range(0.001f, 0.3f)] float intervalForCharDisplay = 0.05f;   // 1文字の表示にかける時間

@@ -137,8 +137,8 @@ Camera:
   m_GameObject: {fileID: 400583083}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.6792453, g: 0.13136347, b: 0.19061846, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -540,6 +540,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114546119915772390, guid: 58a561d1dbcdf49e2b949f508eaccbd3,
+        type: 2}
+      propertyPath: sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4964827236964592, guid: 58a561d1dbcdf49e2b949f508eaccbd3, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -580,32 +585,32 @@ Prefab:
     - target: {fileID: 114546119915772390, guid: 58a561d1dbcdf49e2b949f508eaccbd3,
         type: 2}
       propertyPath: sentences.Array.data[0]
-      value: "\u30A8\u30F3\u30C7\u30A3\u30F3\u30B0"
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 114546119915772390, guid: 58a561d1dbcdf49e2b949f508eaccbd3,
         type: 2}
       propertyPath: sentences.Array.data[1]
-      value: "\u3048\u3093\u3067\u3043\u3093\u3050"
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 114546119915772390, guid: 58a561d1dbcdf49e2b949f508eaccbd3,
         type: 2}
       propertyPath: sentences.Array.data[2]
-      value: Ending
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 114546119915772390, guid: 58a561d1dbcdf49e2b949f508eaccbd3,
         type: 2}
       propertyPath: sentences.Array.data[3]
-      value: ENDING
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 114546119915772390, guid: 58a561d1dbcdf49e2b949f508eaccbd3,
         type: 2}
       propertyPath: sentences.Array.data[4]
-      value: ending
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 114546119915772390, guid: 58a561d1dbcdf49e2b949f508eaccbd3,
         type: 2}
       propertyPath: sentences.Array.data[5]
-      value: endhingu
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58a561d1dbcdf49e2b949f508eaccbd3, type: 2}

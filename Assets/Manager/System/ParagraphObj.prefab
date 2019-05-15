@@ -52,11 +52,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - "\u30AA\u30FC\u30D7\u30CB\u30F3\u30B0"
-  - "\u304A\u30FC\u3077\u306B\u3093\u3050"
-  - Opening
-  - OPENING
-  - openning
-  - o-puningu
+  - 
   uiText: {fileID: 0}
   intervalForCharDisplay: 0.05

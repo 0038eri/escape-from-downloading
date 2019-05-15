@@ -23,6 +23,7 @@ public class StartScn : MonoBehaviour
 
   private void Update()
   {
+
     // クリックした時
     if (Input.GetMouseButtonDown(0))
     {

@@ -74,4 +74,10 @@ public class GameModeManager : SingletonMonoBehaviour<GameModeManager>
     playFlag = false;
   }
 
+  public void selectScene()
+  {
+    gameMode = "selectScene";
+    playFlag = false;
+  }
+
 }
