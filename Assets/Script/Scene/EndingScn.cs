@@ -18,7 +18,7 @@ public class EndingScn : MonoBehaviour
   IEnumerator endingCoroutine()
   {
     yield return new WaitForSeconds(fadeTime);
-    SoundManager.Instance.playBgm();
+    SoundManager.Instance.playSound();
   }
 
 }

@@ -19,7 +19,7 @@ public class OpeningScn : MonoBehaviour
   IEnumerator openingCoroutine()
   {
     yield return new WaitForSeconds(fadeTime);
-    SoundManager.Instance.playBgm();
+    SoundManager.Instance.playSound();
   }
 
 }

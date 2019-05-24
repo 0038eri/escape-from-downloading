@@ -15,7 +15,7 @@ public class StartScn : MonoBehaviour
   {
     stage1Flag = StageJudgeManager.Instance.stage1ClearSelect();
     GameModeManager.Instance.systemScene();
-    SoundManager.Instance.playBgm();
+    SoundManager.Instance.playSound();
     fadeTime = FadeAnimation.Instance.valueFadeTime();
     FadeAnimation.Instance.goFadeIn();
 

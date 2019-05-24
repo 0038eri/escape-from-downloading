@@ -2,23 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StageScn : MonoBehaviour {
+public class StageScn : MonoBehaviour
+{
 
-    private float fadeTime;
+  private float fadeTime;
 
-    private void Start()
-    {
-        fadeTime = FadeAnimation.Instance.valueFadeTime();
-        FadeAnimation.Instance.goFadeIn();
-        PlayerStateManager.Instance.beforeGameMethod();
-        StartCoroutine(startMethodS());
-    }
+  private void Start()
+  {
+    fadeTime = FadeAnimation.Instance.valueFadeTime();
+    FadeAnimation.Instance.goFadeIn();
+    PlayerStateManager.Instance.beforeGameMethod();
+    StartCoroutine(startMethodS());
+  }
 
-    IEnumerator startMethodS()
-    {
-        yield return new WaitForSeconds(fadeTime);
-        GameStartAnimator.Instance.trueAnimation();
-        SoundManager.Instance.playBgm();
-    }
+  IEnumerator startMethodS()
+  {
+    yield return new WaitForSeconds(fadeTime);
+    GameStartAnimator.Instance.trueAnimation();
+    SoundManager.Instance.playSound();
+  }
 
 }

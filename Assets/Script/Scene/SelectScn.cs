@@ -19,7 +19,7 @@ public class SelectScn : MonoBehaviour
   IEnumerator selectCoroutine()
   {
     yield return new WaitForSeconds(fadeTime);
-    SoundManager.Instance.playBgm();
+    SoundManager.Instance.playSound();
   }
 
   public void menuFromSelect()
