@@ -15,11 +15,11 @@ public class TypeAnimation : MonoBehaviour
 
   [SerializeField, Range(0.001f, 0.3f)] float intervalForCharDisplay = 0.05f;   // 1文字の表示にかける時間
 
-  private int currentSentenceNum = 0; //現在表示している文章番号
+  private int currentNumber = 0; //現在表示している文章番号
   private string currentSentence = string.Empty;  // 現在の文字列
-  private float timeUntilDisplay = 0;     // 表示にかかる時間
-  private float timeBeganDisplay = 1;         // 文字列の表示を開始した時間
-  private int lastUpdateCharCount = -1;      // 表示中の文字数
+  private float timeUntilDisplay = 0; // 表示にかかる時間
+  private float timeBeganDisplay = 1; // 文字列の表示を開始した時間
+  private int lastUpdateCharCount = -1; // 表示中の文字数
 
   private bool isSkip = false;
 
@@ -39,11 +39,11 @@ public class TypeAnimation : MonoBehaviour
     if (IsDisplayComplete())
     {
       //最後の文章ではない & ボタンが押された
-      if (currentSentenceNum < sentences.Length && isSkip == true)
+      if (currentNumber < sentences.Length && isSkip == true)
       {
         SetNextSentence();
       }
-      else if (currentSentenceNum == sentences.Length && isSkip == true)
+      else if (currentNumber == sentences.Length && isSkip == true)
       {
         SceneSkip.Instance.skipToStage1();
       }
@@ -72,10 +72,10 @@ public class TypeAnimation : MonoBehaviour
   // 次の文章をセットする
   void SetNextSentence()
   {
-    currentSentence = sentences[currentSentenceNum];
+    currentSentence = sentences[currentNumber];
     timeUntilDisplay = currentSentence.Length * intervalForCharDisplay;
     timeBeganDisplay = Time.time;
-    currentSentenceNum++;
+    currentNumber++;
     lastUpdateCharCount = 0;
   }
 
